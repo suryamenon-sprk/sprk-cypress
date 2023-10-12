@@ -1,8 +1,8 @@
-import Util from "../../../../util/Util"
+import Helper from "../../../../util/Helper"
 
 
 // MEMBERS
-var util = new Util();
+var util = new Helper();
 const HttpMethod = util.getHttpMethod()
 const CURRENT_BASE_URL = util.getCurrentBaseURL()
 

@@ -1,4 +1,4 @@
-class Util {
+class Helper {
 
     HttpMethod = {
         GET: "GET",
@@ -7,16 +7,33 @@ class Util {
         DELETE: "DELETE"
     }
 
+    HttpHeaders = {
+        AUTHORIZATION: "Authorization"
+    }
+
+    Authorities = {
+        ADMIN: "ADMIN",
+        SALES: "SALES",
+        DEFAULT: "DEFAULT"
+    }
+
     BASE_URL = {
         AWS: "",
         NGROK: "https://mollusk-heroic-jaguar.ngrok-free.app"
     }
 
 
-
     // GETTERS
     getHttpMethod() {
         return this.HttpMethod;
+    }
+
+    getHttpHeaders() {
+        return this.HttpHeaders;
+    }
+
+    getAuthorities() {
+        return this.Authorities;
     }
 
     getCurrentBaseURL() {
@@ -25,4 +42,4 @@ class Util {
 
 }
 
-export default Util
+export default Helper
