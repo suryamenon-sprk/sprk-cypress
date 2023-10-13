@@ -1,0 +1,109 @@
+[
+    {
+      "firstname": "John",
+      "middlename": "Doe",
+      "lastname": "Smith",
+      "username": "johndoe",
+      "email": "john.doe@example.com",
+      "password": "Password@123",
+      "org_id": 1,
+      "description": "Test case with unique username and email",
+      "expected_status_code": 400
+    },
+    {
+      "firstname": "Alice",
+      "middlename": "Mary",
+      "lastname": "Johnson",
+      "username": "alicejohnson",
+      "email": "alice.johnson@example.com",
+      "password": "Alice@456",
+      "org_id": 1,
+      "description": "Test case with repeated username",
+      "expected_status_code": 400
+    },
+    {
+      "firstname": "Bob",
+      "middlename": "David",
+      "lastname": "Brown",
+      "username": "bob_brown",
+      "email": "bob.brown@example.com",
+      "password": "Bob@789",
+      "org_id": 1,
+      "description": "Test case with repeated email",
+      "expected_status_code": 400
+    },
+
+    {
+        "firstname": "George",
+        "middlename": "Denis",
+        "lastname": "Green",
+        "username": null,
+        "email": null,
+        "password": "George@789",
+        "org_id": 1,
+        "description": "Test case with null email",
+        "expected_status_code": 400
+      },
+
+      {
+        "firstname": "Kenny",
+        "middlename": "Sebastian",
+        "lastname": "Kyle",
+        "username": null,
+        "email": null,
+        "password": "Kenny@789",
+        "org_id": 1,
+        "description": "Test case with null email, username",
+        "expected_status_code": 400
+      },
+
+      {
+        "firstname": null,
+        "middlename": "Nolen",
+        "lastname": "White",
+        "username": null,
+        "email": null,
+        "password": "Nolen@789",
+        "org_id": 1,
+        "description": "Test case with null email, username and firstname",
+        "expected_status_code": 400
+      },
+
+      {
+        "firstname": "Gina",
+        "middlename": "Brian",
+        "lastname": "yellow",
+        "username": null,
+        "email": "gina@gmail.com",
+        "password": "Gina@789",
+        "org_id": 1,
+        "description": "Test case with null username",
+        "expected_status_code": 400
+      },
+
+      {
+        "firstname": "Jake",
+        "middlename": "Peralta",
+        "lastname": "Drake",
+        "username": "Jake-Drake",
+        "email": null,
+        "password": "Jake@789",
+        "org_id": 1,
+        "description": "Test case with null email",
+        "expected_status_code": 400
+      },
+
+      {
+        "firstname": "Sarah",
+        "middlename": "Lopez",
+        "lastname": "Clark",
+        "username": "SarahClark",
+        "email": "sarah.clark@example.com",
+        "password": null,
+        "org_id": "1",
+        "description": "Test case with null password",
+        "expected_status_code": 400
+      }
+
+  ]
+  
