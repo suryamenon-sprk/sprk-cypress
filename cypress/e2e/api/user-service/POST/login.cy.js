@@ -1,10 +1,6 @@
-import Helper from "../../../../util/Helper"
-
-
 // MEMBERS
-var util = new Helper();
-const HttpMethod = util.getHttpMethod()
-const CURRENT_BASE_URL = util.getCurrentBaseURL()
+const HttpMethod = Cypress.env("HTTP_METHOD")
+const CURRENT_BASE_URL = Cypress.env("BASE_URL")
 
 
 
@@ -24,6 +20,7 @@ before(() => {
 // DESCRIPTION
 describe('API-Login Test', () => {
 
+    
     // TEST
     it('Login - superuser', () => {
 
@@ -51,7 +48,6 @@ describe('API-Login Test', () => {
 
         
     });
-
 
 
 

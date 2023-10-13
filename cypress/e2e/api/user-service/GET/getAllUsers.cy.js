@@ -1,14 +1,13 @@
-import Helper from "../../../../util/Helper"
-import TokenHelper from "../../../../util/Token";
-
-
 // MEMBERS
-var util = new Helper();
-var tokenHelper = new TokenHelper();
-
-const Authorities = util.getAuthorities()
-const HttpMethod = util.getHttpMethod()
-const CURRENT_BASE_URL = util.getCurrentBaseURL()
+const HttpMethod = {
+    GET: "GET",
+    POST: "POST",
+    PATCH: "PATCH",
+    DELETE: "DELETE"
+}
+const BASE_URL = Cypress.env("BASE_URL")
+const TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
+const TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
 
 
@@ -19,7 +18,7 @@ describe("GET - Users-All (ADMIN)", () => {
     it('WITHOUT AUTH HEADER', () => {
         cy.request({
             method: HttpMethod.GET,
-            url: CURRENT_BASE_URL + "/api/auth/users",
+            url: BASE_URL + "/api/auth/users",
             failOnStatusCode: false,
             headers: {
                 "ngrok-skip-browser-warning": true
@@ -44,7 +43,7 @@ describe("GET - Users-All (ADMIN)", () => {
     it('Random shit inside Authorization Header', () => {
         cy.request({
             method: HttpMethod.GET,
-            url: CURRENT_BASE_URL + "/api/auth/users",
+            url: BASE_URL + "/api/auth/users",
             failOnStatusCode: false,
             headers: {
                 "Authorization": "HALO",
@@ -58,55 +57,37 @@ describe("GET - Users-All (ADMIN)", () => {
 
 
 
-
     it('Token superuser - Authorization Header', () => {
-        
-        tokenHelper
-        .getTokenByLogin(Authorities.ADMIN)
-        .then((token) => {
-            
-            cy.request({
-                method: HttpMethod.GET,
-                url: CURRENT_BASE_URL + "/api/auth/users",
-                failOnStatusCode: false,
-                headers: {
-                    "Authorization": token,
-                    "ngrok-skip-browser-warning": true
-                }
-            }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body)
-            })
-
-        })
-
+        cy.request({
+            method: HttpMethod.GET, // Use the HttpMethod from Helper
+            url: BASE_URL + "/api/auth/users",
+            failOnStatusCode: false,
+            headers: {
+                Authorization: `Bearer ${TOKEN_ADMIN}`,
+                "ngrok-skip-browser-warning": true
+            }
+        }).then((response) => {
+            expect(response.status).to.equal(200);
+        });
     });
-
-
-
 
 
 
     it(' Token-Sales - Sales should not have access to all users data', () => {
-        tokenHelper
-        .getTokenByLogin(Authorities.SALES)
-        .then((token) => {
-
-            cy.request({
-                method: HttpMethod.GET,
-                url: CURRENT_BASE_URL + "/api/auth/users",
-                failOnStatusCode: false,
-                headers: {
-                    "Authorization": token,
-                    "ngrok-skip-browser-warning": true
-                }
-            }).then((response) => {
-                expect(response.status).to.equal(403)
-                cy.log(response.body)
-            })
-
-
-        })
+        cy.request({
+            method: HttpMethod.GET, // Use the HttpMethod from Helper
+            url: BASE_URL + "/api/auth/users",
+            failOnStatusCode: false,
+            headers: {
+                Authorization: `Bearer ${TOKEN_SALES}`,
+                "ngrok-skip-browser-warning": true
+            }
+        }).then((response) => {
+            expect(response.status).to.equal(403);
+            cy.log(response.body);
+        });
     });
+
+
 
 })
