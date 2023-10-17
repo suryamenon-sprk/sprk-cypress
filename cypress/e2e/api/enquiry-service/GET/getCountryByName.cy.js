@@ -2,7 +2,7 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const API_URL = `${ENV_BASE_URL}/api/auth/users`
+const API_URL = `${ENV_BASE_URL}/api/enquiry/country/name/India`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -16,9 +16,10 @@ const HttpMethod = {
 
 
 
-// DESCRIBE
-describe("GET - Users-All (ADMIN)", () => {
 
+
+//DESCRIPTION
+describe('GET - COUNTRY(AllUsers)', () =>{
 
     it('Authorization Header - No Value',
         () => {
@@ -31,15 +32,6 @@ describe("GET - Users-All (ADMIN)", () => {
                 }
             }).then((response) => {
                 expect(response.status).to.equal(404)
-
-                // let responseBody = response.body;
-
-                // if ('error' in responseBody)
-                // if (responseBody.hasOwnProperty('error'))
-                //     cy.log(responseBody.error)
-                // else
-                //     cy.log(responseBody)
-
             })
         }
     );
@@ -66,6 +58,7 @@ describe("GET - Users-All (ADMIN)", () => {
 
 
 
+
     it('Authorization Header - superuser (TOKEN)',
         () => {
             cy.request({
@@ -77,14 +70,16 @@ describe("GET - Users-All (ADMIN)", () => {
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
+                expect(response.status).to.equal(200)
+                cy.log(response.body)
             });
         }
     );
+    
 
 
 
-    it('Authorization Header - sales (TOKEN) [Sales should not have access to all users data.]',
+    it('Authorization Header - sales (TOKEN)',
         () => {
             cy.request({
                 method: HttpMethod.GET,
@@ -95,7 +90,7 @@ describe("GET - Users-All (ADMIN)", () => {
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(403);
+                expect(response.status).to.equal(200);
                 cy.log(response.body);
             });
         }
@@ -103,4 +98,4 @@ describe("GET - Users-All (ADMIN)", () => {
 
 
 
-})
+});

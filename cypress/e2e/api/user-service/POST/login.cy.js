@@ -1,6 +1,14 @@
-// MEMBERS
-const HttpMethod = Cypress.env("HTTP_METHOD")
-const CURRENT_BASE_URL = Cypress.env("BASE_URL")
+const ENV_BASE_URL = Cypress.env("BASE_URL")
+
+const API_URL = `${ENV_BASE_URL}/api/auth/login`
+const HttpMethod = {
+    GET: "GET",
+    POST: "POST",
+    PATCH: "PATCH",
+    DELETE: "DELETE"
+}
+
+
 
 
 
@@ -8,12 +16,13 @@ const CURRENT_BASE_URL = Cypress.env("BASE_URL")
 var payload_superuser = null
 before(() => {
 
-    cy.fixture("login-superuser")
-    .then((data) => {
+    cy.fixture("login-superuser").then((data) => {
         payload_superuser = data
     })
 
 })
+
+
 
 
 
@@ -37,17 +46,16 @@ describe('API-Login Test', () => {
             // REQUEST
             cy.request({
                 method: HttpMethod.POST,
-                url: CURRENT_BASE_URL + "/api/auth/login",
+                url: API_URL,
                 failOnStatusCode: false,
                 body: bodyPayload
             }).then((response) => {
                 expect(response.status).to.equal(testCase.expected_status_code)
-            })
+            }) // request
 
-        })
-
-        
-    });
+        }) // forEach
+    
+    }); // it
 
 
 

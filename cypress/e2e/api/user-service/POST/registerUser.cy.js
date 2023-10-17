@@ -1,19 +1,30 @@
-import Helper from "../../../../util/Helper";
+const ENV_BASE_URL = Cypress.env("BASE_URL")
 
-var util = new Helper
-const HttpMethod = util.getHttpMethod()
-const CURRENT_BASE_URL = util.getCurrentBaseURL()
+const API_URL = `${ENV_BASE_URL}/api/auth/register`
+const HttpMethod = {
+    GET: "GET",
+    POST: "POST",
+    PATCH: "PATCH",
+    DELETE: "DELETE"
+}
+
+
+
+
 
 //FIXTURE
 var payload_register = null
 before(() => {
 
-    cy.fixture("register-users")
-    .then((data) => {
+    cy.fixture("register-users").then((data) => {
         payload_register = data
     })
 
 })
+
+
+
+
 
 // DESCRIPTION
 describe('API-Register Test', () => {
@@ -23,27 +34,30 @@ describe('API-Register Test', () => {
 
         payload_register.forEach((testCase) => {
 
-        let bodyPayload = {
-            "firstname": testCase.firstname,
-            "middlename": testCase.middlename,
-            "lastname": testCase.lastname,
-            "username": testCase.username,
-            "email": testCase.email,
-            "password": testCase.password,
-            "org_id": testCase.org_id
-        }
+            let bodyPayload = {
+                "firstname": testCase.firstname,
+                "middlename": testCase.middlename,
+                "lastname": testCase.lastname,
+                "username": testCase.username,
+                "email": testCase.email,
+                "password": testCase.password,
+                "org_id": testCase.org_id
+            }
 
-        // REQUEST
-        cy.request({
-            method: HttpMethod.POST,
-            url: CURRENT_BASE_URL + "/api/auth/register",
-            failOnStatusCode: false,
-            body: bodyPayload
-        }).then((response) => {
-            expect(response.status).to.equal(testCase.expected_status_code)
-        })
+            // REQUEST
+            cy.request({
+                method: HttpMethod.POST,
+                url: API_URL,
+                failOnStatusCode: false,
+                body: bodyPayload
+            }).then((response) => {
+                expect(response.status).to.equal(testCase.expected_status_code)
+            }) // request
 
-    }) 
-    });
+        }) // forEach
+
+    }) // it
+
+
 
 })
