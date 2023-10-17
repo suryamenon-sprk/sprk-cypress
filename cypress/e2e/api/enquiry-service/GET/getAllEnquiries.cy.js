@@ -99,7 +99,7 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
 
                 let responseBody = response.body
 
-                const decodedToken = jwtDecode(token);
+                const decodedToken = jwtDecode(AUTH_HEADER.Sales);
                 const userId = decodedToken.sub;
 
                 responseBody.forEach(obj => {

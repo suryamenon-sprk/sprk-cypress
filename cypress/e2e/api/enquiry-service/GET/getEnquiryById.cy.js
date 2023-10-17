@@ -99,7 +99,7 @@ describe('GET - EnquiryID (Admin and Sales)', () =>{
 
                 let responseBody = response.body
 
-                const decodedToken = jwtDecode(token);
+                const decodedToken = jwtDecode(AUTH_HEADER.Sales);
                 const userId = decodedToken.sub;
 
                 expect(responseBody.assigned_user.user_id).to.equal(userId)
