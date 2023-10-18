@@ -1,0 +1,34 @@
+[
+    {
+    "enquiry_id": 1,
+    "follow_up_at": "2023-10-20 10:50:00",
+    "mode_of_follow_up": "HOME_VISIT",
+    "comment": "CALL TODAY",
+    "description": "All fields filled",
+    "expected_status_code":201
+    },
+    {
+        "enquiry_id": 2,
+        "follow_up_at": null,
+        "mode_of_follow_up": "HOME_VISIT",
+        "comment": "CALL TODAY",
+        "description": "Missing Date and time",
+        "expected_status_code":400
+    },
+    {
+        "enquiry_id": 3,
+        "follow_up_at": "2023-10-20 10:50:00",
+        "mode_of_follow_up": null,
+        "comment": "CALL TODAY",
+        "description": "Missing mode of follow up",
+        "expected_status_code":400
+    },
+    {
+        "enquiry_id": 4,
+        "follow_up_at": "2023-10-20 10:50:00",
+        "mode_of_follow_up": "HOME_VISIT",
+        "comment": null,
+        "description": "Missing comment",
+        "expected_status_code":400
+    }
+]

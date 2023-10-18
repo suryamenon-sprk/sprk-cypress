@@ -48,7 +48,7 @@ describe('API-Login Test', () => {
                 method: HttpMethod.POST,
                 url: API_URL,
                 failOnStatusCode: false,
-                body: bodyPayload
+                body: bodyPayload,
             }).then((response) => {
                 expect(response.status).to.equal(testCase.expected_status_code)
             }) // request

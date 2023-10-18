@@ -1,6 +1,8 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
+const ENV_TOKEN = Cypress.env("TOKEN_ADMIN")
 
 const API_URL = `${ENV_BASE_URL}/api/auth/register`
+const TOKEN = `${ENV_TOKEN}`
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -49,7 +51,10 @@ describe('API-Register Test', () => {
                 method: HttpMethod.POST,
                 url: API_URL,
                 failOnStatusCode: false,
-                body: bodyPayload
+                body: bodyPayload,
+                headers: {
+                    Authorization: `Bearer ${TOKEN}`
+                }
             }).then((response) => {
                 expect(response.status).to.equal(testCase.expected_status_code)
             }) // request

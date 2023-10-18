@@ -2,6 +2,7 @@ import jwtDecode from "jwt-decode";
 
 
 
+
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
@@ -100,13 +101,13 @@ describe('GET - EnquiryID (Admin and Sales)', () =>{
                 let responseBody = response.body
 
                 const decodedToken = jwtDecode(AUTH_HEADER.Sales);
-                const userId = decodedToken.sub;
+                let userId = decodedToken.sub;
 
-                expect(responseBody.assigned_user.user_id).to.equal(userId)
+
+                expect(responseBody.assigned_user.user_id).to.equal(Number(userId))
 
             });
-        }
-    );
+        });
 
 
 

@@ -103,7 +103,7 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
                 const userId = decodedToken.sub;
 
                 responseBody.forEach(obj => {
-                    expect(obj.assigned_user.user_id).to.equal(userId)
+                    expect(obj.assigned_user.user_id).to.equal(Number(userId))
                 });
 
             });
