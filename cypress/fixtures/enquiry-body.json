@@ -1,0 +1,74 @@
+[
+    {
+        "student_firstname": "John",
+        "primary_mobile": "1234567890",
+        "description": "Minimum Required Fields",
+        "expected_status_code":201
+
+      },
+      {
+        "student_firstname": "John",
+        "student_middlename": "Doe",
+        "student_lastname": "Smith",
+        "referral_firstname": "Jane",
+        "referral_middlename": "Doe",
+        "referral_lastname": "Smith",
+        "birth_date": "2000-01-01",
+        "gender": "Male",
+        "residence_no": "1234",
+        "flat_house_building": "Apt 101",
+        "area_street_sector_village": "Main St",
+        "landmark": "Near Park",
+        "pincode": "123456",
+        "town_city": "Cityville",
+        "state": "California",
+        "country": "USA",
+        "primary_mobile": "1234567891",
+        "secondary_mobile": "9876543210",
+        "primary_email": "john@example.com",
+        "secondary_email": "john.doe@example.com",
+        "qualification": "High School",
+        "occupation": "Student",
+        "college_name": "XYZ College",
+        "career_requirement": "Full Stack Development",
+        "software_known": "Atom",
+        "course_history": "No",
+        "heard_from": "Website",
+        "description": "All Fields filled",
+        "expected_status_code":400
+      },
+      {
+        "referral_firstname": "Jane",
+        "primary_mobile": "1234567890",
+        "description": "Missing Required fields",
+        "expected_status_code":400
+      },
+      {
+        "student_firstname": "John",
+        "birth_date": "01/01/2000",
+        "primary_mobile": "12345" ,
+        "description": "Invalid Phone number",
+        "expected_status_code":400
+      },
+      {
+        "student_firstname": "John",
+        "student_middlename": null,
+        "student_lastname": null,
+        "primary_mobile": "1234567890",
+        "description": "Empty string Fields",
+        "expected_status_code":201
+      },
+      {
+        "student_firstname": "John",
+        "gender": "Unknown",
+        "primary_mobile": "1234567890",
+        "description": "Invalid Enum Values",
+        "expected_status_code":400
+      }
+      
+      
+      
+      
+      
+      
+]
