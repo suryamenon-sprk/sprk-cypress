@@ -1,0 +1,46 @@
+[
+    {
+        "user_id": "1",
+        "filter_from": null,
+        "filter_to": null,
+        "description": "from and to date is null with user",
+        "expected_status_code":200
+    },
+    {
+        "user_id": "2",
+        "filter_from": null,
+        "filter_to": null,
+        "description": "Missing Date and time",
+        "expected_status_code":200
+    },
+    {
+        "user_id": null,
+        "filter_from": "2023-10-20",
+        "filter_to": null,
+        "description": "Missing Date and time",
+        "expected_status_code":200
+    },
+    {
+        "user_id": null,
+        "filter_from": null,
+        "filter_to": "2023-10-20",
+        "description": "Missing Date and time",
+        "expected_status_code":200
+    },
+    {
+        "user_id": null,
+        "filter_from": "2023-10-20",
+        "filter_to": "2023-10-30",
+        "description": "Missing Date and time",
+        "expected_status_code":200
+    },
+    {
+        "user_id": null,
+        "filter_from": null,
+        "filter_to": null,
+        "description": "Missing Date and time",
+        "expected_status_code":200
+    }
+    
+
+]
