@@ -10,6 +10,7 @@ module.exports = defineConfig({
   },
 
   e2e: {
+    projectId: "yi8d6y",
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
