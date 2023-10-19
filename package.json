@@ -14,7 +14,7 @@
   "description": "portal-testing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "test":"npx cypress run --browser=chrome --headed --record --key=643e9c51-56ff-4832-92ab-65021e768b30"
   },
   "repository": {
     "type": "git",
