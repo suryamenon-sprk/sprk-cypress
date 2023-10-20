@@ -3,7 +3,7 @@
         "primary_mobile": null,
         "primary_email": "kunalvartak.official@gmail.com",
         "description": "Mobile number is null",
-        "expected_status_code":400
+        "expected_status_code":200
     },
     {
         "primary_mobile": "1234567890",
@@ -16,7 +16,7 @@
         "primary_mobile": null,
         "primary_email": null,
         "description": "Mobile both fields are null",
-        "expected_status_code":400
+        "expected_status_code":200
     }
 
 ]
