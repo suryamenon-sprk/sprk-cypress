@@ -31,7 +31,7 @@ describe('GET - COUNTRY (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(404)
+                expect(response.status).to.equal(200)
             })
         }
     );

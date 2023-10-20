@@ -1,8 +1,12 @@
+import jwtDecode from "jwt-decode";
+
+
+
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const API_URL = `${ENV_BASE_URL}/api/enquiry/country/name/India`
+const API_URL = `${ENV_BASE_URL}/api/enquiry/user/2`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -19,7 +23,7 @@ const HttpMethod = {
 
 
 //DESCRIPTION
-describe('GET - COUNTRY(AllUsers)', () =>{
+describe('GET - ENQUIRY (AllUsers)', () =>{
 
     it('Authorization Header - No Value',
         () => {
@@ -31,7 +35,7 @@ describe('GET - COUNTRY(AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                expect(response.status).to.equal(404)
             })
         }
     );
@@ -92,6 +96,16 @@ describe('GET - COUNTRY(AllUsers)', () =>{
             }).then((response) => {
                 expect(response.status).to.equal(200);
                 cy.log(response.body);
+
+                let responseBody = response.body
+
+                const decodedToken = jwtDecode(AUTH_HEADER.Sales);
+                const userId = decodedToken.sub;
+
+                responseBody.forEach(obj => {
+                    expect(obj.assigned_user.user_id).to.equal(Number(userId))
+                });
+
             });
         }
     );

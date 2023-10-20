@@ -90,19 +90,19 @@ describe('GET - FollowUpById(Admin,Sales)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
+                expect(response.status).to.equal(403);
                 cy.log(response.body);
 
-                /*
-                let responseBody = response.body
+                
+                //  let responseBody = response.body
 
-                const decodedToken = jwtDecode(token);
-                const userId = decodedToken.sub;
+                //  const decodedToken = jwtDecode(token);
+                //  const userId = decodedToken.sub;
 
-                responseBody.forEach(obj => {
-                    expect(obj.assigned_user.user_id).to.equal(userId)
-                });
-                */
+                //  responseBody.forEach(obj => {
+                //      expect(obj.assigned_user.user_id).to.equal(userId)
+                //  });
+                 
 
             });
         }
