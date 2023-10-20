@@ -1,0 +1,18 @@
+name: Run Cypress Tests
+on: [push]
+
+jobs:
+    install:
+     run-on: ubuntu-latest
+     steps:
+       -name: checkout
+        uses: actions/checkout@v2
+       -name: install modeules
+        uses: npi ci
+
+       -name: Cypress
+        uses: Cypress-io/github-action@v3
+        with:
+          browser: chrome
+          headless: true
+          start: npm start
