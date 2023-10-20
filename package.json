@@ -14,7 +14,7 @@
   "description": "portal-testing",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --browser=chrome --headed --record --key=643e9c51-56ff-4832-92ab-65021e768b30",
+    "start": "npx cypress run --browser=chrome --headed --record --key=643e9c51-56ff-4832-92ab-65021e768b30",
     "cypress:run":"cypress run",
     "cypress:open":"cypress open"
   },
