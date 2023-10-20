@@ -1,0 +1,46 @@
+[
+    {
+      "student_firstname": "John",
+      "student_middlename": null,
+      "student_lastname": "Doe",
+      "birth_date": "1990-01-01",
+      "gender": "MALE",
+      "residence_no": null,
+      "flat_house_building": "ABC",
+      "area_street_sector_village": "sector 5",
+      "landmark": null,
+      "pincode": "123654",
+      "town_city": "Panvel",
+      "state": "Maharashtra",
+      "country": "India",
+      "primary_mobile": "9856985631",
+      "secondary_mobile": null,
+      "primary_email": "john@example.com",
+      "secondary_email": null,
+      "qualification": null,
+      "occupation": null,
+      "college_name": null,
+      "assigned_user": 1,
+      "discard_reason": null,
+      "discard_by": null,
+      "description": "Valid test case",
+      "expected_status_code": 200
+    },
+    {
+      "student_firstname": null,
+      "student_lastname": null,
+      "birth_date": null,
+      "gender": null,
+      "primary_email": null,
+      "description": "Missing Required fields ",
+      "expected_status_code": 200
+    },
+    {
+      "student_firstname": "Alice",
+      "student_lastname": "Smith",
+      "primary_email": "invalid_email",
+      "description": "Invalid Email",
+      "expected_status_code": 400
+    }
+]
+  
