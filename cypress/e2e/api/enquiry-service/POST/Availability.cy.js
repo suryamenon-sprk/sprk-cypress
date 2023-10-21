@@ -20,7 +20,7 @@ var payload_register = null
 var enquiry_obj = null
 before(() => {
 
-    cy.fixture("existing-enquiry").then((data) => {
+    cy.fixture("EnquiryBody/existing-enquiry").then((data) => {
         payload_register = data
     })
 

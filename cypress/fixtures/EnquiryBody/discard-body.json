@@ -1,0 +1,21 @@
+[
+    {
+        "enquiry_id": [1],
+        "discard_reason": "Not interested",
+        "description": "Normal Dicard with reason",
+        "expected_status_code": 404
+    },
+    {
+        "enquiry_id": [20],
+        "discard_reason": null,
+        "description": "Discard reason is null",
+        "expected_status_code": 400
+    },
+    {
+        "enquiry_id": [],
+        "discard_reason": "Not interested",
+        "description": "Normal Dicard with reason",
+        "expected_status_code": 400
+    }
+    
+]

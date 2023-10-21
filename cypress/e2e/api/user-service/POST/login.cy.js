@@ -16,7 +16,7 @@ const HttpMethod = {
 var payload_superuser = null
 before(() => {
 
-    cy.fixture("login-superuser").then((data) => {
+    cy.fixture("UserBody/login-superuser").then((data) => {
         payload_superuser = data
     })
 

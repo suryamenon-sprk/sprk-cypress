@@ -18,7 +18,7 @@ const HttpMethod = {
 var payload_register = null
 before(() => {
 
-    cy.fixture("update-enquiry-body").then((data) => {
+    cy.fixture("EnquiryBody/update-enquiry-body").then((data) => {
         payload_register = data
     })
 
