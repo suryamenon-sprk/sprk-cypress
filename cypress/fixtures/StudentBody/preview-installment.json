@@ -1,0 +1,27 @@
+[
+    {
+        "number_of_installments": 0,
+        "total_fees": 57320,
+        "description": "Zero installment",
+        "expected_status_code": 200
+    },
+    {
+        "number_of_installments": 10,
+        "total_fees": 57320,
+        "description": "No. of installment more than permitted",
+        "expected_status_code": 200
+    },
+    {
+        "number_of_installments": 5,
+        "total_fees": 57320,
+        "description": "Normal installment within 9 months",
+        "expected_status_code": 200
+    },
+    {
+        "number_of_installments": -1,
+        "total_fees": 57320,
+        "description": "Negative value in no. of installment(no. of installment should not accept negative value)",
+        "expected_status_code": 200
+    }
+
+]

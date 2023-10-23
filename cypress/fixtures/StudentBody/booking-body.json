@@ -1,0 +1,45 @@
+[
+    {
+        "course_group_id": [37],
+        "student_id": 1,
+        "enquiry_id": null,
+        "credit_id": 1,
+        "total_fees": 57000,
+        "number_of_installments": 5,
+        "registration_payment": [0],
+        "gst": null,
+        "discount_amount": 0,
+        "discount_reason": null,
+        "description": "required fields filled",
+        "expected_status_code": 201
+    },
+    {
+        "course_group_id": [37],
+        "student_id": 1,
+        "enquiry_id": null,
+        "credit_id": 1,
+        "total_fees": null,
+        "number_of_installments": 5,
+        "registration_payment": [0],
+        "gst": null,
+        "discount_amount": 0,
+        "discount_reason": null,
+        "description": "missing course fees",
+        "expected_status_code": 400
+    },
+    {
+        "course_group_id": [null], 
+        "student_id": 1,
+        "enquiry_id": null,
+        "credit_id": 1,
+        "total_fees": 57000,
+        "number_of_installments": 5,
+        "registration_payment": [0],
+        "gst": null,
+        "discount_amount": 0,
+        "discount_reason": null,
+        "description": "No course id assigned (This test case accepts null value in array in course_group_id it should give error of 400)",
+        "expected_status_code": 201
+    }
+
+]
