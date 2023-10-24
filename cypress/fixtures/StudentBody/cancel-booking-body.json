@@ -1,0 +1,27 @@
+[
+    {
+        "booking_id": 2,
+        "cancellation_reason": "HALO",
+        "description": "No null values",
+        "expected_status_code": 200
+    },
+    {
+        "booking_id": null,
+        "cancellation_reason": "HALO",
+        "description": "Booking id is null",
+        "expected_status_code": 400
+    },
+    {
+        "booking_id": 2,
+        "cancellation_reason": null,
+        "description": "Cancellation reason is null",
+        "expected_status_code": 400
+    },
+    {
+        "booking_id": null,
+        "cancellation_reason": null,
+        "description": "Both the fields are null",
+        "expected_status_code": 400
+    }
+    
+]

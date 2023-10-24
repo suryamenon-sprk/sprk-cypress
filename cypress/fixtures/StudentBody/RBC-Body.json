@@ -1,0 +1,90 @@
+[
+    {
+        "course_group_id": [2],
+        "booking_id": 13,
+        "total_fees": 5000,
+        "number_of_installments": 5,
+        "payment_type": "INSTALLMENT",
+        "create_credit": false,
+        "rbc_reason": "HALO",
+        "description": "No null values",
+        "expected_status_code": 200
+    },
+    {
+        "course_group_id": [2],
+        "booking_id": null,
+        "total_fees": null,
+        "number_of_installments": 5,
+        "payment_type": "INSTALLMENT",
+        "create_credit": false,
+        "rbc_reason": "HALO",
+        "description": "booking id and total fees is null",
+        "expected_status_code": 400
+    },
+    {
+        "course_group_id": [2],
+        "booking_id": 13,
+        "total_fees": 5000,
+        "number_of_installments": null,
+        "payment_type": "INSTALLMENT",
+        "create_credit": false,
+        "rbc_reason": "HALO",
+        "description": "number of installment is zero",
+        "expected_status_code": 400
+    },
+    {
+        "course_group_id": [2],
+        "booking_id": 13,
+        "total_fees": 5000,
+        "number_of_installments": 5,
+        "payment_type": null,
+        "create_credit": false,
+        "rbc_reason": "HALO",
+        "description": "payment type is null",
+        "expected_status_code": 400
+    },
+    {
+        "course_group_id": [null],
+        "booking_id": 13,
+        "total_fees": 5000,
+        "number_of_installments": 5,
+        "payment_type": "INSTALLMENT",
+        "create_credit": false,
+        "rbc_reason": "HALO",
+        "description": "course group id is null",
+        "expected_status_code": 200
+    },
+    {
+        "course_group_id": [2],
+        "booking_id": 13,
+        "total_fees": 5000,
+        "number_of_installments": 5,
+        "payment_type": "INSTALLMENT",
+        "create_credit": true,
+        "rbc_reason": null,
+        "description": "create credit kept as true and rbc reason is null",
+        "expected_status_code": 400
+    },
+    {
+        "course_group_id": [2],
+        "booking_id": 13,
+        "total_fees": 5000,
+        "number_of_installments": 5,
+        "payment_type": "INSTALLMENT",
+        "create_credit": true,
+        "rbc_reason": "HALO",
+        "description": "create credit is kept as true",
+        "expected_status_code": 200
+    },
+    {
+        "course_group_id": [2],
+        "booking_id": 0,
+        "total_fees": 5000,
+        "number_of_installments": 5,
+        "payment_type": "INSTALLMENT",
+        "create_credit": false,
+        "rbc_reason": "HALO",
+        "description": "Invalid booking id",
+        "expected_status_code": 404
+    }
+]
