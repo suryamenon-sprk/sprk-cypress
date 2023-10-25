@@ -2,7 +2,7 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const API_URL = `${ENV_BASE_URL}/api/student/delete/10`
+const API_URL = `${ENV_BASE_URL}/api/student/cancel/admission/25`
 const API_URL_ENQ = `${ENV_BASE_URL}/api/student/bookings/`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
@@ -16,25 +16,9 @@ const HttpMethod = {
 }
 
 
-var enquiry_obj = null
-beforeEach(() => {
-    cy.request({
-      method: HttpMethod.GET,
-      url: API_URL_ENQ,
-      failOnStatusCode: false,
-      headers: {
-        Authorization: AUTH_HEADER.Admin,
-        "ngrok-skip-browser-warning": true,
-      },
-    }).then((response) => {
-      expect(response.status).to.equal(200);
-      enquiry_obj = response.body;
-    });
-  });
-
 
 //DESCRIPTION
-describe('DELETE - BOOKING (only admin)', () =>{
+describe('ADMISSION - CANCEL  (only admin)', () =>{
 
     it('Authorization Header - No Value',
         () => {
@@ -93,12 +77,7 @@ describe('DELETE - BOOKING (only admin)', () =>{
             "ngrok-skip-browser-warning": true,
           },
         }).then((response) => {
-          enquiry_obj = response.body;
-          if (bodyPayload != enquiry_obj.booked_id) {
-            expect(response.status).to.equal(404);
-          } else {
-            expect(response.status).to.equal(200);
-          }
+          expect(response.status).to.equal(400);
         });
       });
     
@@ -118,7 +97,7 @@ describe('DELETE - BOOKING (only admin)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(404);
+                expect(response.status).to.equal(400);
                 cy.log(response.body);
 
             });
