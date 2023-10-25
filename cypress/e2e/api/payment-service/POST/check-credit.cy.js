@@ -1,7 +1,7 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN = Cypress.env("TOKEN_ADMIN")
 
-const API_URL = `${ENV_BASE_URL}/api/payment/add`
+const API_URL = `${ENV_BASE_URL}/api/payment/credit/check`
 const TOKEN = `${ENV_TOKEN}`
 const HttpMethod = {
     GET: "GET",
@@ -15,32 +15,22 @@ const HttpMethod = {
 var payload_register = null
 before(() => {
 
-    cy.fixture("PaymentBody/add-payment-body").then((data) => {
+    cy.fixture("PaymentBody/credit-body").then((data) => {
         payload_register = data
     })
 
 })
 
 // DESCRIPTION
-describe('API-addPayment Test', () => {
+describe('API-check credit Test', () => {
 
     // TEST
-    it('Add - Payment', () => {
+    it('check  - credit', () => {
 
         payload_register.forEach((testCase) => {
 
             let bodyPayload = {
-                payment_month: testCase.payment_month,
-                paid_amount: testCase.paid_amount,
-                due_amount: testCase.due_amount,
-                booking_id: testCase.booking_id,
-                payment_mode: testCase.payment_mode,
-                transaction_id: testCase.transaction_id,
-                cheque_number: testCase.cheque_number,
-                cheque_date: testCase.cheque_date,
-                bank_name: testCase.bank_name,
-                branch_name: testCase.branch_name,
-                authorization_code: testCase.authorization_code,
+                credit_uid: testCase.credit_uid
             }
 
             // REQUEST

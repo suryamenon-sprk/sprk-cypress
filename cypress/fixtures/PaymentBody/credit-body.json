@@ -1,0 +1,18 @@
+[
+    {
+    "credit_uid": "cdab1e726f15797b",
+    "description": "TEST CASE 1",
+    "expected_status_code": 404
+    },
+    {
+     "credit_uid": "HALO",
+     "description": "TEST CASE 2",
+    "expected_status_code": 404
+    },
+    {
+        "credit_uid": null,
+        "description": "TEST CASE 3",
+        "expected_status_code": 404
+    }
+
+]

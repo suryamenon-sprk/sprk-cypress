@@ -1,0 +1,21 @@
+[
+    {
+        "receipt_id": 3,
+        "cancel_reason": "HALO",
+        "description": "No null values",
+        "expected_status_code": 200
+    },
+    {
+        "receipt_id": null,
+        "cancel_reason": "HALO",
+        "description": "receipt id is null",
+        "expected_status_code": 400
+    },
+    {
+        "receipt_id": 1,
+        "cancel_reason": null,
+        "description": "cancel reason is null",
+        "expected_status_code": 400
+    }
+    
+]
