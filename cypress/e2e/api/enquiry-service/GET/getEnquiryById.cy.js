@@ -7,7 +7,7 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const API_URL = `${ENV_BASE_URL}/api/enquiry/25`
+const API_URL = `${ENV_BASE_URL}/api/enquiry/10`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -95,7 +95,7 @@ describe('GET - EnquiryID (Admin and Sales)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
+                expect(response.status).to.equal(403);
                 cy.log(response.body);
 
                 let responseBody = response.body
