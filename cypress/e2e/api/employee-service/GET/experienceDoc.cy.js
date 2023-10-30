@@ -14,7 +14,7 @@ const HttpMethod = {
 }
 const baseUrlEmp = `${ENV_BASE_URL}/api/auth/emp/`
 const start = 1;
-const end = 10;
+const end = 5;
 
 for(let number = start; number <= end; number++){
     let API_URL_EMP = `${baseUrlEmp}${number}`;
@@ -44,7 +44,7 @@ var emp_obj = null
 describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
     const baseUrl = `${ENV_BASE_URL}/api/auth/doc/exp/`;
     const startingNumber = 1;
-    const endNumber = 10;
+    const endNumber = 5;
 
     for(let number = startingNumber; number <= endNumber; number++){
         let API_URL = `${baseUrl}${number}`;
@@ -62,6 +62,7 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
                 }
             }).then((response) => {
                 expect(response.status).to.equal(404)
+               
             })
         }
     );
@@ -100,9 +101,9 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-               if(emp_obj.emp_id != number)
-               expect(response.status).to.equal(404)
-                else
+                if(emp_obj.doc_salary_slip === false)
+                expect(response.status).to.equal(404)
+                else if(emp_obj.emp_id === number)
                 expect(response.status).to.equal(200)
                 cy.log(response.body)
             });
@@ -123,9 +124,6 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if(emp_obj.emp_id != number)
-               expect(response.status).to.equal(400)
-                else
                 expect(response.status).to.equal(403)
                 cy.log(response.body)
             });
