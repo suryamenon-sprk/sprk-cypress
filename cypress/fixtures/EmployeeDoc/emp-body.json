@@ -1,0 +1,57 @@
+[
+    {
+        "firstname": "Sneha",
+        "lastname": "Varghese",
+        "phone": "9989995897",
+        "email": "fresh@gmail.com",
+        "authorities": ["ROLE_SALES"],
+        "description": "No null values",
+        "expected_status_code": 400
+    },
+    {
+        "firstname": null,
+        "lastname": "King",
+        "phone": "8888888888",
+        "email": "john@gmail.com",
+        "authorities": ["ROLE_SALES"],
+        "description": "firstname is null",
+        "expected_status_code": 400
+    },
+    {
+        "firstname": "John",
+        "lastname": null,
+        "phone": "8888888888",
+        "email": "john@gmail.com",
+        "authorities": ["ROLE_SALES"],
+        "description": "lastname is null",
+        "expected_status_code": 400
+    },
+    {
+        "firstname": "John",
+        "lastname": "Ruth",
+        "phone": null,
+        "email": "john@gmail.com",
+        "authorities": ["ROLE_SALES"],
+        "description": "mobile number is null",
+        "expected_status_code": 400
+    },
+    {
+        "firstname": "John",
+        "lastname": "Ruth",
+        "phone": "8888888888",
+        "email": null,
+        "authorities": ["ROLE_SALES"],
+        "description": "email is null (Giving internal server error 500)",
+        "expected_status_code": 500
+    },
+    {
+        "firstname": "John",
+        "lastname": null, 
+        "phone": "8888888888",
+        "email": "john@gmail.com",
+        "authorities": [null],
+        "description": "authorities is null",
+        "expected_status_code": 400
+    }
+
+]
