@@ -1,7 +1,7 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 let TOKEN = null
 
-const API_URL = `${ENV_BASE_URL}/api/auth/opn/emp`
+const API_URL = `${ENV_BASE_URL}/api/auth/emp/1`
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -36,10 +36,10 @@ before(() => {
 
 
 // DESCRIPTION
-describe('API-updateEmployeeExt Test', () => {
+describe('API-updateEmployee Test', () => {
 
     // TEST
-    it('Update - Employee - External', () => {
+    it('Update - Employee', () => {
 
         
         payload_register.forEach((testCase) => {
