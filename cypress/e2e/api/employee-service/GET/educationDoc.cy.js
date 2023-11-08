@@ -2,6 +2,7 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
+
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -12,46 +13,21 @@ const HttpMethod = {
     PATCH: "PATCH",
     DELETE: "DELETE"
 }
-const baseUrlEmp = `${ENV_BASE_URL}/api/auth/emp/`
-const start = 1;
-const end = 5;
 
-for(let number = start; number <= end; number++){
-    let API_URL_EMP = `${baseUrlEmp}${number}`;
-    console.log(API_URL_EMP); 
 
-var emp_obj = null
-            beforeEach(() => {
-                cy.request({
-                method: HttpMethod.GET,
-                url: API_URL_EMP,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Admin,
-                    "ngrok-skip-browser-warning": true,
-                },
-                }).then((response) => {
-                emp_obj = response.body;
-                if(emp_obj.emp_id != number)
-                expect(response.status).to.equal(404);
-                else
-                expect(response.status).to.equal(200);
-                });
-            });
 
-        }
+
 //DESCRIPTION
-describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
-    const baseUrl = `${ENV_BASE_URL}/api/auth/doc/edu/`;
+describe('GET - EMPLOYEES EDUCATION DOCUMENT', () =>{
+    const base_URL = `${ENV_BASE_URL}/api/auth/doc/edu/`
     const startingNumber = 1;
-    const endNumber = 5;
+    const endNumber = 10;
 
     for(let number = startingNumber; number <= endNumber; number++){
-        let API_URL = `${baseUrl}${number}`;
+        let API_URL = `${base_URL}${number}`;
         console.log(API_URL); 
-    
 
-    it(`Authorization Header - No Value ${number}`,
+    it('Authorization Header - No Value',
         () => {
             cy.request({
                 method: HttpMethod.GET,
@@ -62,7 +38,6 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
                 }
             }).then((response) => {
                 expect(response.status).to.equal(404)
-               
             })
         }
     );
@@ -70,7 +45,7 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
 
 
 
-    it(`Authorization Header - Invalid Value ${number}`, 
+    it('Authorization Header - Invalid Value', 
         () => {
             cy.request({
                 method: HttpMethod.GET,
@@ -81,6 +56,7 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
+                console.log(response)
                 expect(response.status).to.equal(400)
                 cy.log(response.body.error)
             })
@@ -90,7 +66,7 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
 
 
 
-    it(`Authorization Header - superuser (TOKEN) ${number}`,
+    it('Authorization Header - superuser (TOKEN)',
         () => {
             cy.request({
                 method: HttpMethod.GET,
@@ -101,10 +77,10 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if(emp_obj.doc_salary_slip === false)
-                expect(response.status).to.equal(404)
-                else if(emp_obj.emp_id === number)
-                expect(response.status).to.equal(200)
+                if (response.body.error)
+                    expect(response.status).to.equal(404)
+                else
+                    expect(response.status).to.equal(200)
                 cy.log(response.body)
             });
         }
@@ -113,7 +89,7 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
 
 
 
-    it(`Authorization Header - sales (TOKEN) ${number}`,
+    it('Authorization Header - sales (TOKEN)',
         () => {
             cy.request({
                 method: HttpMethod.GET,
@@ -124,12 +100,13 @@ describe('GET - IDENTIFICATION DOCUMENT (Only superuser)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(403)
-                cy.log(response.body)
+                expect(response.status).to.equal(403);
+                cy.log(response.body);
             });
         }
     );
 
     }
+
 
 });

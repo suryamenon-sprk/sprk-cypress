@@ -14,18 +14,40 @@ const HttpMethod = {
     DELETE: "DELETE"
 }
 
+const API_URL_EMP = `${ENV_BASE_URL}/api/auth/emp/act`
+var activity_obj = null
+            beforeEach(() => {
+                cy.request({
+                method: HttpMethod.GET,
+                url: API_URL_EMP,
+                failOnStatusCode: false,
+                headers: {
+                    Authorization: AUTH_HEADER.Admin,
+                    "ngrok-skip-browser-warning": true,
+                },
+                }).then((response) => {
+                if(!response.body)
+                expect(response.status).to.equal(204);
+                else
+                expect(response.status).to.equal(200);
+                activity_obj = response.body;
+                });
+            });
+
+
 
 
 
 //DESCRIPTION
-describe('GET - EMPLOYEES OFFER LETTER DOCUMENT', () =>{
-    const base_URL = `${ENV_BASE_URL}/api/auth/doc/add/`
+describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
+    const base_URL = `${ENV_BASE_URL}/api/auth/emp/act/`
     const startingNumber = 1;
     const endNumber = 10;
 
     for(let number = startingNumber; number <= endNumber; number++){
         let API_URL = `${base_URL}${number}`;
         console.log(API_URL); 
+
 
     it('Authorization Header - No Value',
         () => {
@@ -56,7 +78,6 @@ describe('GET - EMPLOYEES OFFER LETTER DOCUMENT', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                console.log(response)
                 expect(response.status).to.equal(400)
                 cy.log(response.body.error)
             })
@@ -77,10 +98,10 @@ describe('GET - EMPLOYEES OFFER LETTER DOCUMENT', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.body.error)
-                    expect(response.status).to.equal(404)
-                else
-                    expect(response.status).to.equal(200)
+                if(activity_obj.emp_id !== number)
+                expect(response.status).to.equal(204)
+                else 
+                expect(response.status).to.equal(200)
                 cy.log(response.body)
             });
         }
@@ -107,6 +128,5 @@ describe('GET - EMPLOYEES OFFER LETTER DOCUMENT', () =>{
     );
 
     }
-
 
 });

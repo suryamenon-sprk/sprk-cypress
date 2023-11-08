@@ -2,7 +2,7 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-
+const API_URL = `${ENV_BASE_URL}/api/auth/emp/notify`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -17,15 +17,9 @@ const HttpMethod = {
 
 
 
-//DESCRIPTION
-describe('GET - EMPLOYEES OFFER LETTER DOCUMENT', () =>{
-    const base_URL = `${ENV_BASE_URL}/api/auth/doc/add/`
-    const startingNumber = 1;
-    const endNumber = 10;
 
-    for(let number = startingNumber; number <= endNumber; number++){
-        let API_URL = `${base_URL}${number}`;
-        console.log(API_URL); 
+//DESCRIPTION
+describe('GET - ALL NOTIFICATION', () =>{
 
     it('Authorization Header - No Value',
         () => {
@@ -56,7 +50,6 @@ describe('GET - EMPLOYEES OFFER LETTER DOCUMENT', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                console.log(response)
                 expect(response.status).to.equal(400)
                 cy.log(response.body.error)
             })
@@ -77,10 +70,7 @@ describe('GET - EMPLOYEES OFFER LETTER DOCUMENT', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.body.error)
-                    expect(response.status).to.equal(404)
-                else
-                    expect(response.status).to.equal(200)
+                expect(response.status).to.equal(200)
                 cy.log(response.body)
             });
         }
@@ -106,7 +96,6 @@ describe('GET - EMPLOYEES OFFER LETTER DOCUMENT', () =>{
         }
     );
 
-    }
 
 
 });

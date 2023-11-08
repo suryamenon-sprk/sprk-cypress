@@ -16,10 +16,9 @@ const HttpMethod = {
 
 
 
-
 //DESCRIPTION
-describe('GET - EMPLOYEES OFFER LETTER DOCUMENT', () =>{
-    const base_URL = `${ENV_BASE_URL}/api/auth/doc/add/`
+describe('GET - EMPLOYEES PROFILE BY ID', () =>{
+    const base_URL = `${ENV_BASE_URL}/api/auth/profile/`
     const startingNumber = 1;
     const endNumber = 10;
 
