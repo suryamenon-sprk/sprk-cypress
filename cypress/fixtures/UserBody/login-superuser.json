@@ -1,43 +1,49 @@
 [
 
     {
-        "username_or_email": "superuser",
+        "email": "kavita@sprktechnologies.in",
         "password": "Kavita@123",
+        "hcaptcha_response": null,
         "description": "Credentials are VALID. (username, password)",
         "expected_status_code": 200
     },
 
     {
-        "username_or_email": "kavita@sprktechnologies.in",
-        "password": "Kavita@123",
-        "description": "Credentials are VALID. (email, password)",
-        "expected_status_code": 200
-    }, 
-
-    {
-        "username_or_email": null,
+        "email": null,
         "password": null,
+        "hcaptcha_response":null,
         "description": "username/email, password field is NULL.",
         "expected_status_code": 400
     },
 
     {
-        "username_or_email": null,
+        "email": null,
         "password": "Kavita@123",
+        "hcaptcha_response":null,
         "description": "username/email field is NULL.",
         "expected_status_code": 400
     },
 
     {
-        "username_or_email": "superuser",
+        "email": "superuser",
         "password": null,
+        "hcaptcha_response":null,
         "description": "password field is NULL.",
         "expected_status_code": 400
     },
 
     {
-        "username_or_email": "invalid@sprktechnologies.in",
+        "email": "invalid@sprktechnologies.in",
         "password": "Kavita1@123",
+        "hcaptcha_response":null,
+        "description": "Credentials are INVALID. (email, password)",
+        "expected_status_code": 401
+    },
+
+    {
+        "email": "kavita@sprktechnologies.in",
+        "password": "Kavita@123",
+        "hcaptcha_response":"123",
         "description": "Credentials are INVALID. (email, password)",
         "expected_status_code": 401
     }

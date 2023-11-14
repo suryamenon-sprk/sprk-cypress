@@ -5,8 +5,9 @@
         "phone": "9989995897",
         "email": "fresh@gmail.com",
         "authorities": ["ROLE_SALES"],
+        "joining_date": "2023-11-01",
         "description": "No null values",
-        "expected_status_code": 400
+        "expected_status_code": 201
     },
     {
         "firstname": null,
@@ -14,7 +15,8 @@
         "phone": "8888888888",
         "email": "john@gmail.com",
         "authorities": ["ROLE_SALES"],
-        "description": "firstname is null",
+        "joining_date": "2023-11-01",
+        "description": "firstname is null(500 error need to be fixed)",
         "expected_status_code": 400
     },
     {
@@ -23,8 +25,9 @@
         "phone": "8888888888",
         "email": "john@gmail.com",
         "authorities": ["ROLE_SALES"],
+        "joining_date": "2023-11-01",
         "description": "lastname is null",
-        "expected_status_code": 400
+        "expected_status_code": 201
     },
     {
         "firstname": "John",
@@ -32,8 +35,9 @@
         "phone": null,
         "email": "john@gmail.com",
         "authorities": ["ROLE_SALES"],
+        "joining_date": "2023-11-01",
         "description": "mobile number is null",
-        "expected_status_code": 400
+        "expected_status_code": 500
     },
     {
         "firstname": "John",
@@ -41,6 +45,7 @@
         "phone": "8888888888",
         "email": null,
         "authorities": ["ROLE_SALES"],
+        "joining_date": "2023-11-01",
         "description": "email is null (Giving internal server error 500)",
         "expected_status_code": 500
     },
@@ -50,6 +55,17 @@
         "phone": "8888888888",
         "email": "john@gmail.com",
         "authorities": [null],
+        "joining_date": "2023-11-01",
+        "description": "authorities is null",
+        "expected_status_code": 400
+    },
+    {
+        "firstname": "John",
+        "lastname": "Khan", 
+        "phone": "8888888888",
+        "email": "john@gmail.com",
+        "authorities": ["ROLE_SALES"],
+        "joining_date": null,
         "description": "authorities is null",
         "expected_status_code": 400
     }

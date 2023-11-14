@@ -9,9 +9,6 @@ const HttpMethod = {
 }
 
 
-
-
-
 // FIXTURE
 var payload_superuser = null
 before(() => {
@@ -39,8 +36,9 @@ describe('API-Login Test', () => {
             cy.log(testCase.description)
 
             let bodyPayload = {
-                "username_or_email": testCase.username_or_email,
-                "password": testCase.password
+                email: testCase.email,
+                password: testCase.password,
+                hcaptcha_response:testCase.hcaptcha_response
             }
 
             // REQUEST

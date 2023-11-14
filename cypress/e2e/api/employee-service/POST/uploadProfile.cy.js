@@ -6,7 +6,7 @@ const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`
 }
 
-const API_URL = `${ENV_BASE_URL}/api/auth/opn/emp`
+const API_URL = `${ENV_BASE_URL}/api/auth/upload/profile`
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -29,19 +29,19 @@ const path = require('path');
 // })
 
 // DESCRIPTION
-describe('API-uploadDoc Test', () => {
+describe('API-uploadProfile Test', () => {
 
     // TEST
     it('upload - Documents', () => {
-        const ideFilePath = './cypress/fixtures/pdf/Surya_resume.pdf'
+        const profileFilePath = './cypress/fixtures/image/Daisy.jpg'
 
-        cy.readFile(ideFilePath, 'binary').then((fileContent) => {
+        cy.readFile(profileFilePath, 'binary').then((fileContent) => {
             // Convert the binary data to a base64-encoded string
-            const base64Content = Cypress.Blob.binaryStringToBlob(fileContent, 'application/pdf');
+            const base64Content = Cypress.Blob.binaryStringToBlob(fileContent, 'image/jpeg');
         
             // Create a FormData object
             const formData = new FormData();
-            formData.append('ide', base64Content, 'Surya_resume.pdf');
+            formData.append('ide', base64Content, 'Daisy.jpg');
             // const formBody = new URLSearchParams(formData).toString();
             
             // REQUEST

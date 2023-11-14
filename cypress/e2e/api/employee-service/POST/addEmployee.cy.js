@@ -1,9 +1,10 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
-const ENV_TOKEN = Cypress.env("TOKEN_ADMIN")
+const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
+const AUTH_HEADER = {
+    Admin: `Bearer ${ENV_TOKEN_ADMIN}`
+}
 
 const API_URL = `${ENV_BASE_URL}/api/auth/emp/add`
-const API_URL_REQ = `${ENV_BASE_URL}/api/auth/emp/req/27`
-const TOKEN = `${ENV_TOKEN}`
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -22,12 +23,34 @@ before(() => {
 
 })
 
+
+const API_URL_REQ = `${ENV_BASE_URL}/api/auth/emp/req`
+var emp_obj = null
+beforeEach(() => {
+    cy.request({
+    method: HttpMethod.GET,
+    url: API_URL_REQ,
+    failOnStatusCode: false,
+    headers: {
+        Authorization: AUTH_HEADER.Admin,
+        "ngrok-skip-browser-warning": true,
+    },
+    }).then((response) => {
+    if(!response.body)
+    expect(response.status).to.equal(204);
+    else
+    expect(response.status).to.equal(200);
+    emp_obj = response.body;
+    });
+});
+
+
 // DESCRIPTION
 describe('API-addEmployee Test', () => {
 
     // TEST
     it('Add - Employee', () => {
-
+       
         payload_register.forEach((testCase) => {
 
             let bodyPayload = {
@@ -35,8 +58,10 @@ describe('API-addEmployee Test', () => {
                 lastname: testCase.lastname,
                 phone: testCase.phone,
                 email: testCase.email,
-                authorities:testCase.authorities
-            }
+                authorities:testCase.authorities,
+                joining_date: testCase.joining_date
+            }  
+                
 
             // REQUEST
             cy.request({
@@ -45,11 +70,18 @@ describe('API-addEmployee Test', () => {
                 failOnStatusCode: false,
                 body: bodyPayload,
                 headers: {
-                    Authorization: `Bearer ${TOKEN}`
+                    Authorization: AUTH_HEADER.Admin
                 }
             }).then((response) => {
-                expect(response.status).to.equal(testCase.expected_status_code)
-            }) // request
-        }) // forEach
 
-    }) })
+                if (emp_obj.data.some((req) => req.email === testCase.email))  
+                    expect(response.status).to.equal(400)
+                else
+                    expect(response.status).to.equal(testCase.expected_status_code)
+                
+            }) // request
+
+        }) // forEach
+    
+    })  
+})

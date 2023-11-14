@@ -1,8 +1,12 @@
+import 'cypress-file-upload';
+
 const ENV_BASE_URL = Cypress.env("BASE_URL")
-const ENV_TOKEN = Cypress.env("TOKEN_ADMIN")
+const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
+const AUTH_HEADER = {
+    Admin: `Bearer ${ENV_TOKEN_ADMIN}`
+}
 
 const API_URL = `${ENV_BASE_URL}/api/auth/upload/doc/1`
-const TOKEN = `Bearer ${ENV_TOKEN}`
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -37,22 +41,22 @@ describe('API-uploadDoc Test', () => {
         
             // Create a FormData object
             const formData = new FormData();
-            formData.append('ide', base64Content);
-            const formBody = new URLSearchParams(formData).toString();
+            formData.append('ide', base64Content, 'Surya_resume.pdf');
+            // const formBody = new URLSearchParams(formData).toString();
             
             // REQUEST
             cy.request({
                 method: HttpMethod.POST,
                 url: API_URL,
                 headers: {
-                    'Authorization': TOKEN,
+                    'Authorization': AUTH_HEADER.Admin,
                     'Content-type': 'multipart/form-data',
                 },
                 formData: true, 
                 failOnStatusCode: false,
-                body: formBody
+                body: formData
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(200)
                 console.log(response)
             }); // request
 
