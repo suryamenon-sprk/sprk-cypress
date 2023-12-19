@@ -24,7 +24,7 @@ before(() => {
 })
 
 
-const API_URL_REQ = `${ENV_BASE_URL}/api/auth/emp/req`
+const API_URL_REQ = `${ENV_BASE_URL}/api/auth/req`
 var emp_obj = null
 beforeEach(() => {
     cy.request({

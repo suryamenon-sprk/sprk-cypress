@@ -1,10 +1,11 @@
 import jwtDecode from "jwt-decode";
 
 
-
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
+
+
 
 const API_URL = `${ENV_BASE_URL}/api/enquiry/`
 const AUTH_HEADER = {
@@ -24,6 +25,7 @@ const HttpMethod = {
 
 //DESCRIPTION
 describe('GET - ENQUIRY (AllUsers)', () =>{
+
 
     it('Authorization Header - No Value',
         () => {
@@ -54,7 +56,7 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -65,6 +67,8 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
 
     it('Authorization Header - superuser (TOKEN)',
         () => {
+
+          
             cy.request({
                 method: HttpMethod.GET,
                 url: API_URL,

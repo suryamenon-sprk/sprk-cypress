@@ -1,11 +1,14 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
+const ENV_TOKEN_EMP = Cypress.env("TOKEN_EMP")
 
-const API_URL = `${ENV_BASE_URL}/api/enquiry/countries`
+
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
-    Sales: `Bearer ${ENV_TOKEN_SALES}`
+    Sales: `Bearer ${ENV_TOKEN_SALES}`,
+    Emp: `Bearer ${ENV_TOKEN_EMP}`
+
 }
 const HttpMethod = {
     GET: "GET",
@@ -14,13 +17,12 @@ const HttpMethod = {
     DELETE: "DELETE"
 }
 
-
-
+const API_URL = `${ENV_BASE_URL}/api/auth/`
 
 
 //DESCRIPTION
-describe('GET - COUNTRY (AllUsers)', () =>{
-
+describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
+   
     it('Authorization Header - No Value',
         () => {
             cy.request({
@@ -31,7 +33,7 @@ describe('GET - COUNTRY (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                expect(response.status).to.equal(404)
             })
         }
     );
@@ -59,13 +61,26 @@ describe('GET - COUNTRY (AllUsers)', () =>{
 
 
 
+    it('Authorization Header - employee (TOKEN)',
+        () => {
+            cy.request({
+                method: HttpMethod.GET,
+                url: API_URL,
+                failOnStatusCode: false,
+                headers: {
+                    Authorization: AUTH_HEADER.Emp,
+                    "ngrok-skip-browser-warning": true
+                }
+            }).then((response) => {
+                    expect(response.status).to.equal(200)
+                    cy.log(response.body)
+                
+            });
+        }
+    );
+
     it('Authorization Header - superuser (TOKEN)',
         () => {
-
-            // cy.contains('LMS').click();
-            // cy.contains('LEAD').click();
-            // cy.get('[actions="VIEW"]').click();
-
             cy.request({
                 method: HttpMethod.GET,
                 url: API_URL,
@@ -75,8 +90,9 @@ describe('GET - COUNTRY (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body)
+                    expect(response.status).to.equal(200)
+                    cy.log(response.body)
+                
             });
         }
     );
@@ -95,12 +111,12 @@ describe('GET - COUNTRY (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
+                expect(response.status).to.equal(404);
                 cy.log(response.body);
             });
         }
     );
 
-
+    // }
 
 });

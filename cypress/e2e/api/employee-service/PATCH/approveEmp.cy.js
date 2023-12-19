@@ -1,7 +1,11 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
-let TOKEN = null
+const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
+const AUTH_HEADER = {
+    Admin: `Bearer ${ENV_TOKEN_ADMIN}`
+}
 
-const API_URL = `${ENV_BASE_URL}/api/auth/approve/emp/req/25`
+const API_URL = `${ENV_BASE_URL}/api/auth/req/approve/13`
+
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -9,23 +13,25 @@ const HttpMethod = {
     DELETE: "DELETE"
 }
 
-before(() => {
-// TOKEN
+const API_URL_REQ = `${ENV_BASE_URL}/api/auth/req/13`
+var req_obj = null
+beforeEach(() => {
     cy.request({
-        method: HttpMethod.POST, 
-        url: `${ENV_BASE_URL}/api/auth/login`, 
-        failOnStatusCode: false,
-        body: {
-            email: "kavita@sprktechnologies.in",
-            password: 'Kavita@123',
-        },
+    method: HttpMethod.GET,
+    url: API_URL_REQ,
+    failOnStatusCode: false,
+    headers: {
+        Authorization: AUTH_HEADER.Admin,
+        "ngrok-skip-browser-warning": true,
+    },
     }).then((response) => {
-        expect(response.status).to.equal(200); 
-        TOKEN = response.body.token; 
+    if(!response.body)
+    expect(response.status).to.equal(204);
+    else
+    expect(response.status).to.equal(200);
+    req_obj = response.body;
     });
-
-})
-
+});
 
 // DESCRIPTION
 describe('API-approveEmployee Test', () => {
@@ -39,10 +45,13 @@ describe('API-approveEmployee Test', () => {
                 url: API_URL,
                 failOnStatusCode: false,
                 headers: {
-                    Authorization: `Bearer ${TOKEN}`
+                    Authorization: AUTH_HEADER.Admin
                 }
             }).then((response) => {
+                if(req_obj.data.request_status === "APPROVED")
                 expect(response.status).to.equal(200);
+                else
+                expect(response.status).to.equal(400);
             });
 
             

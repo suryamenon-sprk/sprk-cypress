@@ -1,7 +1,7 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 let TOKEN = null
 
-const API_URL = `${ENV_BASE_URL}/api/auth/disable/emp/3`
+const API_URL = `${ENV_BASE_URL}/api/auth/disable/emp/1`
 const HttpMethod = {
     GET: "GET",
     POST: "POST",

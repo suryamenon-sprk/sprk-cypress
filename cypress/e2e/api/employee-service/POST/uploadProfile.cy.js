@@ -41,7 +41,7 @@ describe('API-uploadProfile Test', () => {
         
             // Create a FormData object
             const formData = new FormData();
-            formData.append('ide', base64Content, 'Daisy.jpg');
+            formData.append('profile', base64Content, 'Daisy.jpg');
             // const formBody = new URLSearchParams(formData).toString();
             
             // REQUEST
