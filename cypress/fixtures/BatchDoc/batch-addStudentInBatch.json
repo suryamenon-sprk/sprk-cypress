@@ -1,0 +1,26 @@
+[
+    {    "batch_id":"e03fd2e5-2e1a-4c49-85f4-3ca7c1f09757",
+        "students_id":[3,4],
+        "description": "Valid details",
+        "expected_status_code": 200
+    
+    },
+    {
+        "batch_id":null,
+        "students_id":[4,5],
+        "description": "batch_id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"e03fd2e5-2e1a-4c49-85f4-3ca7c1f09757",
+        "students_id":[null],
+        "description": "batch_id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"f1b0f4b9-e1c2-4cad-88bd-bc7b56b20179",
+        "students_id":null,
+        "description": "student_id is null",
+        "expected_status_code": 400
+    }
+]

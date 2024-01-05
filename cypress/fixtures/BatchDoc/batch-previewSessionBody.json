@@ -1,0 +1,98 @@
+[
+    {
+        "faculty_id":"SPRK23VIV05",
+        "course_id": 6,
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"13:30",
+        "end_time":"15:30",
+        "date":"2023-12-25",
+        "number_of_days": 5,
+        "zone": "Asia/Calcutta",
+        "description": "Valid Details",
+        "expected_status_code": 200
+    },
+    {
+        "faculty_id":null,
+        "course_id": 6,
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"13:30",
+        "end_time":"15:30",
+        "date":"2023-12-25",
+        "number_of_days": 5,
+        "zone": "Asia/Calcutta",
+        "description": "faculty_id is null",
+        "expected_status_code": 400
+    },
+    {
+        "faculty_id":"SPRK23VIV05",
+        "course_id": null,
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"13:30",
+        "end_time":"15:30",
+        "date":"2023-12-25",
+        "number_of_days": 5,
+        "zone": "Asia/Calcutta",
+        "description": "Course_id is null",
+        "expected_status_code": 400
+    },
+    {
+        "faculty_id":"SPRK23VIV05",
+        "course_id": 6,
+        "days_of_week":[],
+        "start_time":"13:30",
+        "end_time":"15:30",
+        "date":"2023-12-25",
+        "number_of_days": 5,
+        "zone": "Asia/Calcutta",
+        "description": "Days of week is null",
+        "expected_status_code": 400
+    },
+    {
+        "faculty_id":"SPRK23VIV05",
+        "course_id": 6,
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":null,
+        "end_time":"15:30",
+        "date":"2023-12-25",
+        "number_of_days": 5,
+        "zone": "Asia/Calcutta",
+        "description": "start date is null",
+        "expected_status_code": 400
+    },
+    {
+        "faculty_id":"SPRK23VIV05",
+        "course_id": 6,
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"13:00",
+        "end_time":"15:30",
+        "date":null,
+        "number_of_days": 5,
+        "zone": "Asia/Calcutta",
+        "description": "Date is null",
+        "expected_status_code": 400
+    },
+    {
+        "faculty_id":"SPRK23VIV05",
+        "course_id": 6,
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"13:00",
+        "end_time":"15:30",
+        "date":"2023-12-25",
+        "number_of_days": null,
+        "zone": "Asia/Calcutta",
+        "description": "number of days is null",
+        "expected_status_code": 400
+    },
+    {
+        "faculty_id":"SPRK23VIV05",
+        "course_id": 6,
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"13:30",
+        "end_time":"15:30",
+        "date":"2023-12-25",
+        "number_of_days": 5,
+        "zone": null,
+        "description": "zone is null",
+        "expected_status_code": 400
+    }
+]
