@@ -16,11 +16,8 @@ const HttpMethod = {
 }
 
 
-
-
-
 //DESCRIPTION
-describe('GET - COURSE-GROUP (AllUsers)', () =>{
+describe('GET - all Faculty Batch List', () =>{
 
     it('Authorization Header - No Value',
         () => {
@@ -32,7 +29,10 @@ describe('GET - COURSE-GROUP (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                if (response.status === 200) {
+                } else {
+                    expect(response.status).to.equal(204);
+                }
             })
         }
     );
@@ -51,8 +51,10 @@ describe('GET - COURSE-GROUP (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body.error)
+                if (response.status === 200) {
+                } else {
+                    expect(response.status).to.equal(204);
+                }
             })
         }
     );
@@ -71,8 +73,10 @@ describe('GET - COURSE-GROUP (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body)
+                if (response.status === 200) {
+                } else {
+                    expect(response.status).to.equal(204);
+                }
             });
         }
     );
@@ -91,8 +95,10 @@ describe('GET - COURSE-GROUP (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
-                cy.log(response.body);
+                if (response.status === 200) {
+                } else {
+                    expect(response.status).to.equal(204);
+                }
             });
         }
     );

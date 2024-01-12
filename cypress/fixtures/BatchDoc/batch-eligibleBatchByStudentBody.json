@@ -1,0 +1,53 @@
+[
+   { 
+        "course_id": 36,
+        "students": [1,2],
+        "description":"Valid course ID",
+        "expected_status_code": 200
+    },
+
+    {
+        "course_id": null,
+        "students": [1, 2],
+        "description": "CourseId is null",
+        "expected_status_code": 400
+    },
+
+    {
+        "course_id": " ",
+        "students": [1, 2],
+        "description": "CourseId is contains space",
+        "expected_status_code": 400
+    },
+    {
+        "course_id": 0,
+        "students": [1, 2],
+        "description": "CourseId is given value zero",
+        "expected_status_code": 404
+    },
+    {
+        "course_id": 36,
+        "students": [null],
+        "description": "student id list is null",
+        "expected_status_code": 400
+    },
+    {
+        "course_id": 36,
+        "students": [0],
+        "description": "student id contails zero values",
+        "expected_status_code": 400
+    },
+    {
+        "course_id": 36,
+        "students": [null, 2],
+        "description": "CourseId null in between the list",
+        "expected_status_code": 200
+    },
+    {
+        "course_id": 36,
+        "students": [0, 2],
+        "description": "CourseId is 0 in between the list",
+        "expected_status_code": 200
+    }
+
+]

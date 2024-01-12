@@ -1,0 +1,83 @@
+[
+    {
+
+        "batch_id": "BTH24JANPYTH1",
+        "faculty_id":"SPRK24VIV62",
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "days_of_week":[],
+        "start_time":"",
+        "end_time":"",
+        "date":"",
+        "description": "No update in details",
+        "expected_status_code": 200
+    },
+    {
+
+        "batch_id": "BTH24JANPYTH1",
+        "faculty_id":"SPRK24VIV62",
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "days_of_week":[],
+        "start_time":"12:00",
+        "end_time":"11:00",
+        "date":"15/01/2024",
+        "description": "start_time, end_time, date, where edited",
+        "expected_status_code": 200
+    },
+    {
+
+        "batch_id": null,
+        "faculty_id":"SPRK24VIV62",
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "days_of_week":[],
+        "start_time":"",
+        "end_time":"",
+        "date":"",
+        "description": "Batch id is null",
+        "expected_status_code": 400
+    },
+    {
+
+        "batch_id": "BTH24JANPYTH1",
+        "faculty_id":null,
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "days_of_week":[],
+        "start_time":"",
+        "end_time":"",
+        "date":"",
+        "description": "faculty id is null",
+        "expected_status_code": 400
+    },
+    {
+
+        "batch_id": "BTH24JANPYTH1",
+        "faculty_id":"SPRK24VIV62",
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "days_of_week":[null],
+        "start_time":"",
+        "end_time":"",
+        "date":"",
+        "description": "days_of_week is null",
+        "expected_status_code": 200
+    },
+    {
+
+        "batch_id": "BTH24JANPYTH1",
+        "faculty_id":"SPRK24VIV62",
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "days_of_week":[null],
+        "start_time":"",
+        "end_time":"",
+        "date":"",
+        "description": "days_of_week is null",
+        "expected_status_code": 400
+    }
+
+    
+
+]

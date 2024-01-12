@@ -1,8 +1,8 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
+const batches = ['BTH24JANPYTH1','BTH24JANMSQL1','BTH24JANTGST1','BTH24JANTGST1','BTH24JANHTM51','BTH24JANBEXL1','BTH24JANBTLY1']
 
-const API_URL = `${ENV_BASE_URL}/api/batch/students/b78bd528-39e4-4865-b58d-1b1595b1d236`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -19,8 +19,9 @@ const HttpMethod = {
 
 
 //DESCRIPTION
-describe('GET - COURSE-GROUP (AllUsers)', () =>{
-
+describe('GET - Student By Batch', () =>{
+    batches.forEach(batch=> {
+        const API_URL = `${ENV_BASE_URL}/api/batch/students/${batch}`
     it('Authorization Header - No Value',
         () => {
             cy.request({
@@ -95,7 +96,7 @@ describe('GET - COURSE-GROUP (AllUsers)', () =>{
             });
         }
     );
-
+})
 
 
 });

@@ -1,8 +1,8 @@
 [
     {
-        "faculty_id":"SPRK23VIV05",
+        "faculty_id":"SPRK24PANC0",
         "course_id": 6,
-        "days_of_week":["MONDAY","TUESDAY"],
+        "days_of_week":["FRIDAY","SATURDAY","SUNDAY"],
         "start_time":"13:30",
         "end_time":"15:30",
         "date":"2023-12-25",

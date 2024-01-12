@@ -1,0 +1,104 @@
+[
+    {
+        "batch_id":"BTH24JANBEXL2",
+        "faculty_id":"SPRK24VIV62",
+        "course_id":17,
+        "zone":"Asia/Calcutta",
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"12:00",
+        "end_time":"1:00",
+        "sessions":[
+            {
+            "start":"",
+            "end":""
+            }
+        ],
+        "description": "Valid Details",
+        "expected_status_code": 200
+    },
+    {
+        "batch_id":null,
+        "faculty_id":"SPRK24VIV62",
+        "course_id":17,
+        "zone":"Asia/Calcutta",
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"12:00",
+        "end_time":"1:00",
+        "sessions":[
+            {
+            "start":"",
+            "end":""
+            }
+        ],
+        "description": "batch_id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24JANBEXL2",
+        "faculty_id":null,
+        "course_id":17,
+        "zone":"Asia/Calcutta",
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"12:00",
+        "end_time":"1:00",
+        "sessions":[
+            {
+            "start":"",
+            "end":""
+            }
+        ],
+        "description": "faculty id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24JANBEXL2",
+        "faculty_id":"SPRK24VIV62",
+        "course_id":null,
+        "zone":"Asia/Calcutta",
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"12:00",
+        "end_time":"1:00",
+        "sessions":[
+            {
+            "start":"",
+            "end":""
+            }
+        ],
+        "description": "course id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24JANBEXL2",
+        "faculty_id":"SPRK24VIV62",
+        "course_id":17,
+        "zone":null,
+        "days_of_week":["MONDAY","TUESDAY"],
+        "start_time":"12:00",
+        "end_time":"1:00",
+        "sessions":[
+            {
+            "start":"",
+            "end":""
+            }
+        ],
+        "description": "zone is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24JANBEXL2",
+        "faculty_id":"SPRK24VIV62",
+        "course_id":17,
+        "zone":"Asia/Calcutta",
+        "days_of_week":[null],
+        "start_time":"12:00",
+        "end_time":"1:00",
+        "sessions":[
+            {
+            "start":"",
+            "end":""
+            }
+        ],
+        "description": "course id is null",
+        "expected_status_code": 400
+    }
+]

@@ -1,8 +1,8 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN = Cypress.env("TOKEN_ADMIN")
+const TOKEN = ENV_TOKEN
+const API_URL = `${ENV_BASE_URL}/api/batch/reschedule`
 
-const API_URL = `${ENV_BASE_URL}/api/batch/preview`
-const TOKEN = `${ENV_TOKEN}`
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -16,17 +16,17 @@ const HttpMethod = {
 var payload_register = null
 before(() => {
 
-    cy.fixture("BatchDoc/batch-previewSessionBody").then((data) => {
+    cy.fixture("BatchDoc/batch-rescheduleWhileCreationBody").then((data) => {
         payload_register = data
     })
 
 })
 
 // DESCRIPTION
-describe('POST - Preview Session Date And Time', () => {
+describe('POST - Reschedule While Creation', () => {
 
     // TEST
-    it('Create - Enquiry', () => {
+    it('Reschedule while Creation', () => {
 
         payload_register.forEach((testCase) => {
 
@@ -34,11 +34,16 @@ describe('POST - Preview Session Date And Time', () => {
                 faculty_id: testCase.faculty_id,
                 course_id: testCase.course_id,
                 days_of_week:testCase.days_of_week,
+                number_of_days:testCase.number_of_days,
                 start_time:testCase.start_time,
                 end_time:testCase.end_time,
                 date:testCase.date,
                 number_of_days: testCase.number_of_days,
-                zone: testCase.zone
+                zone: testCase.zone,
+                session_requests:testCase.session_requests,
+                start:testCase.start,
+                end:testCase.end
+
             }
 
             // REQUEST

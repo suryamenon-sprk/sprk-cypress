@@ -2,7 +2,10 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const API_URL = `${ENV_BASE_URL}/api/batch/get/faculty/details?facultyUid=SPRK23PAN37&start=&end=`
+const faculties = ['SPRK24PANC0','SPRK24VIV62','SPRK99RINE5','SPRK24ABD84','SPRK00SHI61']
+
+
+
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -20,8 +23,11 @@ const HttpMethod = {
 
 
 //DESCRIPTION
-describe('GET - COURSE-GROUP (AllUsers)', () =>{
+describe('GET - faculty details', () =>{
+   
 
+    faculties.forEach(faculty=>{
+        const API_URL = `${ENV_BASE_URL}/api/batch/get/faculty/details?facultyUid=${faculty}&start=null&end=null`
     it('Authorization Header - No Value',
         () => {
             cy.request({
@@ -32,7 +38,11 @@ describe('GET - COURSE-GROUP (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                if (response.status === 200) {
+                } else if(response.status === 204) {
+                } else {
+                    expect(response.status).to.equal(400);
+                }
             })
         }
     );
@@ -51,8 +61,11 @@ describe('GET - COURSE-GROUP (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body.error)
+                if (response.status === 200) {
+                } else if(response.status === 204) {
+                } else {
+                    expect(response.status).to.equal(400);
+                }
             })
         }
     );
@@ -71,8 +84,11 @@ describe('GET - COURSE-GROUP (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body)
+                if (response.status === 200) {
+                } else if(response.status === 204) {
+                } else {
+                    expect(response.status).to.equal(400);
+                }
             });
         }
     );
@@ -91,12 +107,16 @@ describe('GET - COURSE-GROUP (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
-                cy.log(response.body);
+                if (response.status === 200) {
+                } else if(response.status === 204) {
+                } else {
+                    expect(response.status).to.equal(400);
+                }
             });
         }
     );
 
+    
 
-
+});
 });

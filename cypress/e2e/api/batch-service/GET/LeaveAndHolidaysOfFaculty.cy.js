@@ -2,7 +2,8 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const API_URL = `${ENV_BASE_URL}/api/batch/faculty/HLWD/SPRK23PAN76`
+const faculties = ['SPRK24PANC0','SPRK24VIV62','SPRK99RINE5','SPRK24ABD84','SPRK00SHI61']
+
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -21,7 +22,8 @@ const HttpMethod = {
 
 //DESCRIPTION
 describe('GET - Leave And Holidays Of faculty by faculty Id', () =>{
-
+    faculties.forEach(faculty => {
+        const API_URL = `${ENV_BASE_URL}/api/batch/faculty/HLWD/${faculty}`
     it('Authorization Header - No Value',
         () => {
             cy.request({
@@ -98,5 +100,5 @@ describe('GET - Leave And Holidays Of faculty by faculty Id', () =>{
     );
 
 
-
+});
 });

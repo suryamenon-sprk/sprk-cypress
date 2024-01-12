@@ -22,7 +22,7 @@ const HttpMethod = {
 // })
 
 // DESCRIPTION
-describe('PATCH - Cancel batch', () => {
+describe('PATCH - Change Batch Status To Confirm Batch', () => {
 
     // TEST
     batches.forEach((batch) => {

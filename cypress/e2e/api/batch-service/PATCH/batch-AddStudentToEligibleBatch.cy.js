@@ -12,23 +12,24 @@ const HttpMethod = {
 }
 
 //FIXTURE
-// var payload_register = null
-// before(() => {
+var payload_register = null
+before(() => {
 
-//     cy.fixture("BatchDoc/batch-rescheduleWhileCreationBody").then((data) => {
-//         payload_register = data
-//     })
+    cy.fixture("BatchDoc/batch-addStudentToEligibleBatch").then((data) => {
+        payload_register = data
+    })
 
-// })
+})
 
 // DESCRIPTION
-describe('PATCH - Cancel batch', () => {
+describe('PATCH - Add Student To Eligible Batch', () => {
 
     // TEST
     batches.forEach((batch) => {
-        const API_URL = `${ENV_BASE_URL}/api/batch/approve/${batch}`
+    const API_URL = `${ENV_BASE_URL}/api/batch/add/students/${batch}`
     it('Reschedule while Creation', () => {  
-
+        payload_register.forEach(testCase=>{
+            
             // REQUEST
             cy.request({
                 method: HttpMethod.POST,
@@ -46,6 +47,9 @@ describe('PATCH - Cancel batch', () => {
                 }
             }) // request
 
-        }) // forEach
+        }) //for each student id
 
-    }) })
+        }) 
+
+    }) //for each batches
+})

@@ -1,0 +1,110 @@
+[
+    {
+        "faculty_id":"SPRK24PANC0",
+    
+        "course_id": 17,
+    
+        "zone":"Asia/Calcutta",
+    
+        "number_of_days": 5,
+    
+        "start_time":"12:30",
+    
+        "end_time":"14:30",
+    
+        "days_of_week":["MONDAY","WEDNESDAY","FRIDAY"],
+    
+        "session_requests":[
+            {
+                "session_id": 1,
+    
+                "start":"2024-01-15 12:30",
+    
+                "end":"2024-01-15 14:30"
+            }
+        ],
+        "description": "Valid details",
+        "expected_status_code": 200
+    },
+    {
+        "faculty_id":"SPRK24PANC0",
+    
+        "course_id": null,
+    
+        "zone":"Asia/Calcutta",
+    
+        "number_of_days": 0,
+    
+        "start_time":"12:30",
+    
+        "end_time":"14:30",
+    
+        "days_of_week":["MONDAY","WEDNESDAY","FRIDAY"],
+    
+        "session_requests":[
+            {
+                "session_id":1,
+    
+                "start":"2024-01-15 12:30",
+    
+                "end":"2024-01-15 14:30"
+           }
+        ],
+        "description": "courseId is zero",
+        "expected_status_code": 400
+    },
+    {
+        "faculty_id":"SPRK24PANC0",
+    
+        "course_id": null,
+    
+        "zone":"Asia/Calcutta",
+    
+        "number_of_days": 0,
+    
+        "start_time":"12:30",
+    
+        "end_time":"14:30",
+    
+        "days_of_week":["MONDAY","WEDNESDAY","FRIDAY"],
+    
+        "session_requests":[
+            {
+                "session_id":1,
+    
+                "start":null,
+    
+                "end":"2024-01-15 14:30"
+           }
+        ],
+        "description": "one of session date time is null",
+        "expected_status_code": 400
+    },
+    {
+        "faculty_id":"SPRK24PANC0",
+    
+        "course_id": null,
+    
+        "zone":"Asia/Calcutta",
+    
+        "number_of_days": 0,
+    
+        "start_time":"12:30",
+    
+        "end_time":"14:30",
+    
+        "days_of_week":[null],
+    
+        "session_requests":[
+            {
+                "session_id":1,
+    
+                "start":null,
+    
+                "end":"2024-01-15 14:30"
+            }
+        ],
+        "description": "one of session date time is null",
+        "expected_status_code": 400
+    }
+]

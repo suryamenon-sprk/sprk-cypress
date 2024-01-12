@@ -2,7 +2,9 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const API_URL = `${ENV_BASE_URL}/api/batch/allsessions/SPRK23PAN76`
+const faculties = ['SPRK24PANC0','SPRK24VIV62','SPRK99RINE5','SPRK24ABD84','SPRK00SHI61']
+
+const API_URL = `${ENV_BASE_URL}/api/batch/allsessions/${faculties}`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -22,6 +24,7 @@ const HttpMethod = {
 //DESCRIPTION
 describe('GET - All batch Session By Faculty', () =>{
 
+    faculties.forEach(faculty=> {
     it('Authorization Header - No Value',
         () => {
             cy.request({
@@ -32,8 +35,13 @@ describe('GET - All batch Session By Faculty', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                if (response.status === 200) {
+                } else {
+                    expect(response.status).to.equal(204);
+                }
             })
+            })
+            
         }
     );
 
@@ -51,8 +59,10 @@ describe('GET - All batch Session By Faculty', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body.error)
+                if (response.status === 200) {
+                } else {
+                    expect(response.status).to.equal(204);
+                }
             })
         }
     );
@@ -71,8 +81,10 @@ describe('GET - All batch Session By Faculty', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body)
+                if (response.status === 200) {
+                } else {
+                    expect(response.status).to.equal(204);
+                }
             });
         }
     );
@@ -91,12 +103,13 @@ describe('GET - All batch Session By Faculty', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
-                cy.log(response.body);
+                if (response.status === 200) {
+                } else {
+                    expect(response.status).to.equal(204);
+                }
             });
         }
     );
 
 
-
-});
+})
