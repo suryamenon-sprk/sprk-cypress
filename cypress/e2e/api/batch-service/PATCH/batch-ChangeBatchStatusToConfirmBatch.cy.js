@@ -27,14 +27,13 @@ describe('PATCH - Change Batch Status To Confirm Batch', () => {
     // TEST
     batches.forEach((batch) => {
         const API_URL = `${ENV_BASE_URL}/api/batch/approve/${batch}`
-    it('Reschedule while Creation', () => {  
+    it('Change Batch Status To Confirm Batch', () => {  
 
             // REQUEST
             cy.request({
-                method: HttpMethod.POST,
+                method: HttpMethod.PATCH,
                 url: API_URL,
                 failOnStatusCode: false,
-                body: bodyPayload,
                 headers: {
                     Authorization: `Bearer ${TOKEN}`
                 }

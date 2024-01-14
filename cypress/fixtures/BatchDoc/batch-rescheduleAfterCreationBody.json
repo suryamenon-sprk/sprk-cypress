@@ -1,0 +1,233 @@
+[
+    {
+        "batch_id":"BTH24JANPYTH1",
+
+        "faculty_id":"SPRK24VIV62",
+    
+        "course_id": 35,
+    
+        "zone":"Asia/Calcutta",
+    
+        "number_of_days": 5,
+    
+        "start_time":"12:30",
+    
+        "end_time":"14:30",
+    
+        "days_of_week":["MONDAY","WEDNESDAY"],
+    
+        "session_requests":[
+            {
+                "session_id":1,
+    
+                "start":"2024-01-15 12:30",
+    
+                "end":"2024-01-15 14:30"
+        },
+        {
+                "session_id":2,
+    
+                "start":"2024-01-17 12:30",
+    
+                "end":"2024-01-17 14:30"
+        },
+        {
+                "session_id":3,
+    
+                "start":"2024-01-19 12:30",
+    
+                "end":"2024-01-19 14:30"
+        },
+        {
+                "session_id":4,
+    
+                "start":"2024-01-22 12:30",
+    
+                "end":"2024-01-22 14:30"
+        },
+        {
+                "session_id":5,
+    
+                "start":"2024-01-24 12:30",
+    
+                "end":"2024-01-24 14:30"
+        }
+        ],
+        "description": "Valid Details",
+        "expected_status_code": 200
+    },
+
+    {
+        "batch_id":null,
+
+        "faculty_id":"SPRK24VIV62",
+    
+        "course_id": 35,
+    
+        "zone":"Asia/Calcutta",
+    
+        "number_of_days": 5,
+    
+        "start_time":"12:30",
+    
+        "end_time":"14:30",
+    
+        "days_of_week":["MONDAY","WEDNESDAY"],
+    
+        "session_requests":[
+            {
+                "session_id":1,
+    
+                "start":"2024-01-15 12:30",
+    
+                "end":"2024-01-15 14:30"
+        },
+        {
+                "session_id":2,
+    
+                "start":"2024-01-17 12:30",
+    
+                "end":"2024-01-17 14:30"
+        },
+        {
+                "session_id":3,
+    
+                "start":"2024-01-19 12:30",
+    
+                "end":"2024-01-19 14:30"
+        },
+        {
+                "session_id":4,
+    
+                "start":"2024-01-22 12:30",
+    
+                "end":"2024-01-22 14:30"
+        },
+        {
+                "session_id":5,
+    
+                "start":"2024-01-24 12:30",
+    
+                "end":"2024-01-24 14:30"
+        }
+        ],
+        "description": "Batch id is null it will just preview the batch",
+        "expected_status_code": 200
+    },
+
+    {
+        "batch_id":null,
+
+        "faculty_id":null,
+    
+        "course_id": 35,
+    
+        "zone":"Asia/Calcutta",
+    
+        "number_of_days": 5,
+    
+        "start_time":"12:30",
+    
+        "end_time":"14:30",
+    
+        "days_of_week":["MONDAY","WEDNESDAY"],
+    
+        "session_requests":[
+            {
+                "session_id":1,
+    
+                "start":"2024-01-15 12:30",
+    
+                "end":"2024-01-15 14:30"
+        },
+        {
+                "session_id":2,
+    
+                "start":"2024-01-17 12:30",
+    
+                "end":"2024-01-17 14:30"
+        },
+        {
+                "session_id":3,
+    
+                "start":"2024-01-19 12:30",
+    
+                "end":"2024-01-19 14:30"
+        },
+        {
+                "session_id":4,
+    
+                "start":"2024-01-22 12:30",
+    
+                "end":"2024-01-22 14:30"
+        },
+        {
+                "session_id":5,
+    
+                "start":"2024-01-24 12:30",
+    
+                "end":"2024-01-24 14:30"
+        }
+        ],
+        "description": "Faculty id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":null,
+
+        "faculty_id":"SPRK24VIV62",
+    
+        "course_id": 35,
+    
+        "zone":"Asia/Calcutta",
+    
+        "number_of_days": 5,
+    
+        "start_time":"12:30",
+    
+        "end_time":"14:30",
+    
+        "days_of_week":["MONDAY","WEDNESDAY"],
+    
+        "session_requests":[
+            {
+                "session_id":1,
+    
+                "start":"2024-01-15 14:30",
+    
+                "end":"2024-01-15 12:30"
+        },
+        {
+                "session_id":2,
+    
+                "start":"2024-01-17 12:30",
+    
+                "end":"2024-01-17 14:30"
+        },
+        {
+                "session_id":3,
+    
+                "start":"2024-01-19 12:30",
+    
+                "end":"2024-01-19 14:30"
+        },
+        {
+                "session_id":4,
+    
+                "start":"2024-01-22 12:30",
+    
+                "end":"2024-01-22 14:30"
+        },
+        {
+                "session_id":5,
+    
+                "start":"2024-01-24 12:30",
+    
+                "end":"2024-01-24 14:30"
+        }
+        ],
+        "description": "Have given start time after end date ",
+        "expected_status_code": 400
+    }
+
+]

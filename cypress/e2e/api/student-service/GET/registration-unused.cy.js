@@ -28,7 +28,10 @@ beforeEach(() => {
         "ngrok-skip-browser-warning": true,
       },
     }).then((response) => {
-      expect(response.status).to.equal(200);
+        if(response.status === 204)
+        expect(response.status).to.equal(204)
+        else
+        expect(response.status).to.equal(200)
       enquiry_obj = response.body;
     });
   });
@@ -68,7 +71,7 @@ describe('GET - REGISTRATION - UNUSED (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }

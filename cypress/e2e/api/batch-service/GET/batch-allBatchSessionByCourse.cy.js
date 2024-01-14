@@ -35,11 +35,9 @@ describe('GET - All Batch Sessions By Course', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.body.length === 0) {
-                    expect(response.status).to.equal(204);
-                } else {
-                    expect(response.status).to.equal(200);
-                }
+            
+                    expect(response.status).to.equal(404);
+                
             })
         });
 
@@ -60,11 +58,8 @@ describe('GET - All Batch Sessions By Course', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.body.length === 0) {
-                    expect(response.status).to.equal(204);
-                } else {
-                    expect(response.status).to.equal(200);
-                }
+                    expect(response.status).to.equal(403);
+                
             })
         }
     );
@@ -106,11 +101,8 @@ describe('GET - All Batch Sessions By Course', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.body.length === 0) {
-                    expect(response.status).to.equal(204);
-                } else {
-                    expect(response.status).to.equal(200);
-                }
+                    expect(response.status).to.equal(403);
+                
             });
         }
     );

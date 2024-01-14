@@ -6,11 +6,11 @@
         "zone":"Asia/Calcutta",
         "days_of_week":["MONDAY","TUESDAY"],
         "start_time":"12:00",
-        "end_time":"1:00",
+        "end_time":"13:00",
         "sessions":[
             {
-            "start":"",
-            "end":""
+            "start":"12:00",
+            "end":"13:00"
             }
         ],
         "description": "Valid Details",
@@ -23,7 +23,7 @@
         "zone":"Asia/Calcutta",
         "days_of_week":["MONDAY","TUESDAY"],
         "start_time":"12:00",
-        "end_time":"1:00",
+        "end_time":"13:00",
         "sessions":[
             {
             "start":"",
@@ -40,7 +40,7 @@
         "zone":"Asia/Calcutta",
         "days_of_week":["MONDAY","TUESDAY"],
         "start_time":"12:00",
-        "end_time":"1:00",
+        "end_time":"13:00",
         "sessions":[
             {
             "start":"",
@@ -57,7 +57,7 @@
         "zone":"Asia/Calcutta",
         "days_of_week":["MONDAY","TUESDAY"],
         "start_time":"12:00",
-        "end_time":"1:00",
+        "end_time":"13:00",
         "sessions":[
             {
             "start":"",

@@ -1,6 +1,6 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN = Cypress.env("TOKEN_ADMIN")
-
+const TOKEN = ENV_TOKEN
 const API_URL = `${ENV_BASE_URL}/api/batch/edit`
 const HttpMethod = {
     GET: "GET",
@@ -34,6 +34,7 @@ describe('POST - Edit Batch', () => {
                 faculty_id:testCase.faculty_id,
                 course_id: testCase.course_id,
                 zone:testCase.zone,
+                number_of_days:testCase.number_of_days,
                 days_of_week:testCase.days_of_week,
                 start_time:testCase.start_time,
                 end_time:testCase.end_time,

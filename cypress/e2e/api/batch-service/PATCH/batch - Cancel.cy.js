@@ -31,10 +31,9 @@ describe('PATCH - Cancel batch', () => {
 
             // REQUEST
             cy.request({
-                method: HttpMethod.POST,
+                method: HttpMethod.PATCH,
                 url: API_URL,
                 failOnStatusCode: false,
-                body: bodyPayload,
                 headers: {
                     Authorization: `Bearer ${TOKEN}`
                 }

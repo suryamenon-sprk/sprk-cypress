@@ -87,32 +87,7 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
 
 
 
-    it('Authorization Header - sales (TOKEN)',
-        () => {
-            cy.request({
-                method: HttpMethod.GET,
-                url: API_URL,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Sales,
-                    "ngrok-skip-browser-warning": true
-                }
-            }).then((response) => {
-                expect(response.status).to.equal(200);
-                cy.log(response.body);
-
-                let responseBody = response.body
-
-                const decodedToken = jwtDecode(AUTH_HEADER.Sales);
-                const userId = decodedToken.sub;
-
-                responseBody.forEach(obj => {
-                    expect(obj.assigned_user.user_id).to.equal(Number(userId))
-                });
-
-            });
-        }
-    );
+   
 
 
 

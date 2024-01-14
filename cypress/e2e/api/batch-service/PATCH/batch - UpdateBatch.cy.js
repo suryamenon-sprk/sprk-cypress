@@ -1,6 +1,6 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN = Cypress.env("TOKEN_ADMIN")
-
+const TOKEN = ENV_TOKEN
 const API_URL = `${ENV_BASE_URL}/api/batch/update`
 const HttpMethod = {
     GET: "GET",
@@ -45,7 +45,7 @@ describe('PATCH - Update Batch', () => {
 
             // REQUEST
             cy.request({
-                method: HttpMethod.POST,
+                method: HttpMethod.PATCH,
                 url: API_URL,
                 failOnStatusCode: false,
                 body: bodyPayload,

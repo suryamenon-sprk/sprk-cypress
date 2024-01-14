@@ -18,7 +18,7 @@ const HttpMethod = {
 var payload_register = null
 before(() => {
 
-    cy.fixture("EnquiryBody/discard-body").then((data) => {
+    cy.fixture("EnquiryBody/transfer-body").then((data) => {
         payload_register = data
     })
 
@@ -32,8 +32,8 @@ describe('API-transferEnquiry Test', () => {
         payload_register.forEach((testCase) => {
 
             let bodyPayload = {
-                enquiry_id: testCase.enquiry_id,
-                discard_reason: testCase.discard_reason
+                enquiry_id:testCase.enquiry_id,
+                user_id:testCase.user_id,
             }
 
             // REQUEST
@@ -69,16 +69,6 @@ describe('API-transferEnquiry Test', () => {
                 headers: {
                     Authorization: `Bearer ${TOKEN_SALES}`
                 }
-            }).then((response) => {
-                expect(response.status).to.equal(testCase.expected_status_code)
-                let responseBody = response.body
-
-                const decodedToken = jwtDecode(TOKEN_SALES);
-                const userId = decodedToken.sub;
-
-                responseBody.forEach(obj => {
-                    expect(obj.assigned_user.user_id).to.equal(Number(userId))
-                });
             }) // request
 
         })

@@ -16,7 +16,7 @@ const HttpMethod = {
 var payload_register = null
 before(() => {
 
-    cy.fixture("BatchDoc/batch-RescheduleWhileCreation").then((data) => {
+    cy.fixture("BatchDoc/batch-RescheduleAfterCreationBody").then((data) => {
         payload_register = data
     })
 

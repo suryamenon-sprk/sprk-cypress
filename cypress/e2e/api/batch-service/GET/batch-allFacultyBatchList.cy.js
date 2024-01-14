@@ -29,10 +29,9 @@ describe('GET - all Faculty Batch List', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.status === 200) {
-                } else {
-                    expect(response.status).to.equal(204);
-                }
+               
+                    expect(response.status).to.equal(404);
+                
             })
         }
     );
@@ -51,10 +50,9 @@ describe('GET - all Faculty Batch List', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.status === 200) {
-                } else {
-                    expect(response.status).to.equal(204);
-                }
+              
+                    expect(response.status).to.equal(403);
+                
             })
         }
     );
@@ -95,10 +93,9 @@ describe('GET - all Faculty Batch List', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.status === 200) {
-                } else {
-                    expect(response.status).to.equal(204);
-                }
+               
+                    expect(response.status).to.equal(403);
+                
             });
         }
     );

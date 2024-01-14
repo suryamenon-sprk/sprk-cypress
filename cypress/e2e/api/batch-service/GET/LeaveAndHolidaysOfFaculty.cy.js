@@ -34,7 +34,7 @@ describe('GET - Leave And Holidays Of faculty by faculty Id', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                expect(response.status).to.equal(404)
             })
         }
     );
@@ -53,7 +53,7 @@ describe('GET - Leave And Holidays Of faculty by faculty Id', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -93,7 +93,7 @@ describe('GET - Leave And Holidays Of faculty by faculty Id', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
+                expect(response.status).to.equal(403);
                 cy.log(response.body);
             });
         }

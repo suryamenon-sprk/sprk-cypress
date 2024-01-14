@@ -1,48 +1,48 @@
 [
     {
-        "email": "suryakavaiya@gmail.com",
-        "password": "eitonaRneMv",
+        "eid": "kavita@sprktechnologies.in",
+        "password": "Kavita@123",
         "hcaptcha_response": null,
         "description": "Credentials are VALID. (username, password)",
         "expected_status_code": 200
     },
     {
-        "email": null,
+        "eid": null,
         "password": null,
         "hcaptcha_response": null,
         "description": "Credentials are Null. (username, password)",
         "expected_status_code": 400
     },
     {
-        "email": null,
+        "eid": null,
         "password": "eitonaRneMv",
         "hcaptcha_response": null,
         "description": "Email is null.",
         "expected_status_code": 400
     },
     {
-        "email": "suryakavaiya@gmail.com",
+        "eid": "suryakavaiya@gmail.com",
         "password": null,
         "hcaptcha_response": null,
         "description": "Password is null",
         "expected_status_code": 400
     },
     {
-        "email": "suryakavaiya1@gmail.com",
+        "eid": "suryakavaiya1@gmail.com",
         "password": "eitonaRneMv",
         "hcaptcha_response": null,
         "description": "Email is invalid",
         "expected_status_code": 401
     },
     {
-        "email": "suryakavaiya@gmail.com",
+        "eid": "suryakavaiya@gmail.com",
         "password": "eitonaRneMv123",
         "hcaptcha_response": null,
         "description": "Credentials are VALID. (username, password)",
         "expected_status_code": 401
     },
     {
-        "email": "suryakavaiya@gmail.com",
+        "eid": "suryakavaiya@gmail.com",
         "password": "eitonaRneMv",
         "hcaptcha_response": "123",
         "description": "Credentials are VALID. (username, password)",

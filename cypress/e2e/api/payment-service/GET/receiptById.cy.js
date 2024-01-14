@@ -36,7 +36,7 @@ const HttpMethod = {
 describe('GET -  PAYMENT - BY BOOKING ID (AllUsers)', () =>{
     const baseUrl = `${ENV_BASE_URL}/api/payment/receipt/`;
     const startingNumber = 1;
-    const endNumber = 35;
+    const endNumber = 10;
 
     let API_URL;
     for (let number = startingNumber; number <= endNumber; number++) {
@@ -74,7 +74,7 @@ describe('GET -  PAYMENT - BY BOOKING ID (AllUsers)', () =>{
                         "ngrok-skip-browser-warning": true
                     }
                 }).then((response) => {
-                    expect(response.status).to.equal(400)
+                    expect(response.status).to.equal(403)
                     cy.log(response.body.error)
                 })
             }

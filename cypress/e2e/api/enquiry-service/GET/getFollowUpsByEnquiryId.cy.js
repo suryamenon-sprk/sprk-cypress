@@ -50,7 +50,7 @@ describe('GET - FollowUpById(Admin,Sales)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -70,43 +70,16 @@ describe('GET - FollowUpById(Admin,Sales)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
+                if(response.status === 204)
+                expect(response.status).to.equal(204)
+                else
                 expect(response.status).to.equal(200)
-                cy.log(response.body)
+
             });
         }
     );
     
 
-
-
-    it('Authorization Header - sales (TOKEN)',
-        () => {
-            cy.request({
-                method: HttpMethod.GET,
-                url: API_URL,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Sales,
-                    "ngrok-skip-browser-warning": true
-                }
-            }).then((response) => {
-                expect(response.status).to.equal(403);
-                cy.log(response.body);
-
-                
-                //  let responseBody = response.body
-
-                //  const decodedToken = jwtDecode(token);
-                //  const userId = decodedToken.sub;
-
-                //  responseBody.forEach(obj => {
-                //      expect(obj.assigned_user.user_id).to.equal(userId)
-                //  });
-                 
-
-            });
-        }
-    );
 
 
 

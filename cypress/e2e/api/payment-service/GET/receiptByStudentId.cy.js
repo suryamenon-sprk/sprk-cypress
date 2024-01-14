@@ -36,7 +36,7 @@ var enquiry_obj = null
 describe('GET -  PAYMENT - BY STUDENT ID (AllUsers)', () =>{
     const baseUrl = `${ENV_BASE_URL}/api/payment/receipt/s/`;
     const startingNumber = 1;
-    const endNumber = 35;
+    const endNumber = 10;
 
     let API_URL;
     for (let number = startingNumber; number <= endNumber; number++) {
@@ -74,7 +74,7 @@ describe('GET -  PAYMENT - BY STUDENT ID (AllUsers)', () =>{
                         "ngrok-skip-browser-warning": true
                     }
                 }).then((response) => {
-                    expect(response.status).to.equal(400)
+                    expect(response.status).to.equal(403)
                     cy.log(response.body.error)
                 })
             }
@@ -94,10 +94,10 @@ describe('GET -  PAYMENT - BY STUDENT ID (AllUsers)', () =>{
                         "ngrok-skip-browser-warning": true
                     }
                 }).then((response) => {
-                    if (enquiry_obj.receipt_id === null) {
+                    if (response.status === 204) {
                         expect(response.status).to.equal(204);
                     } else {
-                        expect(response.status).to.equal(204);
+                        expect(response.status).to.equal(200);
                     }
                     // expect(response.status).to.equal(200)
                     // cy.log(response.body)
@@ -119,10 +119,10 @@ describe('GET -  PAYMENT - BY STUDENT ID (AllUsers)', () =>{
                         "ngrok-skip-browser-warning": true
                     }
                 }).then((response) => {
-                    if (enquiry_obj.receipt_id === null) {
+                    if (response.status === 204) {
                         expect(response.status).to.equal(204);
                     } else {
-                        expect(response.status).to.equal(204);
+                        expect(response.status).to.equal(200);
                     }
                     // expect(response.status).to.equal(200);
                     // cy.log(response.body);

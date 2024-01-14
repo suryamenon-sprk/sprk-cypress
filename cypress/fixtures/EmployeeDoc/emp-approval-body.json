@@ -1,0 +1,43 @@
+[
+    {
+        
+        "days": [
+            "MONDAY",
+            "tuesday"
+        ],
+        "in_time": "13:00",
+        "out_time": "21:00",
+        "leaves": 15,
+        "req_id": "REQ243FFF1C",
+        "description": "Valid details",
+        "expected_status_code": 200
+    },
+    {
+        "days": [
+            "MONDAY",
+            "tuesday",
+            "",
+            null
+        ],
+        "in_time": null,
+        "out_time": "21:00",
+        "leaves": 15,
+        "req_id": "REQ243FFF1C",
+        "description": "in time is null",
+        "expected_status_code": 400
+    },
+    {
+        "days": [
+            "MONDAY",
+            "tuesday",
+            "",
+            null
+        ],
+        "in_time": "13:00",
+        "out_time": null,
+        "leaves": 15,
+        "req_id": "REQ243FFF1C",
+        "description": "out time is null",
+        "expected_status_code": 400
+    }
+]

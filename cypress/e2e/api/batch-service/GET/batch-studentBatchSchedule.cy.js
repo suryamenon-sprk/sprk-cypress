@@ -32,11 +32,9 @@ describe('GET - Student Batch Schedule', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.status === 200) {
-                } else if(response.status === 204) {
-                } else {
-                    expect(response.status).to.equal(400);
-                }
+               
+                    expect(response.status).to.equal(404);
+                
             })
         }
     );
@@ -55,11 +53,9 @@ describe('GET - Student Batch Schedule', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.status === 200) {
-                } else if(response.status === 204) {
-                } else {
-                    expect(response.status).to.equal(400);
-                }
+               
+                    expect(response.status).to.equal(403);
+                
             })
         }
     );
@@ -101,11 +97,9 @@ describe('GET - Student Batch Schedule', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.status === 200) {
-                } else if(response.status === 204) {
-                } else {
-                    expect(response.status).to.equal(400);
-                }
+                
+                    expect(response.status).to.equal(403);
+                
             });
         }
     );

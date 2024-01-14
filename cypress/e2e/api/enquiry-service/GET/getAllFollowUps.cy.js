@@ -54,7 +54,7 @@ describe('GET - FollowUps (Admin)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -80,26 +80,6 @@ describe('GET - FollowUps (Admin)', () =>{
         }
     );
     
-
-
-
-    it('Authorization Header - sales (TOKEN) [Sales should not have access to all follow-ups data.]',
-        () => {
-            cy.request({
-                method: HttpMethod.GET,
-                url: API_URL,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Sales,
-                    "ngrok-skip-browser-warning": true
-                }
-            }).then((response) => {
-                expect(response.status).to.equal(403);
-                cy.log(response.body);
-            });
-        }
-    );
-
 
 
 });

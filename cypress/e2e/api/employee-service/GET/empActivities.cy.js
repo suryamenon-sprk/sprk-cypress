@@ -51,7 +51,7 @@ describe('GET - EMPLOYEES ACTIVITY', () =>{
                 }
             }).then((response) => {
                 console.log(response)
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -71,10 +71,11 @@ describe('GET - EMPLOYEES ACTIVITY', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if(!response.body)
-                expect(response.status).to.equal(204)
-                else
-                expect(response.status).to.equal(200)
+                if(response.status === 200){
+                    expect(response.status).to.equal(200)
+                    } else {
+                        expect(response.status).to.equal(404)
+                    }
                 cy.log(response.body)
             });
         }

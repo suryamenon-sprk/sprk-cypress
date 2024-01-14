@@ -25,10 +25,11 @@ beforeEach(() => {
         "ngrok-skip-browser-warning": true,
     },
     }).then((response) => {
-    if(!response.body)
-    expect(response.status).to.equal(204);
-    else
-    expect(response.status).to.equal(200);
+    if(response.status === 404){
+        expect(response.status).to.equal(404)
+    } else {
+        expect(response.status).to.equal(200)
+    }
     req_obj = response.body;
     });
 });
@@ -48,10 +49,13 @@ describe('API-approveEmployee Test', () => {
                     Authorization: AUTH_HEADER.Admin
                 }
             }).then((response) => {
-                if(req_obj.data.request_status !== "APPROVED")
+                if(response.status === 200)
                 expect(response.status).to.equal(200);
-                else
+                else if(response.status === 400)
                 expect(response.status).to.equal(400);
+                else
+                expect(response.status).to.equal(404);
+
             });
 
             

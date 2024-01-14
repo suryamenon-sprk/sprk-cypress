@@ -32,7 +32,7 @@ describe('GET - Student By Batch', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                expect(response.status).to.equal(404)
             })
         }
     );
@@ -51,7 +51,7 @@ describe('GET - Student By Batch', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -91,7 +91,7 @@ describe('GET - Student By Batch', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
+                expect(response.status).to.equal(403);
                 cy.log(response.body);
             });
         }

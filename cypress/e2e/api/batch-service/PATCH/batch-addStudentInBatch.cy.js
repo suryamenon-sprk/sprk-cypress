@@ -31,7 +31,7 @@ describe('API-add Student in batch', () => {
         payload_register.forEach((testCase) => {
 
             let bodyPayload = {
-                batch_id:testCase,
+                batch_id:testCase.batch_id,
                 students_id:testCase.students_id
             }
 
