@@ -19,6 +19,14 @@ module.exports = defineConfig({
       screenshotOnRunFailure=true;
       require(`cypress-mochawesome-reporter/plugin`)(on); //for html reports
     },
+    "reporter": "cypress-mochawesome-reporter",
+    "reporterOptions": {
+    "reportDir": "cypress/reports/mochawesome",
+    "overwrite": true,
+    "html": true,
+    "json": false,
+    "timestamp":"mmddyyyy_HHMMss"
+  }
   },
 });
 
