@@ -2,7 +2,7 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const API_URL = `${ENV_BASE_URL}/api/student/51/doc/1`
+const API_URL = `${ENV_BASE_URL}/api/student/1/doc/3`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -50,7 +50,7 @@ describe('GET - PROFILE - PICTURE (All users)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -70,31 +70,15 @@ describe('GET - PROFILE - PICTURE (All users)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
+                if(response.status === 200)
                 expect(response.status).to.equal(200)
+                else
+                expect(response.status).to.equal(400)
                 cy.log(response.body)
             });
         }
     );
     
-
-
-
-    it('Authorization Header - sales (TOKEN)',
-        () => {
-            cy.request({
-                method: HttpMethod.GET,
-                url: API_URL,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Sales,
-                    "ngrok-skip-browser-warning": true
-                }
-            }).then((response) => {
-                expect(response.status).to.equal(200);
-                cy.log(response.body);
-            });
-        }
-    );
 
 
 

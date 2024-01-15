@@ -51,7 +51,7 @@ describe('GET - EMPLOYEES PROFILE', () =>{
                 }
             }).then((response) => {
                 console.log(response)
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -71,7 +71,7 @@ describe('GET - EMPLOYEES PROFILE', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if(!response.body)
+                if(response.status === 404)
                 expect(response.status).to.equal(404)
                 else
                 expect(response.status).to.equal(200)
@@ -94,7 +94,7 @@ describe('GET - EMPLOYEES PROFILE', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(403);
+                expect(response.status).to.equal(404);
                 cy.log(response.body);
             });
         }

@@ -14,7 +14,7 @@ const HttpMethod = {
     DELETE: "DELETE"
 }
 
-const API_URL_EMP = `${ENV_BASE_URL}/api/auth/emp/act`
+const API_URL_EMP = `${ENV_BASE_URL}/api/auth/act`
 var activity_obj = null
             beforeEach(() => {
                 cy.request({
@@ -40,7 +40,7 @@ var activity_obj = null
 
 //DESCRIPTION
 describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
-    const base_URL = `${ENV_BASE_URL}/api/auth/emp/act/`
+    const base_URL = `${ENV_BASE_URL}/api/auth/act/`
     const startingNumber = 1;
     const endNumber = 10;
 
@@ -78,7 +78,7 @@ describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }

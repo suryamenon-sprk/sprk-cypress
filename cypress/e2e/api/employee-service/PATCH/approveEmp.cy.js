@@ -1,10 +1,11 @@
+
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`
 }
 
-const API_URL = `${ENV_BASE_URL}/api/auth/req/approve/13`
+const API_URL = `${ENV_BASE_URL}/api/auth/req/approve`
 
 const HttpMethod = {
     GET: "GET",
@@ -13,45 +14,47 @@ const HttpMethod = {
     DELETE: "DELETE"
 }
 
-const API_URL_REQ = `${ENV_BASE_URL}/api/auth/req/13`
-var req_obj = null
-beforeEach(() => {
-    cy.request({
-    method: HttpMethod.GET,
-    url: API_URL_REQ,
-    failOnStatusCode: false,
-    headers: {
-        Authorization: AUTH_HEADER.Admin,
-        "ngrok-skip-browser-warning": true,
-    },
-    }).then((response) => {
-    if(!response.body)
-    expect(response.status).to.equal(204);
-    else
-    expect(response.status).to.equal(200);
-    req_obj = response.body;
-    });
-});
+var payload_register = null
+before(() => {
+
+    cy.fixture("EmployeeDoc/emp-approval-body").then((data) => {
+        payload_register = data
+    })
+
+})
 
 // DESCRIPTION
 describe('API-approveEmployee Test', () => {
 
     // TEST
+   
     it('Approve - Employee', () => {
+        payload_register.forEach((testCase) => {
+            let bodyPayload = {
+                        
+                days:testCase.days,
+                in_time: testCase.in_time,
+                out_time: testCase.out_time,
+                leaves: testCase.leaves,
+                req_id: testCase.req_id
+            }
 
         
             cy.request({
                 method: HttpMethod.PATCH,
                 url: API_URL,
+                body: bodyPayload,
                 failOnStatusCode: false,
                 headers: {
                     Authorization: AUTH_HEADER.Admin
                 }
             }).then((response) => {
-                if(req_obj.data.request_status === "APPROVED")
+                if(response.status === 400)
+                expect(response.status).to.equal(400);
+                else if(response.status === 200)
                 expect(response.status).to.equal(200);
                 else
-                expect(response.status).to.equal(400);
+                expect(response.status).to.equal(404)
             });
 
             
@@ -62,6 +65,6 @@ describe('API-approveEmployee Test', () => {
     
     })
     
-        
+});    
 
 

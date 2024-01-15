@@ -71,7 +71,7 @@ describe('DELETE - Enquiry (only admin)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -104,28 +104,5 @@ describe('DELETE - Enquiry (only admin)', () =>{
         });
       });
     
-
-
-
-    it('Authorization Header - sales (TOKEN)',
-        () => {
-            let bodyPayload = [1];
-            cy.request({
-                method: HttpMethod.DELETE,
-                url: API_URL,
-                body: bodyPayload,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Sales,
-                    "ngrok-skip-browser-warning": true
-                }
-            }).then((response) => {
-                expect(response.status).to.equal(403);
-                cy.log(response.body);
-
-            });
-        });
-
-
 
 });

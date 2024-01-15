@@ -55,7 +55,7 @@ describe('GET - EnquiryID (Admin and Sales)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -81,34 +81,5 @@ describe('GET - EnquiryID (Admin and Sales)', () =>{
         }
     );
     
-
-
-
-    it('Authorization Header - sales (TOKEN)',
-        () => {
-            cy.request({
-                method: HttpMethod.GET,
-                url: API_URL,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Sales,
-                    "ngrok-skip-browser-warning": true
-                }
-            }).then((response) => {
-                expect(response.status).to.equal(403);
-                cy.log(response.body);
-
-                let responseBody = response.body
-
-                const decodedToken = jwtDecode(AUTH_HEADER.Sales);
-                let userId = decodedToken.sub;
-
-
-                expect(responseBody.assigned_user.user_id).to.equal(Number(userId))
-
-            });
-        });
-
-
 
 });

@@ -57,7 +57,7 @@ describe('GET - EMPLOYEES SALARY DOCUMENT', () =>{
                 }
             }).then((response) => {
                 console.log(response)
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }

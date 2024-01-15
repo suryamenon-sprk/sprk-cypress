@@ -1,0 +1,105 @@
+[
+    {
+
+        "batch_id": "BTH24JANTGST1",
+
+        "faculty_id":"SPRK99RINE5",
+
+        "course_id": 36,
+
+        "zone":"Asia/Calcutta",
+
+        "days_of_week":["MONDAY"],
+
+        "number_of_days":15,
+
+        "start_time":"12:00",
+
+        "end_time":"13:00",
+
+        "date":"2024-02-25",
+        "description": "No update in details",
+        "expected_status_code": 200
+    },
+    {
+
+        "batch_id": "BTH24JANTGST1",
+
+        "faculty_id":"SPRK99RINE5",
+
+        "course_id": 36,
+
+        "zone":"Asia/Calcutta",
+
+        "days_of_week":[null],
+
+        "number_of_days":15,
+
+        "start_time":"12:00",
+
+        "end_time":"13:00",
+
+        "date":"2024-02-25",
+        "description": "start_time, end_time, date, where edited",
+        "expected_status_code": 400
+    },
+    {
+
+        "batch_id": null,
+        "faculty_id":"SPRK24VIV62",
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "number_of_days":15,
+        "days_of_week":[0],
+        "start_time":"",
+        "end_time":"",
+        "date":"",
+        "description": "Batch id is null",
+        "expected_status_code": 400
+    },
+    {
+
+        "batch_id": "BTH24JANPYTH1",
+        "faculty_id":null,
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "number_of_days":15,
+        "days_of_week":[0,"TUESDAY"],
+        "start_time":"",
+        "end_time":"",
+        "date":"",
+        "description": "faculty id is null",
+        "expected_status_code": 400
+    },
+    {
+
+        "batch_id": "BTH24JANPYTH1",
+        "faculty_id":"SPRK24VIV62",
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "days_of_week":[null],
+        "number_of_days":15,
+        "start_time":"",
+        "end_time":"",
+        "date":"",
+        "description": "days_of_week is null",
+        "expected_status_code": 400
+    },
+    {
+
+        "batch_id": "BTH24JANPYTH1",
+        "faculty_id":"SPRK24VIV62",
+        "course_id": 36,
+        "zone":"Asia/Calcutta",
+        "days_of_week":[null],
+        "number_of_days":15,
+        "start_time":"",
+        "end_time":"",
+        "date":"",
+        "description": "days_of_week is null",
+        "expected_status_code": 400
+    }
+
+    
+
+]

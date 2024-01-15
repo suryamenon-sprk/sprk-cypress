@@ -1,0 +1,32 @@
+[
+    {    "batch_id":"BTH24JANMSQL1",
+        "students_id":[3,4],
+        "description": "Valid details",
+        "expected_status_code": 200
+    
+    },
+    {
+        "batch_id":null,
+        "students_id":[4,5],
+        "description": "batch_id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24JANMSQL1",
+        "students_id":[null],
+        "description": "student id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24JANMSQL1",
+        "students_id":null,
+        "description": "student_id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24JANMS",
+        "students_id":null,
+        "description": "student_id is null",
+        "expected_status_code": 400
+    }
+]

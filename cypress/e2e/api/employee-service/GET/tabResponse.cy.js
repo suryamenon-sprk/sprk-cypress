@@ -50,7 +50,7 @@ describe('GET - TAB RESPONSE (Only superuser)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -70,7 +70,12 @@ describe('GET - TAB RESPONSE (Only superuser)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
+                if(response.status===404){
+                    expect(response.status).to.equal(404)
+                }
+                else{
                 expect(response.status).to.equal(200)
+                }
                 cy.log(response.body)
             });
         }

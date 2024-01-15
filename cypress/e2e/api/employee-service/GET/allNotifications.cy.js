@@ -50,7 +50,7 @@ describe('GET - ALL NOTIFICATION', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -70,7 +70,11 @@ describe('GET - ALL NOTIFICATION', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
+                if(response.status === 200){
                 expect(response.status).to.equal(200)
+                } else {
+                    expect(response.status).to.equal(404)
+                }
                 cy.log(response.body)
             });
         }

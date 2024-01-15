@@ -1,0 +1,21 @@
+[
+    {
+        "enquiry_id": [1, 2, 3, 4, 5],
+        "user_id": 2,
+        "description": "Valid details",
+        "expected_status_code": 200
+    },
+    {
+        "enquiry_id": [1, 2, 3, 4, 5],
+        "user_id": null,
+        "description": "User id is unll",
+        "expected_status_code": 400
+    },
+    {
+        
+        "enquiry_id": [null],
+        "user_id": null,
+        "description": "User id is unll",
+        "expected_status_code": 400
+    }
+]

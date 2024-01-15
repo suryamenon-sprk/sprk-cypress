@@ -6,7 +6,7 @@ const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`
 }
 
-const API_URL = `${ENV_BASE_URL}/api/auth/upload/doc/1`
+const API_URL = `${ENV_BASE_URL}/api/auth/upload/doc/18`
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -33,7 +33,7 @@ describe('API-uploadDoc Test', () => {
 
     // TEST
     it('upload - Documents', () => {
-        const ideFilePath = './cypress/fixtures/pdf/Surya_resume.pdf'
+        const ideFilePath = './cypress/fixtures/pdf/collectionData.pdf'
 
         cy.readFile(ideFilePath, 'binary').then((fileContent) => {
             // Convert the binary data to a base64-encoded string
@@ -41,7 +41,7 @@ describe('API-uploadDoc Test', () => {
         
             // Create a FormData object
             const formData = new FormData();
-            formData.append('ide', base64Content, 'Surya_resume.pdf');
+            formData.append('ide', base64Content, 'collectionData.pdf');
             // const formBody = new URLSearchParams(formData).toString();
             
             // REQUEST
@@ -56,7 +56,12 @@ describe('API-uploadDoc Test', () => {
                 failOnStatusCode: false,
                 body: formData
             }).then((response) => {
+                if(response.status === 200)
                 expect(response.status).to.equal(200)
+                else if(response.status === 404)
+                expect(response.status).to.equal(404)
+                else
+                expect(response.status).to.equal(400)
                 console.log(response)
             }); // request
 

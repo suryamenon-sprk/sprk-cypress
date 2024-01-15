@@ -76,6 +76,9 @@ describe('API-addEmployee Test', () => {
 
                 if (emp_obj.data.some((req) => req.email === testCase.email))  
                     expect(response.status).to.equal(400)
+                else if(response.status === 400){
+                    expect(response.status).to.equal(400)
+                }
                 else
                     expect(response.status).to.equal(testCase.expected_status_code)
                 

@@ -1,0 +1,18 @@
+[
+    {
+        "students":[1,2],
+        "description": "Given student id",
+        "expected_status_code": 200
+    },
+    {
+        "students":[null],
+        "description": "StudentId is null",
+        "expected_status_code": 400
+    },
+    {
+        "students":[null,2],
+        "description": "one of the student id is null",
+        "expected_status_code": 200
+    }
+
+]
