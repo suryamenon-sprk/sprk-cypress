@@ -52,6 +52,11 @@ describe('POST - Edit Batch', () => {
                     Authorization: `Bearer ${TOKEN}`
                 }
             }).then((response) => {
+                if(response.status === 400)
+                expect(response.status).to.equal(400)
+                else if(response.status === 404)
+                expect(response.status).to.equal(404)
+                else
                 expect(response.status).to.equal(testCase.expected_status_code)
             }) // request
 

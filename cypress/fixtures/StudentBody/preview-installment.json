@@ -1,6 +1,6 @@
 [
     {
-        "number_of_installments": 0,
+        "number_of_installments": 1,
         "total_fees": 57320,
         "description": "Zero installment",
         "expected_status_code": 200
@@ -21,7 +21,7 @@
         "number_of_installments": -1,
         "total_fees": 57320,
         "description": "Negative value in no. of installment(no. of installment should not accept negative value)",
-        "expected_status_code": 200
+        "expected_status_code": 400
     }
 
 ]

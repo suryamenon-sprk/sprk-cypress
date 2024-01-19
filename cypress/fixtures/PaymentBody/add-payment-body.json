@@ -1,9 +1,9 @@
 [
     {
-        "payment_month": 1695839400000,
-        "paid_amount": 5700,
-        "due_amount": 5700,
-        "booking_id": 249,
+        "payment_month": "2024-05-18",
+        "paid_amount": 2130,
+        "due_amount": 2130,
+        "booking_id": 132,
         "payment_mode": "CASH",
         "transaction_id": null,
         "cheque_number": null,
@@ -26,11 +26,11 @@
         "bank_name": null,
         "branch_name": null,
         "authorization_code": null,
-        "description": "Payment amount is null",
+        "description": "Payment month is null",
         "expected_status_code": 404
     },
     {
-        "payment_month": 1695839400000,
+        "payment_month": "2024-05-18",
         "paid_amount": null,
         "due_amount": 5000,
         "booking_id": 60,
@@ -45,7 +45,7 @@
         "expected_status_code": 404
     },
     {
-        "payment_month": 1695839400000,
+        "payment_month": "2024-05-18",
         "paid_amount": 5000,
         "due_amount": 5000,
         "booking_id": null,
@@ -60,7 +60,7 @@
         "expected_status_code": 400
     },
     {
-        "payment_month": 1695839400000,
+        "payment_month": "2024-05-18",
         "paid_amount": 5000,
         "due_amount": 5000,
         "booking_id": 60,
@@ -75,7 +75,7 @@
         "expected_status_code": 404
     },
     {
-        "payment_month": 1695839400000,
+        "payment_month": "2024-05-18",
         "paid_amount": 5000,
         "due_amount": 5000,
         "booking_id": 60,
@@ -90,7 +90,7 @@
         "expected_status_code": 400
     },
     {
-        "payment_month": 1695839400000,
+        "payment_month": "2024-05-18",
         "paid_amount": 5000,
         "due_amount": 5000,
         "booking_id": 60,
@@ -105,7 +105,7 @@
         "expected_status_code": 400
     },
     {
-        "payment_month": 1695839400000,
+        "payment_month": "2024-05-18",
         "paid_amount": 5000,
         "due_amount": 5000,
         "booking_id":241,
@@ -117,10 +117,10 @@
         "branch_name": null,
         "authorization_code": 1235285,
         "description": "Payment mode net banking",
-        "expected_status_code": 400
+        "expected_status_code": 404
     },
     {
-        "payment_month": 1695839400000,
+        "payment_month": "2024-05-18",
         "paid_amount": 5000,
         "due_amount": 5000,
         "booking_id": 60,
@@ -135,7 +135,7 @@
         "expected_status_code": 400
     },
     {
-        "payment_month": 1695839400000,
+        "payment_month": "2024-05-18",
         "paid_amount": 43500,
         "due_amount": 43500,
         "booking_id": 231,
@@ -150,7 +150,7 @@
         "expected_status_code": 400
     },
     {
-        "payment_month": 1695839400000,
+        "payment_month": "2024-05-18",
         "paid_amount": 5000,
         "due_amount": 5000,
         "booking_id": 60,
@@ -162,22 +162,7 @@
         "branch_name": null,
         "authorization_code": null,
         "description": "Payment mode cheque bank name and branch name are null",
-        "expected_status_code": 404
-    },
-    {
-        "payment_month": 1695839400000,
-        "paid_amount": 5000,
-        "due_amount": 5000,
-        "booking_id": 60,
-        "payment_mode": "CHEQUE",
-        "transaction_id": null,
-        "cheque_number": 123658,
-        "cheque_date": "2023-11-20",
-        "bank_name": null,
-        "branch_name": "Nariman point",
-        "authorization_code": null,
-        "description": "Bank name is blank",
-        "expected_status_code": 404
+        "expected_status_code": 400
     }
     
 

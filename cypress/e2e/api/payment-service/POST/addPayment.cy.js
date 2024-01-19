@@ -53,9 +53,7 @@ describe('API-addPayment Test', () => {
                     Authorization: `Bearer ${TOKEN}`
                 }
             }).then((response) => {
-                if(response.status === 404)
-                expect(response.status).to.equal(404)
-                else
+               
                 expect(response.status).to.equal(testCase.expected_status_code)
             }) // request
 

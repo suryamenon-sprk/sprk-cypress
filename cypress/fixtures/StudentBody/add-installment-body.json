@@ -1,0 +1,50 @@
+[
+    {
+        "number_of_installments": 10,
+        "booking_id": 1,
+        "description": "Valid number of installment and booking id",
+        "expected_status_code": 200
+    },
+    {
+        "number_of_installments": null,
+        "booking_id": 1,
+        "description": "number of installment is null",
+        "expected_status_code": 400
+    },
+    {
+        "number_of_installments": -1,
+        "booking_id": 1,
+        "description": "Invalid number of installment",
+        "expected_status_code": 400
+    },
+    {
+        "number_of_installments": 0,
+        "booking_id": 1,
+        "description": "number of installment is zero",
+        "expected_status_code": 400
+    },
+    {
+        "number_of_installments": 10,
+        "booking_id": null,
+        "description": "booking id is null",
+        "expected_status_code": 400
+    },
+    {
+        "number_of_installments": 100,
+        "booking_id": 1,
+        "description": "number of installment is more than the limit > 24",
+        "expected_status_code": 400
+    },
+    {
+        "number_of_installments": null,
+        "booking_id": -1,
+        "description": "booking id is invalid",
+        "expected_status_code": 400
+    },
+    {
+        "number_of_installments": 10,
+        "booking_id": 0,
+        "description": "booking id is zero It considers booking id as 1",
+        "expected_status_code": 200
+    }
+]

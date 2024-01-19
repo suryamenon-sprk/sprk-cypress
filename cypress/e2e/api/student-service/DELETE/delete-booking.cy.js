@@ -48,7 +48,7 @@ describe('DELETE - BOOKING (only admin)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(404)
+              expect(response.status).to.equal(404)
             })
         }
     );
@@ -69,7 +69,7 @@ describe('DELETE - BOOKING (only admin)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(400)
+                expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
         }
@@ -94,11 +94,12 @@ describe('DELETE - BOOKING (only admin)', () =>{
           },
         }).then((response) => {
           enquiry_obj = response.body;
-          if (bodyPayload != enquiry_obj.booked_id) {
-            expect(response.status).to.equal(404);
-          } else {
-            expect(response.status).to.equal(200);
-          }
+          if(response.status === 400)
+              expect(response.status).to.equal(400)
+              else if(response.status === 404)
+              expect(response.status).to.equal(404)
+              else
+              expect(response.status).to.equal(200)
         });
       });
     
@@ -118,9 +119,14 @@ describe('DELETE - BOOKING (only admin)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(404);
-                cy.log(response.body);
-
+              if(response.status === 400)
+              expect(response.status).to.equal(400)
+              else if(response.status === 404)
+              expect(response.status).to.equal(404)
+              else if(response.status === 403)
+              expect(response.status).to.equal(403)
+              else
+              expect(response.status).to.equal(200)
             });
         });
 

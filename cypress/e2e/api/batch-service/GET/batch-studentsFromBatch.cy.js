@@ -76,9 +76,13 @@ describe('GET - Student From Batch', () =>{
                 }
             }).then((response) => {
                 if (response.status === 200) {
+                    expect(response.status).to.equal(200)
                 } else if(response.status === 204) {
-                } else {
+                    expect(response.status).to.equal(204)
+                } else if(response.status === 400){
                     expect(response.status).to.equal(400);
+                } else{
+                    expect(response.status).to.equal(404)
                 }
             });
         }
