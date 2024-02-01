@@ -1,26 +1,30 @@
 [
     {
-        "number_of_installments": 1,
-        "total_fees": 57320,
-        "description": "Zero installment",
+        "booking_id": 131,
+        "number_of_installments": 14,
+        "payment_term": "LUMPSUM",
+        "description": "Valid details",
         "expected_status_code": 200
     },
     {
-        "number_of_installments": 10,
-        "total_fees": 57320,
-        "description": "No. of installment more than permitted",
+        "booking_id": 131,
+        "number_of_installments": 14,
+        "payment_term": "INSTALLMENT",
+        "description": "Payment term is installment",
         "expected_status_code": 200
     },
     {
-        "number_of_installments": 5,
-        "total_fees": 57320,
-        "description": "Normal installment within 9 months",
+        "booking_id": null,
+        "number_of_installments": 14,
+        "payment_term": "LUMPSUM",
+        "description": "Booking id is null",
         "expected_status_code": 200
     },
     {
-        "number_of_installments": -1,
-        "total_fees": 57320,
-        "description": "Negative value in no. of installment(no. of installment should not accept negative value)",
+        "booking_id": 131,
+        "number_of_installments": null,
+        "payment_term": null,
+        "description": "Payment_term and number of installment are null",
         "expected_status_code": 400
     }
 

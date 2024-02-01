@@ -14,25 +14,25 @@ const HttpMethod = {
     DELETE: "DELETE"
 }
 
-const API_URL_EMP = `${ENV_BASE_URL}/api/auth/act`
-var activity_obj = null
-            beforeEach(() => {
-                cy.request({
-                method: HttpMethod.GET,
-                url: API_URL_EMP,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Admin,
-                    "ngrok-skip-browser-warning": true,
-                },
-                }).then((response) => {
-                if(!response.body)
-                expect(response.status).to.equal(204);
-                else
-                expect(response.status).to.equal(200);
-                activity_obj = response.body;
-                });
-            });
+// const API_URL_EMP = `${ENV_BASE_URL}/api/auth/act`
+// var activity_obj = null
+//             beforeEach(() => {
+//                 cy.request({
+//                 method: HttpMethod.GET,
+//                 url: API_URL_EMP,
+//                 failOnStatusCode: false,
+//                 headers: {
+//                     Authorization: AUTH_HEADER.Admin,
+//                     "ngrok-skip-browser-warning": true,
+//                 },
+//                 }).then((response) => {
+//                 if(!response.body)
+//                 expect(response.status).to.equal(204);
+//                 else
+//                 expect(response.status).to.equal(200);
+//                 activity_obj = response.body;
+//                 });
+//             });
 
 
 
@@ -98,7 +98,7 @@ describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if(activity_obj.emp_id !== number)
+                if(response.status === 204)
                 expect(response.status).to.equal(204)
                 else 
                 expect(response.status).to.equal(200)

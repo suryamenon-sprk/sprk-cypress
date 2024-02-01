@@ -34,8 +34,9 @@ describe('API-previewInstallment Test', () => {
             payload_register.forEach((testCase) => {
 
                 let bodyPayload = {
-                    number_of_installments: testCase.number_of_installments,
-                    total_fees: testCase.total_fees
+                    booking_id:testCase.booking_id,
+                    number_of_installments:testCase.number_of_installments,
+                    payment_term:testCase.payment_term
                 }
 
                 // REQUEST

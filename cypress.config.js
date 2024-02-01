@@ -5,8 +5,8 @@ module.exports = defineConfig({
   reporter: `cypress-mochawesome-reporter`, //for html reports
 
   env: {
-    TOKEN_ADMIN: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRLQVY3MCIsInVwdCI6MTcwNTU2MDc2NDg1NSwiaWF0IjoxNzA1NjQ4Nzk0LCJleHAiOjE3MDU3MzUxOTR9.yJQ3iJqYbParX1nRUJsf8z0hve2I_yjiFtcbLcEZPWs`,
-    TOKEN_SALES: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRLUlUxNyIsInVwdCI6MTcwNDQ0Njk4MTg3NiwiaWF0IjoxNzA1NjQ4ODYwLCJleHAiOjE3MDU3MzUyNjB9.DhhDHiASVF8E8DE84uHj8x-Fn-MiMvqSsi162gdXZWM`,
+    TOKEN_ADMIN: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRLQVYyMSIsInVwdCI6MTcwNjYyMTY0MDI2NywiaWF0IjoxNzA2Njc3ODQ3LCJleHAiOjE3MDY3NjQyNDd9.ezv9CYNRLl5wFowwe-KSiq9cF1tL8zGtAztfysGU1Eo`,
+    TOKEN_SALES: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRLUlU5NCIsInVwdCI6MTcwNjYyMTY0MDg2NSwiaWF0IjoxNzA2Njc3ODg2LCJleHAiOjE3MDY3NjQyODZ9.9f8Gvh7nwUWmMXrncdV5CiIDphYd6RdLvhpvIUjvnoE`,
     TOKEN_EMP:`eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOSIsInVwdCI6MTY5OTg3MTk0Mjc4OCwiaWF0IjoxNjk5OTQ3NTgxLCJleHAiOjE3MDAwMzM5ODF9.CJ5PvPcZpO-Da88Nh36TujjLK1wQ_SwgjBsyAmR_T7s`,
     BASE_URL: `https://mollusk-heroic-jaguar.ngrok-free.app`,
   },

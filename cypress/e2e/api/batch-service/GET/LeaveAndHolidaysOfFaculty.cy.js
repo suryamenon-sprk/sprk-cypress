@@ -2,7 +2,7 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const faculties = ['SPRK24PANC0','SPRK24VIV62','SPRK99RINE5','SPRK24ABD84','SPRK00SHI61']
+const faculties = ['SPRK24PANA6','SPRK24VIVAF']
 
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
