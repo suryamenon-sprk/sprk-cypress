@@ -1,30 +1,37 @@
 [
     {
-        "booking_id": 131,
-        "number_of_installments": 14,
-        "payment_term": "LUMPSUM",
-        "description": "Valid details",
-        "expected_status_code": 200
-    },
-    {
-        "booking_id": 131,
-        "number_of_installments": 14,
+        "booking_id": 15,
+        "number_of_installments": 12,
         "payment_term": "INSTALLMENT",
-        "description": "Payment term is installment",
+        "description": "Valid details",
         "expected_status_code": 200
     },
     {
         "booking_id": null,
         "number_of_installments": 14,
-        "payment_term": "LUMPSUM",
+        "payment_term": "INSTALLMENT",
         "description": "Booking id is null",
-        "expected_status_code": 200
+        "expected_status_code": 400
     },
     {
-        "booking_id": 131,
+        "booking_id": 15,
         "number_of_installments": null,
+        "payment_term": "INSTALLMENT",
+        "description": "number of installment is null",
+        "expected_status_code": 400
+    },
+    {
+        "booking_id": null,
+        "number_of_installments":null,
+        "payment_term": "INSTALLMENT",
+        "description": "booking Id and number of installment both are null",
+        "expected_status_code": 400
+    },
+    {
+        "booking_id": null,
+        "number_of_installments":null,
         "payment_term": null,
-        "description": "Payment_term and number of installment are null",
+        "description": "Payment_term is null",
         "expected_status_code": 400
     }
 

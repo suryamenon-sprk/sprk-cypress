@@ -1,0 +1,11 @@
+[
+   {
+        "days":["MONDAY","TUESDAY"],
+        "start":"2024-02-19T10:30:00.000Z",
+        "end":"2024-02-19T11:30:00.000Z",
+        "reason":"fhjvv",
+        "description": "Valid data",
+        "expected_status_code": 200
+    }
+    
+]

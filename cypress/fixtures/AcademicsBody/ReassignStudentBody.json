@@ -1,0 +1,58 @@
+[
+    {
+        "batch_id" : "BTH24FEBBTSR3",
+        "rsn_batch_id":"BTH24FEBBTSR2",
+        "stud_id" : 79,
+        "mod_id" : [230, 228],
+        "description": "Valid data",
+        "expected_status_code": 200
+    },
+    {
+        "batch_id" : null,
+        "rsn_batch_id":"BTH24FEBBTSR2",
+        "stud_id" : 79,
+        "mod_id" : [230, 228],
+        "description": "Batch id is given null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id" : "BTH24FEBBTSR3",
+        "rsn_batch_id":null,
+        "stud_id" : 79,
+        "mod_id" : [230, 228],
+        "description": "rsn_batch_id is the id where we have to mention the batch id where student is already in, It is given as null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id" : "BTH24FEBBTSR3",
+        "rsn_batch_id":"BTH24FEBBTSR2",
+        "stud_id" : null,
+        "mod_id" : [230, 228],
+        "description": "Student id is given null to check the error message",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id" : "BTH24FEBBTSR3",
+        "rsn_batch_id":"BTH24FEBBTSR2",
+        "stud_id" : 79,
+        "mod_id" : [null],
+        "description": "module id is given null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id" : "BTH24FEBBEXL2",
+        "rsn_batch_id":"BTH24FEBBTSR2",
+        "stud_id" : 79,
+        "mod_id" : [230, 228],
+        "description": "Invalid batch id",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id" : "BTH24FEBBEXL2",
+        "rsn_batch_id":"BTH24FEBBTSR3",
+        "stud_id" : 79,
+        "mod_id" : [230, 228],
+        "description": "Invalid rsn_batch_id",
+        "expected_status_code": 400
+    }
+]

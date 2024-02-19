@@ -1,0 +1,43 @@
+[{
+    "batch_id":"BTH24FEBBTSR2",
+    "stud_id": 78,
+    "mod_id":[225, 226, 227],
+    "description": "Valid data",
+    "expected_status_code": 200
+},
+{
+    "batch_id":null,
+    "stud_id": 78,
+    "mod_id":[225, 226, 227],
+    "description": "Batch Id is null",
+    "expected_status_code": 400
+},
+{
+    "batch_id":"BTH24FEBBTSR2",
+    "stud_id": null,
+    "mod_id":[225, 226, 227],
+    "description": "Student Id is null",
+    "expected_status_code": 400
+},
+{
+    "batch_id":"BTH24FEBBTSR2",
+    "stud_id": 78,
+    "mod_id":[null],
+    "description": "Module Id is null",
+    "expected_status_code": 400
+},
+{
+    "batch_id":"BTH24FEBBTSR2",
+    "stud_id": 78,
+    "mod_id":[0],
+    "description": "Module id valis is zero",
+    "expected_status_code": 400
+},
+{
+    "batch_id":"BTH24FEBBTSR2",
+    "stud_id": 78,
+    "mod_id":[0, 226, 227],
+    "description": "Module id valis is zero",
+    "expected_status_code": 400
+}
+]

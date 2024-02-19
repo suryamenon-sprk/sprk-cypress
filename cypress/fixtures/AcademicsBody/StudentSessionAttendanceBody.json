@@ -1,0 +1,210 @@
+[
+    {
+        "session_id" : "SSN24E15554",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : "ABSENT"
+                }
+        ],
+        "modules":[
+            {
+                "mod_id" : 225,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "Valid data",
+        "expected_status_code": 200
+    },
+
+    {
+        "session_id" : null,
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : "ABSENT"
+                }
+        ],
+        "modules":[
+            {
+                "mod_id" : 225,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "session id is null",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN24E15554",
+        "student_attendance" : [
+            {
+                "stud_id" : null,
+                "attendance" : "ABSENT"
+                }
+        ],
+        "modules":[
+            {
+                "mod_id" : 225,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "student id is null",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN24E15554",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : null
+                }
+        ],
+        "modules":[
+            {
+                "mod_id" : 225,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "attendance is null",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN24E15554",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : "ABSENT"
+                }
+        ],
+        "modules":[
+            {
+                "mod_id" : null,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "modules id is null",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN24E15554",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : null
+                }
+        ],
+        "modules":[
+            {
+                "mod_id" : 225,
+                "status" : null
+            }
+        ],
+        "description": "status of the module is null",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN24E15554",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : null
+                }
+        ],
+        "modules":[
+            {
+                "mod_id" : 225,
+                "status" : null
+            }
+        ],
+        "description": "status of the module is null",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN242E3E93",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : "ABSENT"
+                }
+        ],
+        "modules":[
+            {
+                "mod_id" : 225,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "Changed session id and and gave wrong module id",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN242E3E93",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : "ABSENT"
+                }
+        ],
+        "modules":[
+            {
+                "mod_id" : 225,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "Changed session id and and gave wrong module id",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN24C8319B",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : "PRESENT"
+            }
+            
+        ],
+        "modules":[
+            {
+                "mod_id" : 61,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "Changed session id and also module id and but have give student id which does not excist in the session ",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN24C8319B",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : "PRESENT"
+            }
+            
+        ],
+        "modules":[
+            {
+                "mod_id" : 61,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "Changed session id and also module id and but have give student id which does not excist in the session ",
+        "expected_status_code": 400
+    },
+    {
+        "session_id" : "SSN24C8319B",
+        "student_attendance" : [
+            {
+                "stud_id" : 78,
+                "attendance" : "PRESENT"
+            }
+            
+        ],
+        "modules":[
+            {
+                "mod_id" : 55,
+                "status" : "COMPLETED"
+            }
+        ],
+        "description": "Gave invalid module id which does not exist in the course of the batch",
+        "expected_status_code": 400
+    }
+]

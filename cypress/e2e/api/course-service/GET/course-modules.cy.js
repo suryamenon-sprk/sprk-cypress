@@ -1,12 +1,14 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
-const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
+const ENV_TOKEN_EMP = Cypress.env("TOKEN_EMP")
+// const ENV_TOKEN_BATCH = Cypress.env("BATCH_IDS")
 
-const API_URL = `${ENV_BASE_URL}/api/student/80`
+const API_URL = `${ENV_BASE_URL}/api/course/36/modules`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
-    Sales: `Bearer ${ENV_TOKEN_SALES}`
+    Faculty: `Bearer ${ENV_TOKEN_EMP}`
 }
+
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -16,13 +18,11 @@ const HttpMethod = {
 
 
 
+// DESCRIPTION
+describe('GET - Course modules', () => {
 
 
-//DESCRIPTION
-describe('GET - STUDENT-BY-ID (AllUsers)', () =>{
-
-    it('Authorization Header - No Value',
-        () => {
+        it(`Authorization Header - No Value`, () => {
             cy.request({
                 method: HttpMethod.GET,
                 url: API_URL,
@@ -31,16 +31,11 @@ describe('GET - STUDENT-BY-ID (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(404)
-            })
-        }
-    );
+                expect(response.status).to.equal(404);
+            });
+        });
 
-
-
-
-    it('Authorization Header - Invalid Value', 
-        () => {
+        it(`Authorization Header - Invalid Value`, () => {
             cy.request({
                 method: HttpMethod.GET,
                 url: API_URL,
@@ -50,17 +45,11 @@ describe('GET - STUDENT-BY-ID (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(403)
-                cy.log(response.body.error)
-            })
-        }
-    );
+                expect(response.status).to.equal(403);
+            });
+        });
 
-
-
-
-    it('Authorization Header - superuser (TOKEN)',
-        () => {
+        it(`Authorization Header - superuser (TOKEN)`, () => {
             cy.request({
                 method: HttpMethod.GET,
                 url: API_URL,
@@ -70,32 +59,33 @@ describe('GET - STUDENT-BY-ID (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body)
+                if (response.status === 200)
+                    expect(response.status).to.equal(200);
+                else if (response === 204)
+                    expect(response.status).to.equal(204);
+                else
+                    expect(response.status).to.equal(400);
             });
-        }
-    );
-    
+        });
 
-
-
-    it('Authorization Header - sales (TOKEN)',
-        () => {
+        it(`Authorization Header - Faculty (TOKEN)`, () => {
             cy.request({
                 method: HttpMethod.GET,
                 url: API_URL,
                 failOnStatusCode: false,
                 headers: {
-                    Authorization: AUTH_HEADER.Sales,
+                    Authorization: AUTH_HEADER.Faculty,
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200);
-                cy.log(response.body);
+                if (response.status === 200)
+                    expect(response.status).to.equal(200);
+                else if (response === 204)
+                    expect(response.status).to.equal(204);
+                else
+                    expect(response.status).to.equal(400);
             });
-        }
-    );
+        });
 
+    });
 
-
-});

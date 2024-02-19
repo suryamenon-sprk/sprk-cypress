@@ -1,0 +1,31 @@
+[
+    {
+        "batch_id":"BTH24FEBAEXL1",
+        "number_of_session":2,
+        "comment":"dfgf",
+        "description": "Valid data",
+        "expected_status_code": 200
+    },
+    {
+        "batch_id":null,
+        "number_of_session":2,
+        "comment":"dfgf",
+        "description": "batch id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24FEBAEXL1",
+        "number_of_session":null,
+        "comment":"dfgf",
+        "description": "Number of session is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24FEBAEXL1",
+        "number_of_session":2,
+        "comment":null,
+        "description": "Comment is null",
+        "expected_status_code": 400
+    }
+    
+]

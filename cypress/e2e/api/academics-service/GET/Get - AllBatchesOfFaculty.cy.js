@@ -1,17 +1,13 @@
-import jwtDecode from "jwt-decode";
-
-
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
-const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
+const ENV_TOKEN_EMP = Cypress.env("TOKEN_EMP")
 
-
-
-const API_URL = `${ENV_BASE_URL}/api/enquiry/`
+const API_URL = `${ENV_BASE_URL}/api/batch/faculty/batches`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
-    Sales: `Bearer ${ENV_TOKEN_SALES}`
+    Faculty: `Bearer ${ENV_TOKEN_EMP}`
 }
+
 const HttpMethod = {
     GET: "GET",
     POST: "POST",
@@ -24,8 +20,7 @@ const HttpMethod = {
 
 
 //DESCRIPTION
-describe('GET - ENQUIRY (AllUsers)', () =>{
-
+describe('GET - All Batches Of Faculty', () =>{
 
     it('Authorization Header - No Value',
         () => {
@@ -37,7 +32,9 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(404)
+                   
+            expect(response.status).to.equal(404);
+                    
             })
         }
     );
@@ -56,8 +53,9 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(403)
-                cy.log(response.body.error)
+                
+                    expect(response.status).to.equal(403);
+                
             })
         }
     );
@@ -67,8 +65,6 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
 
     it('Authorization Header - superuser (TOKEN)',
         () => {
-
-          
             cy.request({
                 method: HttpMethod.GET,
                 url: API_URL,
@@ -78,11 +74,11 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.status === 204)
-                expect(response.status).to.equal(204)
-                else
-                expect(response.status).to.equal(200)
-                cy.log(response.body)
+                    if(response.status === 200)
+                    expect(response.status).to.equal(200)
+                    else
+                    expect(response.status).to.equal(204);
+                
             });
         }
     );
@@ -90,7 +86,26 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
 
 
 
-   
+    it('Authorization Header - Faculty (TOKEN)',
+        () => {
+            cy.request({
+                method: HttpMethod.GET,
+                url: API_URL,
+                failOnStatusCode: false,
+                headers: {
+                    Authorization: AUTH_HEADER.Faculty,
+                    "ngrok-skip-browser-warning": true
+                }
+            }).then((response) => {
+               
+                if(response.status === 200)
+                expect(response.status).to.equal(200)
+                else
+                expect(response.status).to.equal(204);
+                
+            });
+        }
+    );
 
 
 

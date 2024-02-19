@@ -1,0 +1,31 @@
+[
+    {
+        "student_id":78,
+        "module_id":[35,36],
+        "course_id":11,
+        "description": "Valid data",
+        "expected_status_code": 200
+    },
+    {
+        "student_id":null,
+        "module_id":[35,36],
+        "course_id":11,
+        "description": "Student id is null",
+        "expected_status_code": 400
+    },
+
+    {
+        "student_id":78,
+        "module_id":[null],
+        "course_id":11,
+        "description": "Module id is null",
+        "expected_status_code": 400
+    },
+    {
+        "student_id":78,
+        "module_id":[35,36],
+        "course_id":null,
+        "description": "Valid data",
+        "expected_status_code": 400
+    }
+]
