@@ -1,16 +1,14 @@
 import "cypress-localstorage-commands";
 
-export function bypassLogin() {    
+export function bypassLogin(auth, token) {    
       cy.setLocalStorage(
         "persist:auth",
-        JSON.stringify(
-            Cypress.env("auth")
-        )
+        JSON.stringify(auth)
       );
 
       cy.setLocalStorage(
         "token",
-        Cypress.env("token")
+        token
       );
 }
 
