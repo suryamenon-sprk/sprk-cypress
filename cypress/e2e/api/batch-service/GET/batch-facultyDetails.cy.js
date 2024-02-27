@@ -2,9 +2,9 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const faculties = ['SPRK24PANC0','SPRK24VIV62','SPRK99RINE5','SPRK24ABD84','SPRK00SHI61']
+const FACULTY_ID = Cypress.env("FACULTY_ID") 
 
-
+const API_URL = `${ENV_BASE_URL}/api/batch/get/faculty/`
 
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
@@ -26,13 +26,13 @@ const HttpMethod = {
 describe('GET - faculty details', () =>{
    
 
-    faculties.forEach(faculty=>{
-        const API_URL = `${ENV_BASE_URL}/api/batch/get/faculty/details?facultyUid=${faculty}&start=null&end=null`
+    FACULTY_ID.forEach(faculty=>{
+       
     it('Authorization Header - No Value',
         () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}details?facultyUid=${faculty}&start=null&end=null`,
                 failOnStatusCode: false,
                 headers: {
                     "ngrok-skip-browser-warning": true
@@ -52,7 +52,7 @@ describe('GET - faculty details', () =>{
         () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}details?facultyUid=${faculty}&start=null&end=null`,
                 failOnStatusCode: false,
                 headers: {
                     "Authorization": "HALO",
@@ -73,7 +73,7 @@ describe('GET - faculty details', () =>{
         () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}details?facultyUid=${faculty}&start=null&end=null`,
                 failOnStatusCode: false,
                 headers: {
                     Authorization: AUTH_HEADER.Admin,
@@ -96,7 +96,7 @@ describe('GET - faculty details', () =>{
         () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}details?facultyUid=${faculty}&start=null&end=null`,
                 failOnStatusCode: false,
                 headers: {
                     Authorization: AUTH_HEADER.Sales,

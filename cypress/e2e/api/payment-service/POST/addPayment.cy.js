@@ -1,7 +1,7 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN = Cypress.env("TOKEN_ADMIN")
 
-const API_URL = `${ENV_BASE_URL}/api/payment/add`
+const API_URL = `${ENV_BASE_URL}/api/payment/add/5bd83ee2-8474-4fd2-95c7-10c2aec36dc7`
 const TOKEN = `${ENV_TOKEN}`
 const HttpMethod = {
     GET: "GET",

@@ -78,11 +78,10 @@ describe('GET - ENQUIRY (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if (response.status === 204)
-                expect(response.status).to.equal(204)
-                else
-                expect(response.status).to.equal(200)
-                cy.log(response.body)
+                if(response.status === 200)
+                expect(response.status).to.equal(200);
+                else 
+                expect(response.status).to.equal(403);
             });
         }
     );

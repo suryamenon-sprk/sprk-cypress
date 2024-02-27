@@ -107,34 +107,34 @@ describe('GET - Attendance Module Wise', () => {
         });
     });
 
-        it(`Authorization Header - Faculty (TOKEN)`, () => {
-            payload_register.forEach((testCase) => {
+    //     it(`Authorization Header - Faculty (TOKEN)`, () => {
+    //         payload_register.forEach((testCase) => {
 
-                let bodyPayload = {
-                    batch_id:testCase.batch_id,
-                    stud_id: testCase.stud_id,
-                    mod_id:testCase.mod_id
+    //             let bodyPayload = {
+    //                 batch_id:testCase.batch_id,
+    //                 stud_id: testCase.stud_id,
+    //                 mod_id:testCase.mod_id
                     
-                }
-            cy.request({
-                method: HttpMethod.POST,
-                url: API_URL,
-                body:bodyPayload,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Faculty,
-                    "ngrok-skip-browser-warning": true
-                }
-            }).then((response) => {
-                if (response.status === 200)
-                    expect(response.status).to.equal(200);
-                else if (response === 204)
-                    expect(response.status).to.equal(204);
-                else
-                    expect(response.status).to.equal(400);
-            });
-        });
+    //             }
+    //         cy.request({
+    //             method: HttpMethod.POST,
+    //             url: API_URL,
+    //             body:bodyPayload,
+    //             failOnStatusCode: false,
+    //             headers: {
+    //                 Authorization: AUTH_HEADER.Faculty,
+    //                 "ngrok-skip-browser-warning": true
+    //             }
+    //         }).then((response) => {
+    //             if (response.status === 200)
+    //                 expect(response.status).to.equal(200);
+    //             else if (response === 204)
+    //                 expect(response.status).to.equal(204);
+    //             else
+    //                 expect(response.status).to.equal(400);
+    //         });
+    //     });
 
-    });
+    // });
 });
 

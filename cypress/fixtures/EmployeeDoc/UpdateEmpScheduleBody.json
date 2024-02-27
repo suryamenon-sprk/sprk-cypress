@@ -1,0 +1,65 @@
+[
+    {
+        "days":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"],
+        "in_time":"2024-02-02T05:30:00.000Z",
+        "out_time":"2024-02-02T13:30:00.000Z",
+        "leaves":15,
+        "req_id":"SPRK24SURA4",
+        "description": "Valid data",
+        "expected_status_code": 200
+    },
+    {
+        "days":[null],
+        "in_time":"2024-02-02T05:30:00.000Z",
+        "out_time":"2024-02-02T13:30:00.000Z",
+        "leaves":15,
+        "req_id":"SPRK24SURA4",
+        "description": "Week days is Null",
+        "expected_status_code": 400
+    },
+    {
+        "days":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"],
+        "in_time":null,
+        "out_time":"2024-02-02T13:30:00.000Z",
+        "leaves":15,
+        "req_id":"SPRK24SURA4",
+        "description": "In time of the employee given null",
+        "expected_status_code": 400
+    },
+    {
+        "days":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"],
+        "in_time":"2024-02-02T05:30:00.000Z",
+        "out_time":null,
+        "leaves":15,
+        "req_id":"SPRK24SURA4",
+        "description": "Out time of the employee given null",
+        "expected_status_code": 400
+    },
+    {
+        "days":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"],
+        "in_time":"2024-02-02T05:30:00.000Z",
+        "out_time":"2024-02-02T13:30:00.000Z",
+        "leaves":null,
+        "req_id":"SPRK24SURA4",
+        "description": "Number of leaves granted to employee given null",
+        "expected_status_code": 400
+    },
+    {
+        "days":["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"],
+        "in_time":"2024-02-02T05:30:00.000Z",
+        "out_time":"2024-02-02T13:30:00.000Z",
+        "leaves":15,
+        "req_id":null,
+        "description": "req_id i.e user id or employee id for whom the schedule is set is given null",
+        "expected_status_code": 400
+    },
+    {
+        "days":null,
+        "in_time":"2024-02-02T05:30:00.000Z",
+        "out_time":"2024-02-02T13:30:00.000Z",
+        "leaves":15,
+        "req_id":"SPRK24SURA4",
+        "description": "Week days given null",
+        "expected_status_code": 400
+    }
+]

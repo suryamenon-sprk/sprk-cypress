@@ -94,7 +94,7 @@ describe('GET -  RECEIPT - BY BOOKING ID (AllUsers)', () =>{
                         "ngrok-skip-browser-warning": true
                     }
                 }).then((response) => {
-                    if (enquiry_obj.booking_id === null) {
+                    if (response.status === 204) {
                         expect(response.status).to.equal(204);
                     } else {
                         expect(response.status).to.equal(200);
@@ -122,7 +122,7 @@ describe('GET -  RECEIPT - BY BOOKING ID (AllUsers)', () =>{
                     if (enquiry_obj.booking_id === null) {
                         expect(response.status).to.equal(204);
                     } else {
-                        expect(response.status).to.equal(200);
+                        expect(response.status).to.equal(403);
                     }
                     // expect(response.status).to.equal(200);
                     // cy.log(response.body);

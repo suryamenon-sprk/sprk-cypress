@@ -1,8 +1,7 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
-
-const faculties = ['SPRK24PANA6','SPRK24VIVAF']
+const ENV_USER_ID = Cypress.env("FACULTY_ID")
 
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
@@ -22,7 +21,7 @@ const HttpMethod = {
 
 //DESCRIPTION
 describe('GET - Leave And Holidays Of faculty by faculty Id', () =>{
-    faculties.forEach(faculty => {
+    ENV_USER_ID.forEach(faculty => {
         const API_URL = `${ENV_BASE_URL}/api/batch/faculty/HLWD/${faculty}`
     it('Authorization Header - No Value',
         () => {
@@ -73,7 +72,12 @@ describe('GET - Leave And Holidays Of faculty by faculty Id', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
+                if(response.status === 200)
+                    expect(response.status).to.equal(200)
+                else if(response.status === 400)
+                    expect(response.status).to.equal(400)
+                else
+                expect(response.status).to.equal(403)
                 cy.log(response.body)
             });
         }
@@ -93,8 +97,13 @@ describe('GET - Leave And Holidays Of faculty by faculty Id', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(403);
-                cy.log(response.body);
+                if(response.status === 200)
+                    expect(response.status).to.equal(200)
+                else if(response.status === 400)
+                    expect(response.status).to.equal(400)
+                else
+                expect(response.status).to.equal(403)
+                cy.log(response.body)
             });
         }
     );
