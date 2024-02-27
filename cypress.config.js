@@ -5,7 +5,7 @@ module.exports = defineConfig({
   reporter: `cypress-mochawesome-reporter`, //for html reports
 
   env: {
-    TOKEN_ADMIN: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA4MzE5NTAyLCJleHAiOjE3MDg0MDU5MDJ9.lpsIFak_R4LYlfefXzeS0mPqD3RIOfT95dAJ3oz4PpM`,
+    TOKEN_ADMIN: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5MDE5MzUzLCJleHAiOjE3MDkxMDU3NTN9.eV6dKtN7LARuXEUWFb3ylRImTAoF09Ak8xvu2N6rdMM`,
     TOKEN_SALES: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLUlU0NyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA4MzE5NTU5LCJleHAiOjE3MDg0MDU5NTl9.LRa6AIWu1dz_M8YkYZPmpm1iw1NEn11782BTddHy6Bk`,
     TOKEN_EMP:`eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRBUkswOCIsInVwdCI6MTcwNzI5Nzg3NDA1MiwiaWF0IjoxNzA4MzE5NTk0LCJleHAiOjE3MDg0MDU5OTR9.CB_HQBYkszzXY-_jfkCiYhtqzHT8M8zw7W_S_mDO_co`,
     BASE_URL: `https://mollusk-heroic-jaguar.ngrok-free.app`,
@@ -15,7 +15,7 @@ module.exports = defineConfig({
     auth: {
       kavita: {
         "user": "\"kavita@sprktechnologies.in\"",
-        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA4OTMyMDA4LCJleHAiOjE3MDkwMTg0MDh9.MWbLU3-zGUTm8nYwuNprWPf9N7pS_dCyHpa0LrgaxFM\"",
+        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5MDE5MzUzLCJleHAiOjE3MDkxMDU3NTN9.eV6dKtN7LARuXEUWFb3ylRImTAoF09Ak8xvu2N6rdMM\"",
         "roles": "[\"ROLE_ADMIN\"]",
         "userId": "\"SPRK23KAV0C\"",
         "userDetails": "{\"emp_id\":\"SPRK23KAV0C\",\"name\":\"Kavita Pankaj Pawar\",\"email\":\"kavita@sprktechnologies.in\",\"enabled\":true,\"authorities\":[\"ROLE_ADMIN\"],\"profile\":false,\"entitlements\":[{\"name\":\"EMS\",\"sub\":[{\"name\":\"REQUESTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"LEAVE_REQUESTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"FACULTY_EXAM\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"EMPLOYEES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"ACTIVITIES\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"ACADEMICS\",\"sub\":[{\"name\":\"MY_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"DASHBOARD\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"BATCH_SCHEDULING\",\"sub\":[{\"name\":\"FACULTY_SCHEDULE\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"STUDENT_SCHEDULE\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"SESSION_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"LMS\",\"sub\":[{\"name\":\"LEADS\",\"actions\":[\"VIEW\",\"CREATE\",\"DELETE\"]}]},{\"name\":\"CENTER\",\"sub\":[{\"name\":\"BOOKINGS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"COLLECTIONS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"ENROLLMENTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"RBC\",\"actions\":[\"VIEW\",\"CREATE\"]}]}]}",
