@@ -1,0 +1,17 @@
+[
+    {
+        "student_firstname": "Rupesh",
+        "student_lastname": "Mishra",
+        "primary_mobile": "90298888999",
+        "primary_email": "example@exam.com",
+        "description": "Enquiry Creation Modal - All Valid Details",
+        "skip": true
+      },
+      {
+        "student_firstname": " ",
+        "student_lastname": "M",
+        "primary_mobile": "9",
+        "primary_email": "example@exam.com",
+        "description": "Enquiry Creation Modal - All InValid Details"
+      }
+]
