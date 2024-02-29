@@ -1,0 +1,29 @@
+[
+
+    {
+        "payment_method":"INSTALLMENT",
+        "discount":"2500",
+        "discount_reason":"Enjoy",
+        "other_fees":"1500",
+        "no_of_installments":"6",
+        "payment_date":"2024-02-02",
+        "paid_amount":"2000",
+        "payment_mode":"CASH",
+        "description":"Cash Payment with all valid Details"
+
+    },
+    {
+        "payment_method":"LUMPSUM",
+        "discount":"200",
+        "discount_reason":"Enjoooyyyyyyy",
+        "other_fees":"15",
+        "no_of_installments":"6",
+        "payment_date":"2024-02-02",
+        "paid_amount":"2000",
+        "payment_mode":"CASH",
+        "description":"Cash Payment with all valid Details"
+
+    }
+
+
+]

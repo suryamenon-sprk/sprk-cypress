@@ -1,0 +1,31 @@
+[
+    {
+        "firstname": "Sneha",
+        "lastname": "Varghese",
+        "phone": "9989995897",
+        "email": "fresh@gmail.com",
+        "authorities": ["ROLE_SALES"],
+        "joining_date": "2023-11-01",
+        "description": "No null values"
+    },
+    {
+        "firstname": null,
+        "lastname": "King",
+        "phone": "8888888888",
+        "email": "john@gmail.com",
+        "authorities": ["ROLE_FACULTY"],
+        "joining_date": "2023-11-01",
+        "permission":["BATCH SCHEDULING"],
+        "description": "firstname is null(500 error need to be fixed)"
+    },
+    {
+        "firstname": "John",
+        "lastname": null,
+        "phone": "8888888888",
+        "email": "john@gmail.com",
+        "authorities": ["ROLE_ADMIN"],
+        "joining_date": "2023-11-01",
+        "permission":["BATCH SCHEDULING"],
+        "description": "lastname is null"
+    }
+]
