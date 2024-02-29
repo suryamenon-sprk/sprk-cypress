@@ -1,7 +1,7 @@
 [
     {
         "number_of_installments": 6,
-        "booking_id": 15,
+        "booking_id": 144,
         "payment_term": "LUMPSUM",
         "description": "Valid number of installment and booking id",
         "expected_status_code": 200

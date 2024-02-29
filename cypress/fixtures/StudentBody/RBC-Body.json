@@ -52,7 +52,7 @@
         "create_credit": false,
         "rbc_reason": "HALO",
         "description": "course group id is null",
-        "expected_status_code": 200
+        "expected_status_code": 400
     },
     {
         "course_group_id": [2],

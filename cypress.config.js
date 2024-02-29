@@ -12,6 +12,7 @@ module.exports = defineConfig({
     BATCH_IDS: [`BTH24FEBCJAV1`,`BTH24FEBCJAV2`,`BTH24FEBTGST2`,`BTH24FEBTGST3`],
     SESSION_REQUEST: [`5cb9f217-eebd-42ec-bafc-bb797ec14540`,`cea41a1c-7e87-4fef-8457-63d842cc0b3e`,`3c90e80f-69a8-440a-974f-d83275cd4c1d`],
     FACULTY_ID: ["SPRK24SURA4","SPRK24DIS81"],
+    PAYMENT_ID: ["f7ea93bf-a4ef-4ba9-a380-a1dec4814bd2","c7257883-5604-47c0-97c5-4117037faf4b","881fdd67-79c9-44a2-a1b3-adf700512c5e","518f92ca-50a2-4edb-8fff-2b7c59405c82","1c897630-19dd-4cf4-9a12-bc124e2891e6","c73e3cd8-e26d-412d-94f1-ee329f73cef0","0b4799cd-e2ce-41ab-8e6f-da9ba8c8b138","d679d6c4-8d4f-40ad-8a0d-876831a56196","4632afd8-4e0c-4d89-808d-9a30cdc6406e","8c6b383c-eb74-46a7-8b58-f52dd7d41361"],
 
     auth: {
       kavita: {

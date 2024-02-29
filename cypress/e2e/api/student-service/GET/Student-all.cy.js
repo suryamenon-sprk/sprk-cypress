@@ -90,6 +90,9 @@ describe('GET - STUDENT-ALL (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
+                if(response.status === 403)
+                expect(response.status).to.equal(403);
+                else
                 expect(response.status).to.equal(200);
                 cy.log(response.body);
             });

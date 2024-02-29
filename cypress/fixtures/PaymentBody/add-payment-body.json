@@ -1,9 +1,9 @@
 [
     {
         "payment_month": "2024-02-29",
-        "paid_amount": 3140,
-        "due_amount": 3140,
-        "booking_id": 139,
+        "paid_amount": 27709,
+        "due_amount": 27709,
+        "booking_id": 143,
         "payment_mode": "CASH",
         "transaction_id": null,
         "cheque_number": null,
@@ -12,12 +12,12 @@
         "branch_name": null,
         "authorization_code": null,
         "description": "No null value",
-        "expected_status_code": 400
+        "expected_status_code": 201
     },
     {
         "payment_month": null,
-        "paid_amount": 5000,
-        "due_amount": 5000,
+        "paid_amount": 27709,
+        "due_amount": 27709,
         "booking_id": 60,
         "payment_mode": "CASH",
         "transaction_id": null,
@@ -27,12 +27,12 @@
         "branch_name": null,
         "authorization_code": null,
         "description": "Payment month is null",
-        "expected_status_code": 404
+        "expected_status_code": 400
     },
     {
-        "payment_month": "2024-05-18",
+        "payment_month": "2024-02-29",
         "paid_amount": null,
-        "due_amount": 5000,
+        "due_amount": 27709,
         "booking_id": 60,
         "payment_mode": "CASH",
         "transaction_id": null,
@@ -42,10 +42,10 @@
         "branch_name": null,
         "authorization_code": null,
         "description": "Paid amount is null",
-        "expected_status_code": 404
+        "expected_status_code": 400
     },
     {
-        "payment_month": "2024-05-18",
+        "payment_month": "2024-02-29",
         "paid_amount": 5000,
         "due_amount": 5000,
         "booking_id": null,
@@ -60,10 +60,10 @@
         "expected_status_code": 400
     },
     {
-        "payment_month": "2024-05-18",
-        "paid_amount": 5000,
-        "due_amount": 5000,
-        "booking_id": 60,
+        "payment_month": "2024-02-29",
+        "paid_amount": 27709,
+        "due_amount": 27709,
+        "booking_id": 143,
         "payment_mode": "CREDIT_CARD",
         "transaction_id": 12333523,
         "cheque_number": null,
@@ -72,13 +72,13 @@
         "branch_name": null,
         "authorization_code": null,
         "description": "Payment mode credit card",
-        "expected_status_code": 404
+        "expected_status_code": 201
     },
     {
-        "payment_month": "2024-05-18",
-        "paid_amount": 5000,
-        "due_amount": 5000,
-        "booking_id": 60,
+        "payment_month": "2024-02-29",
+        "paid_amount": 27709,
+        "due_amount": 27709,
+        "booking_id": 143,
         "payment_mode": "DEBIT_CREDIT",
         "transaction_id": 203654,
         "cheque_number": null,
@@ -87,28 +87,28 @@
         "branch_name": null,
         "authorization_code": null,
         "description": "Payment mode debit card",
-        "expected_status_code": 400
+        "expected_status_code": 201
     },
     {
-        "payment_month": "2024-05-18",
-        "paid_amount": 5000,
-        "due_amount": 5000,
-        "booking_id": 60,
+        "payment_month": "2024-02-29",
+        "paid_amount": 27709,
+        "due_amount": 27709,
+        "booking_id": 143,
         "payment_mode": "CREDIT_CARD",
-        "transaction_id": "dgf521452252",
+        "transaction_id": "dgffrgrgtgt",
         "cheque_number": null,
         "cheque_date": null,
         "bank_name": null,
         "branch_name": null,
         "authorization_code": null,
-        "description": "Invalid transaction id",
+        "description": "Invalid transaction id it does not consider character only",
         "expected_status_code": 400
     },
     {
-        "payment_month": "2024-05-18",
-        "paid_amount": 5000,
-        "due_amount": 5000,
-        "booking_id":241,
+        "payment_month": "2024-02-29",
+        "paid_amount": 27709,
+        "due_amount": 27709,
+        "booking_id":143,
         "payment_mode": "NET_BANKING",
         "transaction_id": null,
         "cheque_number": null,
@@ -117,28 +117,28 @@
         "branch_name": null,
         "authorization_code": 1235285,
         "description": "Payment mode net banking",
-        "expected_status_code": 404
+        "expected_status_code": 201
     },
     {
-        "payment_month": "2024-05-18",
-        "paid_amount": 5000,
-        "due_amount": 5000,
-        "booking_id": 60,
+        "payment_month": "2024-02-29",
+        "paid_amount": 785,
+        "due_amount": 7400,
+        "booking_id": 141,
         "payment_mode": "NET_BANKING",
         "transaction_id": null,
         "cheque_number": null,
         "cheque_date": null,
         "bank_name": null,
         "branch_name": null,
-        "authorization_code": "fdgf554555",
+        "authorization_code": "fdgfrgfvf",
         "description": "Invalid authorization code",
         "expected_status_code": 400
     },
     {
-        "payment_month": "2024-05-18",
-        "paid_amount": 43500,
-        "due_amount": 43500,
-        "booking_id": 231,
+        "payment_month": "2024-02-29",
+        "paid_amount": 27709,
+        "due_amount": 27709,
+        "booking_id": 143,
         "payment_mode": "CHEQUE",
         "transaction_id": null,
         "cheque_number": 123658,
@@ -147,13 +147,13 @@
         "branch_name": "Nariman point",
         "authorization_code": null,
         "description": "Payemnt mode cheque",
-        "expected_status_code": 400
+        "expected_status_code": 201
     },
     {
-        "payment_month": "2024-05-18",
-        "paid_amount": 5000,
-        "due_amount": 5000,
-        "booking_id": 60,
+        "payment_month": "2024-02-29",
+        "paid_amount": 27709,
+        "due_amount": 27709,
+        "booking_id": 143,
         "payment_mode": "CHEQUE",
         "transaction_id": null,
         "cheque_number": 123585,

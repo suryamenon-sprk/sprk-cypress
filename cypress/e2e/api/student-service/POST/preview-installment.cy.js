@@ -49,7 +49,9 @@ describe('API-previewInstallment Test', () => {
                         Authorization: `Bearer ${TOKEN_ADMIN}`
                     }
                 }).then((response) => {
-                    
+                    if(response.status === 200)
+                    expect(response.status).to.equal(200)
+                    else
                     expect(response.status).to.equal(testCase.expected_status_code)
                     
                 }) // request

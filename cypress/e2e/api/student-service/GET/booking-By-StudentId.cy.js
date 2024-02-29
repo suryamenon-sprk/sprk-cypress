@@ -1,8 +1,9 @@
+
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const API_URL = `${ENV_BASE_URL}/api/student/bookings/s/26`
+const API_URL = `${ENV_BASE_URL}/api/student/bookings/s/`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -14,18 +15,16 @@ const HttpMethod = {
     DELETE: "DELETE"
 }
 
+// DESCRIPTION
+describe('GET - BOOKING - BY - STUDENT-ID  (AllUsers)', () => {
+   
+    let studentId = 107;
 
-
-
-
-//DESCRIPTION
-describe('GET - BOOKING - BY - STUDENT-ID  (AllUsers)', () =>{
-
-    it('Authorization Header - No Value',
-        () => {
+    for (let stuId = 100; stuId < studentId; stuId++) {
+        it('Authorization Header - No Value', () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}${stuId}`,
                 failOnStatusCode: false,
                 headers: {
                     "ngrok-skip-browser-warning": true
@@ -33,17 +32,12 @@ describe('GET - BOOKING - BY - STUDENT-ID  (AllUsers)', () =>{
             }).then((response) => {
                 expect(response.status).to.equal(404)
             })
-        }
-    );
+        });
 
-
-
-
-    it('Authorization Header - Invalid Value', 
-        () => {
+        it('Authorization Header - Invalid Value', () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}${stuId}`,
                 failOnStatusCode: false,
                 headers: {
                     "Authorization": "HALO",
@@ -53,17 +47,12 @@ describe('GET - BOOKING - BY - STUDENT-ID  (AllUsers)', () =>{
                 expect(response.status).to.equal(403)
                 cy.log(response.body.error)
             })
-        }
-    );
+        });
 
-
-
-
-    it('Authorization Header - superuser (TOKEN)',
-        () => {
+        it('Authorization Header - superuser (TOKEN)', () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}${stuId}`,
                 failOnStatusCode: false,
                 headers: {
                     Authorization: AUTH_HEADER.Admin,
@@ -73,17 +62,12 @@ describe('GET - BOOKING - BY - STUDENT-ID  (AllUsers)', () =>{
                 expect(response.status).to.equal(200)
                 cy.log(response.body)
             });
-        }
-    );
-    
+        });
 
-
-
-    it('Authorization Header - sales (TOKEN)',
-        () => {
+        it('Authorization Header - sales (TOKEN)', () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}${stuId}`,
                 failOnStatusCode: false,
                 headers: {
                     Authorization: AUTH_HEADER.Sales,
@@ -93,9 +77,6 @@ describe('GET - BOOKING - BY - STUDENT-ID  (AllUsers)', () =>{
                 expect(response.status).to.equal(200);
                 cy.log(response.body);
             });
-        }
-    );
-
-
-
+        });
+    }
 });

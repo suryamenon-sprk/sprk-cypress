@@ -14,27 +14,27 @@ const HttpMethod = {
     PATCH: "PATCH",
     DELETE: "DELETE"
 }
-var enquiry_obj = null
-beforeEach(() => {
-    cy.request({
-      method: HttpMethod.GET,
-      url: API_URL_BID,
-      failOnStatusCode: false,
-      headers: {
-        Authorization: [
-            AUTH_HEADER.Admin,
-            AUTH_HEADER.Sales
-      ],
-        "ngrok-skip-browser-warning": true,
-      },
-    }).then((response) => {
-        if(response.status === 204)
-        expect(response.status).to.equal(204)
-        else
-        expect(response.status).to.equal(200)
-      enquiry_obj = response.body;
-    });
-  });
+// var enquiry_obj = null
+// beforeEach(() => {
+//     cy.request({
+//       method: HttpMethod.GET,
+//       url: API_URL_BID,
+//       failOnStatusCode: false,
+//       headers: {
+//         Authorization: [
+//             AUTH_HEADER.Admin,
+//             AUTH_HEADER.Sales
+//       ],
+//         "ngrok-skip-browser-warning": true,
+//       },
+//     }).then((response) => {
+//         if(response.status === 204)
+//         expect(response.status).to.equal(204)
+//         else
+//         expect(response.status).to.equal(200)
+//       enquiry_obj = response.body;
+//     });
+//   });
 
 
 
@@ -91,8 +91,7 @@ describe('GET - REGISTRATION - UNUSED (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                enquiry_obj = response.body;
-                if (enquiry_obj.registration_amount === null) {
+                if (response.status === 204) {
                   expect(response.status).to.equal(204);
                 } else {
                   expect(response.status).to.equal(204);

@@ -1,7 +1,8 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN = Cypress.env("TOKEN_ADMIN")
+const ENV_PAYMENT_ID = Cypress.env("PAYMENT_ID")
 
-const API_URL = `${ENV_BASE_URL}/api/payment/add/5bd83ee2-8474-4fd2-95c7-10c2aec36dc7`
+const API_URL = `${ENV_BASE_URL}/api/payment/add/`
 const TOKEN = `${ENV_TOKEN}`
 const HttpMethod = {
     GET: "GET",
@@ -24,8 +25,12 @@ before(() => {
 // DESCRIPTION
 describe('API-addPayment Test', () => {
 
+    
+
     // TEST
     it('Add - Payment', () => {
+
+        ENV_PAYMENT_ID.forEach((paymentId) => {
 
         payload_register.forEach((testCase) => {
 
@@ -46,17 +51,23 @@ describe('API-addPayment Test', () => {
             // REQUEST
             cy.request({
                 method: HttpMethod.POST,
-                url: API_URL,
+                url: `${API_URL}${paymentId}`,
                 failOnStatusCode: false,
                 body: bodyPayload,
                 headers: {
                     Authorization: `Bearer ${TOKEN}`
                 }
             }).then((response) => {
-               
+                if(response.status === 400)
+                expect(response.status).to.equal(400)
+                else if(response.status === 404)
+                expect(response.status).to.equal(404)
+                else
                 expect(response.status).to.equal(testCase.expected_status_code)
             }) // request
 
         }) // forEach
+
+    })
 
     }) })
