@@ -1,9 +1,9 @@
 [
     {
-        "payment_month": "2024-05-18",
-        "paid_amount": 2130,
-        "due_amount": 2130,
-        "booking_id": 132,
+        "payment_month": "2024-02-29",
+        "paid_amount": 3140,
+        "due_amount": 3140,
+        "booking_id": 139,
         "payment_mode": "CASH",
         "transaction_id": null,
         "cheque_number": null,
