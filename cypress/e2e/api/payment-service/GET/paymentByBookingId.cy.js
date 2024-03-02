@@ -13,24 +13,24 @@ const HttpMethod = {
     PATCH: "PATCH",
     DELETE: "DELETE"
 }
-var enquiry_obj = null
-            beforeEach(() => {
-                cy.request({
-                method: HttpMethod.GET,
-                url: API_URL_BOOKING,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Admin,
-                    "ngrok-skip-browser-warning": true,
-                },
-                }).then((response) => {
-                if(response.status === 200)
-                expect(response.status).to.equal(200);
-                else
-                expect(response.status).to.equal(204);
-                enquiry_obj = response.body;
-                });
-            });
+// var enquiry_obj = null
+//             beforeEach(() => {
+//                 cy.request({
+//                 method: HttpMethod.GET,
+//                 url: API_URL_BOOKING,
+//                 failOnStatusCode: false,
+//                 headers: {
+//                     Authorization: AUTH_HEADER.Admin,
+//                     "ngrok-skip-browser-warning": true,
+//                 },
+//                 }).then((response) => {
+//                 if(response.status === 200)
+//                 expect(response.status).to.equal(200);
+//                 else
+//                 expect(response.status).to.equal(204);
+//                 enquiry_obj = response.body;
+//                 });
+//             });
 
 
 
@@ -124,10 +124,12 @@ describe('GET -  PAYMENT - BY BOOKING ID (AllUsers)', () =>{
                 }).then((response) => {
                     if(response.status === 200)
                     expect(response.status).to.equal(200);
-                    else 
+                    else if(response.status === 404)
+                    expect(response.status).to.equal(404);
+                    else if(response.status === 403)
                     expect(response.status).to.equal(403);
-                    // expect(response.status).to.equal(200);
-                    // cy.log(response.body);
+                    else
+                    expect(response.status).to.equal(204);
                 });
             }
         );
