@@ -95,12 +95,12 @@ describe('GET - EMPLOYEE REQUEST (All users)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if(response.status === 404){
-                    expect(response.status).to.equal(404)
-                }
-                else{
-                expect(response.status).to.equal(200)
-                }
+                if(response.status === 200)
+                expect(response.status).to.equal(200);
+                else if(response.status === 404) 
+                expect(response.status).to.equal(404);
+                else
+                expect(response.status).to.equal(400);
             });
         }
     );

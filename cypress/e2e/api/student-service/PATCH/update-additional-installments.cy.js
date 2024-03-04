@@ -51,7 +51,7 @@ describe('API-Add - Installments Test', () => {
                     if (response.status === 400){
                     expect(response.status).to.equal(400)
                     } else{
-                        expect(response.status).to.equal(400)
+                        expect(response.status).to.equal(200)
                     }
                     
                 }) // request

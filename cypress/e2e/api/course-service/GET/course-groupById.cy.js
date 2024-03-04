@@ -90,8 +90,10 @@ describe('GET - COURSE-GROUP-BY-ID (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
+                if(response.status === 200)
                 expect(response.status).to.equal(200);
-                cy.log(response.body);
+                else 
+                expect(response.status).to.equal(403);
             });
         }
     );

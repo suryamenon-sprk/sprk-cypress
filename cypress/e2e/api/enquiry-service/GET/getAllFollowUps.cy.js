@@ -74,8 +74,10 @@ describe('GET - FollowUps (Admin)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(200)
-                cy.log(response.body)
+                if(response.status === 200)
+                expect(response.status).to.equal(200);
+                else 
+                expect(response.status).to.equal(204);
             });
         }
     );

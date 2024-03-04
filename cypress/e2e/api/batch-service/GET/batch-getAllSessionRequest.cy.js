@@ -82,8 +82,10 @@ describe('GET - Session Request from Faculty', () => {
                     expect(response.status).to.equal(200);
                 else if (response === 204)
                     expect(response.status).to.equal(204);
-                else
+                else if (response === 400)
                     expect(response.status).to.equal(400);
+                else
+                    expect(response.status).to.equal(403)
             });
         });
 

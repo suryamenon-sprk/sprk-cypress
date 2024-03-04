@@ -1,0 +1,44 @@
+[
+    {
+        "batch_id":"BTH24FEBCJAV1",
+        "stud_id": 76,
+        "mod_id":[120, 122, 124, 126],
+        "description": "Valid details",
+        "expected_status_code": 200
+    },
+    {
+        "batch_id":null,
+        "stud_id": 79,
+        "mod_id":[754, 756],
+        "description": "Batch id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24FEBBEXL3",
+        "stud_id": null,
+        "mod_id":[754, 756],
+        "description": "Student id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24FEBBEXL3",
+        "stud_id": 79,
+        "mod_id":null,
+        "description": "module id is null",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24FEBBEXL3",
+        "stud_id": 79,
+        "mod_id":[null],
+        "description": "module id is null inside array",
+        "expected_status_code": 400
+    },
+    {
+        "batch_id":"BTH24FEBBEXL3",
+        "stud_id": 79,
+        "mod_id":[0],
+        "description": "zero inside module id array",
+        "expected_status_code": 400
+    }
+]

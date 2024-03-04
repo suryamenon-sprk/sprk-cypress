@@ -90,8 +90,11 @@ describe('GET - RBC - HISTORY  (Admin)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                expect(response.status).to.equal(403);
-                cy.log(response.body);
+                if(response.status === 403)
+                expect(response.status).to.equal(400)
+                else
+                expect(response.status).to.equal(200)
+                cy.log(response.body)
             });
         }
     );

@@ -101,7 +101,7 @@ describe('GET - BOOKING DETAILS BY BOOKING ID', () =>{
                 else if(response.status === 400)
                 expect(response.status).to.equal(400)
                 else
-                expect(response.status).to.equal(404)
+                expect(response.status).to.equal(403)
             });
         }
     );

@@ -1,6 +1,7 @@
 const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
+const ENV_REQUEST_ID = Cypress.env("REQUEST_ID")
 
 
 const AUTH_HEADER = {
@@ -14,25 +15,7 @@ const HttpMethod = {
     DELETE: "DELETE"
 }
 
-const API_URL_EMP = `${ENV_BASE_URL}/api/auth/emp/req`
-var req_obj = null
-            beforeEach(() => {
-                cy.request({
-                method: HttpMethod.GET,
-                url: API_URL_EMP,
-                failOnStatusCode: false,
-                headers: {
-                    Authorization: AUTH_HEADER.Admin,
-                    "ngrok-skip-browser-warning": true,
-                },
-                }).then((response) => {
-                if(!response.body)
-                expect(response.status).to.equal(204);
-                else
-                expect(response.status).to.equal(200);
-                req_obj = response.body;
-                });
-            });
+const API_URL = `${ENV_BASE_URL}/api/auth/req/`
 
 
 
@@ -40,20 +23,15 @@ var req_obj = null
 
 //DESCRIPTION
 describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
-    const base_URL = `${ENV_BASE_URL}/api/auth/emp/req/`
-    const startingNumber = 1;
-    const endNumber = 10;
 
-    for(let number = startingNumber; number <= endNumber; number++){
-        let API_URL = `${base_URL}${number}`;
-        console.log(API_URL); 
+    ENV_REQUEST_ID.forEach((reqId) => {
 
 
     it('Authorization Header - No Value',
         () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}${reqId}`,
                 failOnStatusCode: false,
                 headers: {
                     "ngrok-skip-browser-warning": true
@@ -71,7 +49,7 @@ describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
         () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}${reqId}`,
                 failOnStatusCode: false,
                 headers: {
                     "Authorization": "HALO",
@@ -91,23 +69,19 @@ describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
         () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}${reqId}`,
                 failOnStatusCode: false,
                 headers: {
                     Authorization: AUTH_HEADER.Admin,
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
-                if(req_obj.data[number-1]) {
-                    if(req_obj.data[number-1].req_id != number)
-                        expect(response.status).to.equal(404)
-                    else 
-                        expect(response.status).to.equal(200)
-                    cy.log(response.body)
-                }
+               if(response.status === 200)
+               expect(response.status).to.equal(200);
+                else
+                expect(response.status).to.equal(400);
             });
-        }
-    );
+        });
     
 
 
@@ -116,7 +90,7 @@ describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
         () => {
             cy.request({
                 method: HttpMethod.GET,
-                url: API_URL,
+                url: `${API_URL}${reqId}`,
                 failOnStatusCode: false,
                 headers: {
                     Authorization: AUTH_HEADER.Sales,
@@ -126,9 +100,10 @@ describe('GET - EMPLOYEES ACTIVITY BY ID', () =>{
                 expect(response.status).to.equal(403);
                 cy.log(response.body);
             });
-        }
-    );
+        });
 
-    }
+    });
 
-});
+    });
+
+

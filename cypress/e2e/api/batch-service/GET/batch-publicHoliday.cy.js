@@ -2,7 +2,7 @@ const ENV_BASE_URL = Cypress.env("BASE_URL")
 const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
-const year = 2023
+const year = 2024
 const API_URL = `${ENV_BASE_URL}/api/auth/holidays?year=${year}`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
@@ -102,7 +102,7 @@ describe('GET - Public Holidays ', () =>{
                 if (response.status === 200) {
                 } else if(response.status === 204) {
                 } else {
-                    expect(response.status).to.equal(400);
+                    expect(response.status).to.equal(403);
                 }
             });
         }

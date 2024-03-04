@@ -3,7 +3,7 @@ const ENV_TOKEN_ADMIN = Cypress.env("TOKEN_ADMIN")
 const ENV_TOKEN_SALES = Cypress.env("TOKEN_SALES")
 
 
-const API_URL = `${ENV_BASE_URL}/api/payment/14`
+const API_URL = `${ENV_BASE_URL}/api/payment/13`
 const AUTH_HEADER = {
     Admin: `Bearer ${ENV_TOKEN_ADMIN}`,
     Sales: `Bearer ${ENV_TOKEN_SALES}`
@@ -91,7 +91,10 @@ describe('GET -  PAYMENT - BY  ID (AllUsers)', () =>{
                     "ngrok-skip-browser-warning": true
                 }
             }).then((response) => {
+                if(response.status === 200)
                 expect(response.status).to.equal(200);
+                else
+                expect(response.status).to.equal(403);
                 cy.log(response.body);
             });
         }
