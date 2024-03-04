@@ -44,7 +44,7 @@ module.exports = defineConfig({
       kavita: {
         user: '"kavita@sprktechnologies.in"',
         token:
-          '"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5MTkyMDM3LCJleHAiOjE3MDkyNzg0Mzd9.L7WmMm1YsLWV80CR_0dEPZX5GggHYOkGiZTOq6mVXlc"',
+          '"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5NTMxNzUyLCJleHAiOjE3MDk2MTgxNTJ9.TxJnPkKCqcrhSRh8y-dUhoEfoexVJu2-44tcWju0bWI"',
         roles: '["ROLE_ADMIN"]',
         userId: '"SPRK23KAV0C"',
         userDetails:
