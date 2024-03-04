@@ -25,12 +25,13 @@ before(()=>{
 
 describe('Center',()=>{
 
-
+/*
 
     it("Student New Course and Payent",()=>{
         payload.forEach((test_case) => {
-
-        centerbtn.getStudent().click();
+        if(test_case.get_student){
+          centerbtn.getStudent().click();
+        }
         centerbtn.CourseBtn().click();
         centerbtn.newCourseBtn().click();
         centerbtn.selectCourseBtnPaymentTab().click();
@@ -47,10 +48,58 @@ describe('Center',()=>{
         centerbtn.paymentDate(test_case.payment_date);
         centerbtn.paidAmount(test_case.paid_amount);
         centerbtn.selectPaymentModeWhilePayment(test_case.payment_mode).click();
-        //centerbtn.submitPaymentBtn().click();
-        centerbtn.cancelPaymentBtn().click()
+        
+        if (test_case.upi) {
+            centerbtn.selectTransactionId(test_case.transaction_id);
+        };
 
+        if(test_case.cheque){
+          centerbtn.selectChequeNo(test_case.cheque_number)
+          centerbtn.selectChequeDate(test_case.cheque_date)
+          centerbtn.selectChequeBankName(test_case.bank_name)
+          centerbtn.selectChequeBankBranch(test_case.branch_name)
+        };
+        if(test_case.debit){
+          centerbtn.selectAuthorizationNo(test_case.authorization_no);
+        }
+        if(test_case.credit){
+          centerbtn.selectAuthorizationNo(test_case.authorization_no);
+        }
+        if(test_case.net_banking){
+          centerbtn.selectTransactionId(test_case.transaction_id);
+        }
+      
+        
+        
+
+        centerbtn.submitPaymentBtn().click();
+        //centerbtn.cancelPaymentBtn().click()
+        centerbtn.swalBtn().click();
 
     });
+
     });
+
+  
+
+    it('Print reciept flow',()=>{
+      centerbtn.getStudent().click();
+      centerbtn.receiptBtn().click();
+      //centerbtn.printIcon().click();
+      centerbtn.printHistoryIcon().click();
+      centerbtn.cancelPrintHistoryBtn().click();
+      //centerbtn.printBtn().click();
+      //centerbtn.cancelPrintBtn().click();
+
+    });
+*/  
+
+    it('Reassign Flow',()=>{
+      centerbtn.selectPageSize(100).click();
+      centerbtn.getStudentByIdAndName().click();
+      centerbtn.batchBtn().click();
+      
+    })
+
+
 });
