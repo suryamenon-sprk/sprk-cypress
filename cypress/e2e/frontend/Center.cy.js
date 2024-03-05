@@ -92,14 +92,90 @@ describe('Center',()=>{
       //centerbtn.cancelPrintBtn().click();
 
     });
-*/  
+ 
 
     it('Reassign Flow',()=>{
       centerbtn.selectPageSize(100).click();
       centerbtn.getStudentByIdAndName().click();
       centerbtn.batchBtn().click();
+      centerbtn.reassignBtn().click();
+      centerbtn.selectCoursesToReassign().click();
+      centerbtn.nextBtn().click();
+      centerbtn.selectBatchToReassign().click();
+      centerbtn.tpyeReasonToReassign("Student want to learn again");
+      //centerbtn.reassignBatchBtn().click();
+      centerbtn.cancelRassign().click()
+    })
+  
+
+
+    it('Bookings Tab Flow',()=>{
+      centerbtn.getBookingTab().click();
+      centerbtn.getStartDateInBookingTab("2024-02-02")
+      centerbtn.getEndDateInBookingTab("2024-03-01")
+      centerbtn.bookingClearDate().click()
+      centerbtn.typeTextInBookingSearch("Rup")
       
     })
 
+    it('Booking Cancelation Flow',()=>{
+      centerbtn.getBookingTab().click();
+      centerbtn.getStudentInBookingsTab().click();
+      centerbtn.cancelBookingBtn().click()
+      centerbtn.bookingCancellationReason("XYZ")
+      centerbtn.bookingCancellationCancelBtn().click()
+      //centerbtn.bookingCancellationYesBtn().click()
+    });
+
+
+
+    it('Collection Tab and Export Flow',()=>{
+      centerbtn.getCollectionTab().click()
+      centerbtn.collectionTabStartDate("2024-01-02")
+      centerbtn.collectionTabEndDate("2024-03-03")
+      centerbtn.collectionClearDate().click()
+      centerbtn.typeTextInCollectionSearch("Ru")
+      centerbtn.colectionsExportToExcelBtn().click();
+      //centerbtn.colectionsExportToPDFBtn().click();
+
+    });
+
+
+    it('Cancel collection and initate refund flow',()=>{
+      centerbtn.getCollectionTab().click()
+      centerbtn.getStudentInCollectionTab().click()
+      centerbtn.cancelReceiptAndInitateRefundBtn().click()
+      centerbtn.collectionCancellationReason("ABC");
+      centerbtn.collectionCancellationCancelBtn().click()
+      //centerbtn.collectionCancellationYesBtn().click()
+    });
+
+
+    it('RBC Table Filter ',()=>{
+      centerbtn.getRBCTab().click()
+      centerbtn.rbcTabStartDate("2024-01-02")
+      centerbtn.rbcTabEndDate("2024-03-02")
+      centerbtn.rbcClearDate().click()
+      centerbtn.typeTextInCollectionSearch("Rupesh")
+    })
+
+    */
+
+    it('RBC Flow',()=>{
+      centerbtn.getRBCTab().click()
+      centerbtn.getStudentInRbcTab().click()
+      centerbtn.initiateRbcBtn().click()
+      // centerbtn.clickOnFirstCourseInRightSideInRbc().click()
+      // centerbtn.moveLeftInRbc().click()
+      centerbtn.clickOnAnyCourseOnLeftSideInRbc().click()
+      centerbtn.moveRightInRbc().click()
+      centerbtn.clickRbcPaymentTerm().click()
+      centerbtn.selectRbcPaymentTerm("LUMPSUM").click()
+      centerbtn.clickRbcNoOfInstallments().click()
+      centerbtn.selectRbcNoOfInstallments("5").click()
+      centerbtn.typeReasonForRbc("EFG")
+      centerbtn.closeRbcModel().click()
+      //centerbtn.submitRcbForm().click()
+    })
 
 });
