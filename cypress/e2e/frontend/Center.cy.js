@@ -23,7 +23,7 @@ before(()=>{
 
 describe('Center',()=>{
 
-/*
+
 
     it("Student New Course and Payent",()=>{
         payload.forEach((test_case) => {
@@ -73,6 +73,10 @@ describe('Center',()=>{
         centerbtn.submitPaymentBtn().click();
         //centerbtn.cancelPaymentBtn().click()
         centerbtn.swalBtn().click();
+
+      })
+    })
+  })
 
 describe("Center", () => {
   it("Student New Course and Payent", () => {
@@ -179,7 +183,7 @@ describe("Center", () => {
       centerbtn.typeTextInCollectionSearch("Rupesh")
     })
 
-    */
+
 
     it('RBC Flow',()=>{
       centerbtn.getRBCTab().click()
@@ -198,4 +202,30 @@ describe("Center", () => {
       //centerbtn.submitRcbForm().click()
     })
 
-});
+
+    it('RBC History Tab',()=>{
+      centerbtn.getRBCTab().click()
+      centerbtn.getRbcHistoryTab().click()
+      centerbtn.rbcTabStartDate("2024-01-02")
+      centerbtn.rbcTabEndDate("2024-03-02")
+      //centerbtn.rbcClearDate().click()
+      centerbtn.typeTextInCollectionSearch("Rupesh")
+    })
+ 
+
+
+    it('Credit Hidtory Tab',()=>{
+      centerbtn.getRBCTab().click()
+      centerbtn.getCreditHistoryTab().click()
+      centerbtn.rbcTabStartDate("2024-01-02")
+      centerbtn.rbcTabEndDate("2024-03-02")
+      //centerbtn.rbcClearDate().click()
+      //centerbtn.typeTextInCollectionSearch("Rupesh")
+      centerbtn.creditPrintIcon().click()
+      centerbtn.cancelPrintBtn().click()
+      //centerbtn.printBtn().click()
+    })
+
+
+})
+

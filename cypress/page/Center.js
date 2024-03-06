@@ -331,5 +331,14 @@ export class CenterBtns {
     submitRcbForm(){
         return cy.get('button[type="submit"]')
     }
-
+    getRbcHistoryTab(){
+        return cy.contains('button','RBC HISTORY')
+    }
+    getCreditHistoryTab(){
+        return cy.contains('button','CREDIT HISTORY')
+    }
+    creditPrintIcon(){
+        cy.get('.ag-body-horizontal-scroll-viewport').scrollTo('right');
+        return cy.get('button[aria-label="generatePrint"]').eq(0);
+    }
 }
