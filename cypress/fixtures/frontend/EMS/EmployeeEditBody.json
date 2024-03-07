@@ -1,55 +1,134 @@
 [
     {
-        "firstname": " ",
-        "middlename": "XYZ",
-        "lastname": " ",
-        "phone": " ",
-        "alt_phone": null,
-        "gender": "MALE",
-        "birth_date":"2000-01-01",
-        "email": " ",
-        "alt_email": " ",
-        "blood_group": "A+",
-        "marital_status": "single",
-        "nationality": "indian",
-        "current_flat_house": " ",
-        "current_building_apartment": " ",
-        "current_area_street_sector_village": " ",
-        "current_landmark": "XYZ",
-        "current_pin_code": "410221",
-        "current_city_town": " ",
-        "current_state": null,
-        "current_country": null,
-        "permanent_flat_house": null,
-        "permanent_building_apartment": null,
-        "permanent_area_street_sector_village": null,
-        "permanent_landmark": null,
-        "permanent_pin_code": null,
-        "permanent_city_town": null,
-        "permanent_state": null,
-        "permanent_country": null,
-        "university": null,
-        "degree": null,
-        "stream": null,
-        "college": null,
-        "cgpa": null,
-        "passing_year": null,
-        "skill_set": null,
-        "experience": null,
-        "exp_years": null,
-        "domain": null,
-        "eme_firstname": null,
-        "eme_middlename": null,
-        "eme_lastname": null,
-        "eme_phone": null,
-        "eme_email": null,
-        "eme_relation": null,
-        "physician_name": null,
-        "physician_phone": null,
-        "medical_history": null,
-        "medical_conditions": "N/A",
-        "description": "Required fields are filled"
- 
+        "firstname": "Akash",
+        "description": "Update first name"
+    },
+    {
+        "lastname": "Yadav",
+        "description": "Update lastname name"
+    },
+    {
+        "middlename": "Kamlesh",
+        "description": "Update middlename name"
+    },
+    {
+        "birth_date": "2000-01-01",
+        "description": "Update birth date name"
+    },
+    {
+        "phone": "9997778889",
+        "description": "Update phone number"
+    },
+    {
+        "email": "akash@gmail.com",
+        "description": "Update email"
+    },
+    {
+        "blood_group": "O+",
+        "description": "Update blood group"
+    },
+    {
+        "blood_group": "O+",
+        "description": "Update blood group"
     }
-    
+    ,
+    {
+        "marital_status": "single",
+        "description": "Update marital status"
+    },
+    {
+        "nationality": "Indian",
+        "description": "Update Indian"
+    },
+    {
+        "current_flat_house": "33",
+        "description": "Update flat no."
+    },
+    {
+        "current_building_apartment": "Tulsi height",
+        "description": "Update Building name"
+    },
+    {
+        "current_area_street_sector_village": "sector- 13",
+        "description": "Update sector"
+    },
+    {
+        "current_landmark": "Near Dmart",
+        "description": "Update landmark"
+    },
+    {
+        "current_pincode": "999999",
+        "description": "Update pincode"
+    },
+    {
+        "country": "India",
+        "description": "Update country"
+    }
+    ,
+    {
+        "country": "India",
+        "description": "Update country"
+    },
+    {
+        "state": "Maharashtra",
+        "description": "Update state"
+    },
+    {
+        "university": "KU",
+        "description": "Update university"
+    },
+    {
+        "degree": "me-mtech",
+        "description": "Update degree"
+    },
+    {
+        "stream": "Information Technology",
+        "description": "Update stream"
+    },
+    {
+        "college": "PCE, Panvel",
+        "description": "Update college"
+    },
+    {
+        "passing_year": "2022",
+        "description": "Update passing year"
+    },
+    {
+        "cgpa": "9.2",
+        "description": "Update CGPA"
+    }
+    ,
+    {
+        "eme_name": "Vilas",
+        "description": "Update eme name"
+    },
+    {
+        "eme_phone": "9900887766",
+        "description": "Update eme phone number"
+    },
+    {
+        "relation": "Friend",
+        "description": "Update relation"
+    },
+    {
+        "physician_name": "EXY",
+        "description": "Update physician name"
+    },
+    {
+        "physician_phone": "9888001111",
+        "description": "Update physician phone"
+    },
+    {
+        "medical_condition": "I am totally fine.",
+        "description": "Update medical condition"
+    },
+    {
+        "authority": "ROLE_SALES",
+        "description": "Update authority"
+    }
+
+
+
+
+
 ]

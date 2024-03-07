@@ -64,7 +64,7 @@ export class EMSBtns {
         return cy.get('input[name="middlename"]').clear().type(`${middlename}`);
     }
     empBirthdate(birth_date){
-        return cy.get('input[name="birth_date"]').type(`${birth_date}`)
+        return cy.get('input[name="birth_date"]').clear().type(`${birth_date}`)
     }
     empGender(gender){
         cy.get('div[role="combobox"]').eq(0).click()
@@ -86,19 +86,92 @@ export class EMSBtns {
         return cy.get('input[id="nationality-outlined"]').type(`${nationality}`)
     }
     empUpdateFirstName(firstname){
-        return cy.get('input[name="firstname"]').type(`${firstname}`);
+        return cy.get('input[name="firstname"]').clear().type(`${firstname}`);
     }
     empUpdateLastName(lastname){
-        return cy.get('input[name="lastname"]').type(`${lastname}`);
+        return cy.get('input[name="lastname"]').clear().type(`${lastname}`);
     }
     empUpdatePhone(phone){
-        return cy.get('input[name="phone"]').type(`${phone}`);
+        return cy.get('input[name="phone"]').clear().type(`${phone}`);
     }
     empUpdateEmail(email){
-        return cy.get('input[name="email"]').type(`${email}`);
+        return cy.get('input[name="email"]').clear().type(`${email}`);
+    }
+
+    empUpdateFlatNo(flat_no){
+        return cy.get('input[name="current_flat_house"]').clear().type(`${flat_no}`)
+    }
+    empUpdateAparment(apartment){
+        return cy.get('textarea[name="current_building_apartment"]').clear().type(`${apartment}`)
+    }
+    empUpdateArea(area){
+        return cy.get('input[name="current_area_street_sector_village"]').clear().type(`${area}`)
+    }
+    empUpdateLandmark(landmark){
+        return cy.get('textarea[name="current_landmark"]').clear().type(`${landmark}`)
+    }
+
+    empUpdatePincode(pincode){
+        return cy.get('input[name="current_pin_code"]').clear().type(`${pincode}`)
+    }
+    empUpdateCountry(country){
+        return cy.get('input[placeholder="Country"]').eq(0).type(`${country}`)
+    }
+    empUpdateState(state){
+        return cy.get('input[placeholder="State"]').eq(0).type(`${state}`)
+    }
+    empUpdateCity(city){
+        return cy.get('input[placeholder="City/Town"]').eq(0).clear().type(`${city}`)
+    }
+    empUpdateUniversity(university){
+        return cy.get('input[name="university"]').clear().type(`${university}`)
+    }
+    empUpdateDegree(degree){
+        cy.get('div[role="combobox"]').eq(3).click()
+        return cy.get('ul[role="listbox"]')
+        .find(`li[data-value="${degree}"]`)
+    }
+    empUpdateStream(stream){
+        return cy.get('input[name="stream"]').clear().type(`${stream}`)
+    }
+    empUpdateCollege(college){
+        return cy.get('input[name="college"]').clear().type(`${college}`)
+    }
+    empUpdateCgpa(cgpa){
+        return cy.get('input[name="cgpa"]').clear().type(`${cgpa}`)
+    }
+    empUpdatePassingYear(passing_year){
+        return cy.get('input[name="passing_year"]').clear().type(`${passing_year}`)
     }
 
 
+    empUpdateEmeName(eme_name){
+        return cy.get('input[name="eme_name"]').clear().type(`${eme_name}`)
+    }
+    empUpdateEmePhone(eme_phone){
+        return cy.get('input[name="eme_phone"]').clear().type(`${eme_phone}`)
+    }
+    empUpdateEmeRelation(relation){
+        cy.get('div[role="combobox"]').eq(4).click()
+        return cy.get('ul[role="listbox"]')
+        .find(`li[data-value="${relation}"]`)
+    }
+    empUpdatePhysicianPhone(physician_phone){
+        return cy.get('input[name="physician_phone"]').clear().type(`${physician_phone}`)
+    }
+    empUpdatePhysicianName(physician_name){
+        return cy.get('input[name="physician_name"]').clear().type(`${physician_name}`)
+    }
+    empUpdateMedicalCondition(medical_condition){
+       return cy.contains('p','Enter medical condition if any in detail:').next().find('textarea').eq(0).type(medical_condition);
+    }
+    empUpdateAuthority(authority){
+        cy.get('div[role="combobox"]').eq(5).click()
+        cy.get('ul[role="listbox"]')
+        .find(`li[data-value="${authority}"]`).click()
+        return cy.get('body').click()
+
+    }
 
 
 
@@ -191,5 +264,43 @@ export class EMSBtns {
 
 
     }
+
+
+
+    //portal access request tab buttons
+    getPortalRequestTab(){
+       
+        cy.get(':nth-child(3) > .MuiButtonBase-root').click(); 
+        return cy.contains('Portal Access Request')
+        
+    }
+
+    getPendingRequest(){
+        cy.get('input[placeholder="Search by  Name / status"]').type("pending")
+        return cy.get('[row-id="0"]').find('[col-id="name"]') 
+
+    }
+
+    empJoindedDate(joined_at){
+        cy.get('input[name="joined_at"]').type(`${joined_at}`);
+
+    }
+    requestFormUpdateBtn(){
+        return cy.get('button.MuiButton-containedPrimary').contains('UPDATE');
+
+    }
+    requestFormResendBtn(){
+        return cy.get('button.MuiButton-containedPrimary').contains('RESEND');
+
+    }
+    requestFormApproveBtn(){
+        return cy.get('button.MuiButton-containedPrimary').contains('APPROVE');
+
+    }
+    requestFormDenyBtn(){
+        return cy.get('button.MuiButton-containedPrimary').contains('DENY');
+
+    }
+
     
 }
