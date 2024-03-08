@@ -44,7 +44,7 @@ module.exports = defineConfig({
       kavita: {
         user: '"kavita@sprktechnologies.in"',
         token:
-          '"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5NTMxNzUyLCJleHAiOjE3MDk2MTgxNTJ9.TxJnPkKCqcrhSRh8y-dUhoEfoexVJu2-44tcWju0bWI"',
+          '"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5ODczNDgzLCJleHAiOjE3MDk5NTk4ODN9.oe96h_cHhIXdobJkwzdkwc8DbFfk08DKL0baFGTNygc"',
         roles: '["ROLE_ADMIN"]',
         userId: '"SPRK23KAV0C"',
         userDetails:
@@ -63,7 +63,7 @@ module.exports = defineConfig({
     },
     token: {
       kavita:
-        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5NTMxNzUyLCJleHAiOjE3MDk2MTgxNTJ9.TxJnPkKCqcrhSRh8y-dUhoEfoexVJu2-44tcWju0bWI",
+        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5ODczNDgzLCJleHAiOjE3MDk5NTk4ODN9.oe96h_cHhIXdobJkwzdkwc8DbFfk08DKL0baFGTNygc",
     },
     portal_url: "https://rfc2rnvg-3000.inc1.devtunnels.ms",
   },
