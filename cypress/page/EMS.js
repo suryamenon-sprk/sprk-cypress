@@ -302,5 +302,37 @@ export class EMSBtns {
 
     }
 
+    // Employee activity tab buttons
+
+
+    getEmpActivityTab(){
+       
+        cy.get(':nth-child(3) > .MuiButtonBase-root').click(); 
+        return cy.contains('Activity')
+        
+    }
+
+    searchEmpActivity(search){
+        cy.get('input[placeholder="Search ....."]').type(`${search}`)
+    }
+
+
+    // Employee request tab buttons
+
+    getEmpLeaveRequestTab(){
+       
+        cy.get(':nth-child(3) > .MuiButtonBase-root').click(); 
+        return cy.contains('Leave Request')
+        
+    }
+    getPendingLeaveRequest(){
+        return cy.get('input[placeholder="Search by  Name / status"]').type("pending")
+    }
+    leaveRequestAction(action){
+        cy.get('.ag-body-horizontal-scroll-viewport').scrollTo('right');
+
+        return cy.get('[row-id="0"]').find('[col-id="status_1"]').contains('button',action)
+    }
+
     
 }

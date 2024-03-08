@@ -1,42 +1,14 @@
 [{
+    "course":"C++ Programming",
     "days_of_week": [
             "THURSDAY",
         "FRIDAY"
     ],
-    "date": "2024-03-06T00:00:00.000Z",
+    "date": "2024-02-06",
     "start_time": "12:00",
     "end_time": "14:00",
-    "zone": "Asia/Calcutta"
-},
-{
-    "days_of_week": [
-            "THURSDAY",
-        "FRIDAY"
-    ],
-    "date": "2024-03-09T00:00:00.000Z",
-    "start_time": "12:00",
-    "end_time": "14:00",
-    "zone": "Asia/Calcutta"
-},
-{
-    "days_of_week": [
-            "THURSDAY",
-        "FRIDAY"
-    ],
-    "date": "2024-03-08T00:00:00.000Z",
-    "start_time": "14:00",
-    "end_time": "16:00",
-    "zone": "Asia/Calcutta"
-},
-{
-    "days_of_week": [
-            "THURSDAY",
-        "FRIDAY"
-    ],
-    "date": "2024-03-08T00:00:00.000Z",
-    "start_time": "14:00",
-    "end_time": "16:00",
-    "zone": "Asia/Calcutta"
+    "new_start_time":"13:00",
+    "new_end_time":"15:00"
 }
 
 ]

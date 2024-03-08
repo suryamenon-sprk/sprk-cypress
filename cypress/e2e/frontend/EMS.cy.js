@@ -220,7 +220,7 @@ describe('EMS',()=>{
 
 
 })
-   */
+
 
 
     it('Employee Portal Access Tab',()=>{
@@ -302,5 +302,25 @@ describe('EMS',()=>{
         })
 
     })
+
+    it("Employee Activity",()=>{
+        emsbtn.getEmpActivityTab().click()
+        emsbtn.typeStartDate("2024-02-02")
+        emsbtn.typeEndDate("2024-03-02")
+        emsbtn.clearDate().click()
+        emsbtn.searchEmpActivity("Kav")
+
+    })
+   */
+    it("Employee Leave Request",()=>{
+        emsbtn.getEmpLeaveRequestTab().click()
+        emsbtn.getPendingLeaveRequest()
+        //emsbtn.leaveRequestAction("Deny").click()
+        emsbtn.leaveRequestAction("Approve").click()
+
+        emsbtn.swalBtn().click()
+    })
+
+
 
 })

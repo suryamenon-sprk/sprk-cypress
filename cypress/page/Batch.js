@@ -8,27 +8,20 @@ export class BatchBtn {
   openCourseList() {
     return cy.get("#course").click();
   }
-  selectCourse() {
-    return cy.get(".MuiAutocomplete-option").first().click();
+  selectCourse(course) {
+    return cy.contains('p', 'Select Course:').next().find('input[type="text"]').type(course).type('{downarrow}').type('{enter}'); 
   }
 
   fillStartDate(start_date) {
-    // Convert the date string to a JavaScript Date object
-    const dateObj = new Date(start_date);
-
-    // Format the date as YYYY-MM-DD
-    const formattedDate = dateObj.toISOString().split("T")[0];
-
-    // Click on the date input field and type the formatted date
     cy.get('input[name="date"]').click();
-    return cy.get('[name="date"]').clear().type(formattedDate);
+    return cy.get('[name="date"]').clear().type(start_date);
   }
 
   openFacultyList() {
     return cy.get("#faculty").click();
   }
   selectFaculty() {
-    return cy.get(".MuiButtonBase-root.MuiMenuItem-root").first().click();
+    return cy.get(".MuiButtonBase-root.MuiMenuItem-root").eq(3).click();
   }
 
   selectWeekDays(weekdays) {
@@ -56,9 +49,88 @@ export class BatchBtn {
   }
 
   okbtn() {
-    return cy.get(".swal-button.swal-button--confirm").click();
+    return cy.get(".swal-button.swal-button--confirm");
   }
   backBth() {
     return cy.get("#back-btn-createBatch").click();
   }
+
+  selectStudent(){
+    return cy.get('.MuiButtonBase-root.MuiListItem-root').eq(1)
+
+  }
+  moveRight(){
+    return cy.get('button[aria-label="move selected right"]');
+
+  }
+  saveStudentAddBtn(){
+    return cy.contains('Save Changes')
+
+  }
+  confirmBatchBtn(){
+    return cy.contains('Confirm Batch')
+  }
+
+  selectOngoingBatches(){
+  cy.get('div.MuiFormControl-root.MuiFormControl-fullWidth.MuiTextField-root').eq(0).click().type('ongoing').type('{downarrow}').type('{enter}')
+  return cy.get('body')
+  }
+  selectTabularBatchView(){
+    return cy.get('button.MuiToggleButtonGroup-middleButton');
+
+  
+  }
+  selectBatch(){
+    return cy.get('div[row-id="0"]').find('div[aria-colindex="1"]')
+  
+  }
+
+  selectActionBtn(){
+    return cy.contains('button','Action')
+  }
+  selectEditBatchDetailsBtn(){
+    return cy.contains('Edit Batch Details')
+  }
+  rescheduleBtn(){
+    return cy.get('.session-box').eq(1).contains('Reschedule')
+
+  }
+  typeRescheduleDate(new_date){
+    return cy.get('input[name="newDate"]').click().type(new_date);
+
+  }
+  typeRescheduleStartTime(new_start_time){
+    return cy.get('input[name="newStartTime"]').click().type(new_start_time);
+
+  }
+  typeRescheduleEndTime(new_end_time){
+    return cy.get('input[name="newEndTime"]').click().type(new_end_time);
+
+  }
+
+  saveRescheduleChangesBtn(){
+    return cy.contains('button','Save Changes')
+
+  }
+  cancelRescheduleChangesBtn(){
+    return cy.contains('button','Cancel')
+
+  }
+
+  selectAddStudentBtn(){
+    return cy.contains('Add Student')
+  }
+
+  addStudentCloseBtn(){
+    
+    return cy.get('svg[data-testid="CloseIcon"]')
+
+
+  }
+  addStudentSelectStudent(){
+    return cy.get('.MuiGrid-spacing-xs-2 > :nth-child(1) > .MuiPaper-root > .MuiList-root > :nth-child(2)')
+
+  }
+
+
 }
