@@ -107,7 +107,7 @@ describe("Batch_Scheduling", () => {
   })
   })
 
-*/
+
   it('Action - Add student Flow ',()=>{
     batchBtn.selectOngoingBatches().click()
     batchBtn.selectTabularBatchView().click()
@@ -121,6 +121,172 @@ describe("Batch_Scheduling", () => {
     batchBtn.addStudentCloseBtn().click()
 
   })
+
+
+it('Cancel Batch Flow',()=>{
+  
+  batchBtn.selectTabularBatchView().click()
+  batchBtn.selectOngoingBatches().click('topLeft')
+  batchBtn.selectBatch().click()
+  batchBtn.selectActionBtn().click()
+  batchBtn.selectCancelBatchBtn().click()
+  batchBtn.typeCancelBatchReason("XYZ")
+  batchBtn.cancelBatchCancellationbtn().click()
+  //batchBtn.batchCancellationYesbtn().click()
+
+
+})
+
+
+
+it('Hold Batch Flow',()=>{
+  
+  batchBtn.selectTabularBatchView().click()
+  batchBtn.selectOngoingBatches().click('topLeft')
+  batchBtn.selectBatch().click()
+  batchBtn.selectActionBtn().click()
+  batchBtn.selectHoldBatchBtn().click()
+  batchBtn.typeHoldBatchReason("XYZ")
+  batchBtn.cancelBatchHoldBtn().click()
+  //batchBtn.batchHoldYesbtn().click()
+
+})
+
+
+
+
+
+// FOR FACULTY 
+
+// it('add session Flow',()=>{
+  
+//   batchBtn.selectTabularBatchView().click()
+//   batchBtn.selectOngoingBatches().click('topLeft')
+//   batchBtn.selectBatch().click()
+//   batchBtn.selectActionBtn().click()
+//   batchBtn.selectAddSessionBtn().click()
+//   batchBtn.selectNoOfExtraSession("3").click()
+
+
+// })
+
+
+
+it('Session Subtab in Batch Details',()=>{
+   batchBtn.selectTabularBatchView().click()
+   batchBtn.selectOngoingBatches().click('topLeft')
+   batchBtn.selectBatch().click()
+   batchBtn.clickOnSessionToViewModules().click()
+})
+
+
+
+
+it('Modules Subtab in Batch Details',()=>{
+  batchBtn.selectTabularBatchView().click()
+  batchBtn.selectOngoingBatches().click('topLeft')
+  batchBtn.selectBatch().click()
+  batchBtn.modulesBtnInBatchDetails().click()
+  batchBtn.searchInBatchDetailsTab("Completed")
+})
+
+
+it('Attendance Subtab in Batch Details',()=>{
+  batchBtn.selectTabularBatchView().click()
+  batchBtn.selectOngoingBatches().click('topLeft')
+  batchBtn.selectBatch().click()
+  batchBtn.attendanceBtnInBatchDetails().click()
+  batchBtn.searchInBatchDetailsTab("3")
+  batchBtn.seeAttendanceModulewise().click()
+  batchBtn.searchInBatchDetailsTab("Ab")
+})
+
+it('History Subtab in Batch Details',()=>{
+  batchBtn.selectTabularBatchView().click()
+  batchBtn.selectOngoingBatches().click('topLeft')
+  batchBtn.selectBatch().click()
+  batchBtn.historyBtnInBatchDetails().click()
+ 
+ })
+
+
+it('Batches Filter',()=>{
+  batchBtn.selectTabularBatchView().click()
+  batchBtn.selectBatchStatus(["ongoing","onhold","cancelled"])
+  batchBtn.selectBatchCourse(["C Programming","Python"])
+  batchBtn.selectBatchFaculty(["shiv"])
+
+ })
+
+
+
+
+it('Faculty Schedule Tab- all filters, search and pagination',()=>{
+  batchBtn.getFacultyScheduleTab().click()
+  batchBtn.facultyScheduleTabSearch("Hello")
+  batchBtn.applyTodayFilterInFacultyScheduleTab().click()
+  batchBtn.applyAllTimeFilterInFacultyScheduleTab().click()
+  batchBtn.applyDateFilterInFacultyScheduleTab("2024-01-01","2024-03-08").click()
+  batchBtn.goToPageNumber("7").click()
+  batchBtn.selectPageSize("100").click()
+
+})
+
+
+
+it('Student Schedule Tab- all filters, search  pagination',()=>{
+  batchBtn.getStudentScheduleTab().click()
+  batchBtn.facultyScheduleTabSearch("Hello")
+  batchBtn.applyDateFilterInFacultyScheduleTab("2024-01-01","2024-03-08").click()
+  batchBtn.goToPageNumber("7").click()
+  batchBtn.selectPageSize("100").click()
+  batchBtn.applyStatusFilter(["PENDING","ACTIVE","ON LEAVE"]).click()
+
+})
+*/
+it('Student Schedule Tab- Add Student Flow',()=>{
+  batchBtn.getStudentScheduleTab().click()
+  batchBtn.selectPageSize("100").click()
+  batchBtn.addStudentInStudentScheduleBtn().click()
+  batchBtn.okbtn().click()
+
+})
+
+
+
+
+
+
+
+
+
+
+
+/*
+it('Session Tab- all filters, search and pagination',()=>{
+  batchBtn.getSessionRequestTab().click()
+  batchBtn.facultyScheduleTabSearch("Hello")
+  batchBtn.applyDateFilterInFacultyScheduleTab("2024-01-01","2024-03-08").click()
+  batchBtn.goToPageNumber("7").click()
+  batchBtn.selectPageSize("100").click()
+  batchBtn.applyStatusFilter(["Pending","Approved","Select All"]).click()
+
+})
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
