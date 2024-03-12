@@ -221,14 +221,21 @@ it('Batches Filter',()=>{
 
 
 
-it('Faculty Schedule Tab- all filters, search and pagination',()=>{
+it('Faculty Schedule Tab- all filters, search, pagination, faculty info and view Batch Details',()=>{
   batchBtn.getFacultyScheduleTab().click()
-  batchBtn.facultyScheduleTabSearch("Hello")
+  batchBtn.facultyScheduleTabSearch("Shiv")
   batchBtn.applyTodayFilterInFacultyScheduleTab().click()
   batchBtn.applyAllTimeFilterInFacultyScheduleTab().click()
   batchBtn.applyDateFilterInFacultyScheduleTab("2024-01-01","2024-03-08").click()
   batchBtn.goToPageNumber("7").click()
   batchBtn.selectPageSize("100").click()
+  batchBtn.getFacultyInFacultyScheduleTab().click()
+  batchBtn.facultyScheduleTabSearch("BTH")
+  batchBtn.applyTodayFilterInFacultyScheduleTab().click()
+  batchBtn.applyAllTimeFilterInFacultyScheduleTab().click()
+  batchBtn.selectPageSize("100").click()
+  batchBtn.viewBatchDetailsFromEmpTable().click()
+
 
 })
 
@@ -248,7 +255,7 @@ it('Student Schedule Tab- Add Student Flow',()=>{
   batchBtn.getStudentScheduleTab().click()
   batchBtn.selectPageSize("100").click()
   batchBtn.addStudentInStudentScheduleBtn().click()
-  batchBtn.okbtn().click()
+  //batchBtn.okbtn().click()
 
 })
 
@@ -261,9 +268,9 @@ it('Student Schedule Tab- Add Student Flow',()=>{
 
 
 
-
 /*
-it('Session Tab- all filters, search and pagination',()=>{
+
+it('Session Request Tab- all filters, search and pagination',()=>{
   batchBtn.getSessionRequestTab().click()
   batchBtn.facultyScheduleTabSearch("Hello")
   batchBtn.applyDateFilterInFacultyScheduleTab("2024-01-01","2024-03-08").click()

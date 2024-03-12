@@ -255,8 +255,13 @@ export class BatchBtn {
     return cy.get(`li[data-value="${page_size}"]`)
   }
 
+  getFacultyInFacultyScheduleTab(){
+    return cy.get('[row-index="0"]').find('[col-id="name"]')
+  }
 
-
+  viewBatchDetailsFromEmpTable(){
+    return cy.get('[row-index="0"]').find('[col-id="batch_id"]')
+  }
 
 
 
@@ -277,9 +282,23 @@ export class BatchBtn {
 
   }
   addStudentInStudentScheduleBtn(){
-    //Click Student Code
+    
+    let i = 1;
+let checkboxClicked = false;
 
-    return cy.contains('button','Add Student')
+do {
+  cy.get(`[row-index="${i}"]`).find('[col-id="course_name"]').invoke('text').then((text) => {
+    if (text.includes('MySQL')) {
+      cy.get(`[row-index="${i}"]`).find('[col-id="checkboxColumn"]').click();
+      checkboxClicked = true; // Set checkboxClicked to true
+      console.log(checkboxClicked)
+    }
+  });
+  i++;
+} while (!checkboxClicked);
+
+
+     return cy.contains('button','Add Student')
   }
 
 
