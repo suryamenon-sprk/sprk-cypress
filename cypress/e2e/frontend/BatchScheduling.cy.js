@@ -250,16 +250,19 @@ it('Student Schedule Tab- all filters, search  pagination',()=>{
   batchBtn.applyStatusFilter(["PENDING","ACTIVE","ON LEAVE"]).click()
 
 })
-*/
+
 it('Student Schedule Tab- Add Student Flow',()=>{
   batchBtn.getStudentScheduleTab().click()
   batchBtn.selectPageSize("100").click()
   batchBtn.addStudentInStudentScheduleBtn().click()
-  //batchBtn.okbtn().click()
+  //batchBtn.cancenAddStudentUsingCrossIcon().click()
+  batchBtn.selectBatchToAddStudent().click()
+  batchBtn.addAvailableBtn().click()
+  batchBtn.okbtn().click()
 
 })
 
-
+*/
 
 
 

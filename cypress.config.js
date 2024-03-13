@@ -4,6 +4,7 @@ module.exports = defineConfig({
   reporter: `cypress-mochawesome-reporter`, //for html reports
 
   env: {
+    TOKEN_FACULTY:`eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRQUkFDOSIsInVwdCI6MTcxMDMxNTIxODUwNiwiaWF0IjoxNzEwMzE2MTMyLCJleHAiOjE3MTA0MDI1MzJ9.-7lEkFttg1jtrsWNa_2tO4jOe6NAr5VIHz9ZkzcVquE`,
     TOKEN_ADMIN: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5MjA0ODEzLCJleHAiOjE3MDkyOTEyMTN9.ZnmSESg6JspAxa0z0PnG0OknzlY-3ARgoEsy5wY0jps`,
     TOKEN_SALES: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLUlU0NyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5MTg4MjYzLCJleHAiOjE3MDkyNzQ2NjN9.DtPijwIYnOuSTCbJW6M0Rb2WcB_TU3q2xqopzzwiLRw`,
     TOKEN_EMP: `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRTVVJBNCIsInVwdCI6MTcwODc2OTcxNjExMiwiaWF0IjoxNzA5MTg4MTMwLCJleHAiOjE3MDkyNzQ1MzB9.3AWyVMJcoYzzuJ2NTBFsQrcn_KTC9BLwsrQe873s2Ys`,
@@ -43,7 +44,7 @@ module.exports = defineConfig({
     auth: {
       kavita: {
         "user": "\"kavita@sprktechnologies.in\"",
-        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzEwMjMxNDM0LCJleHAiOjE3MTAzMTc4MzR9.kQr6cT9-jLzdgnM987akJ8J5WXXkAlq2MZSwTLbnBlg\"",
+        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzEwMzA4NTc2LCJleHAiOjE3MTAzOTQ5NzZ9.Ua9fFKQueZd_S34fM5l99TiB5-SaRXh1LfF3MbgVhtE\"",
         "roles": "[\"ROLE_ADMIN\"]",
         "userId": "\"SPRK23KAV0C\"",
         "userDetails": "{\"emp_id\":\"SPRK23KAV0C\",\"name\":\"Kavita Pankaj Pawar\",\"email\":\"kavita@sprktechnologies.in\",\"enabled\":true,\"authorities\":[\"ROLE_ADMIN\"],\"profile\":false,\"entitlements\":[{\"name\":\"EMS\",\"sub\":[{\"name\":\"REQUESTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"LEAVE_REQUESTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"FACULTY_EXAM\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"EMPLOYEES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"ACTIVITIES\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"ACADEMICS\",\"sub\":[{\"name\":\"MY_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"DASHBOARD\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"BATCH_SCHEDULING\",\"sub\":[{\"name\":\"FACULTY_SCHEDULE\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"STUDENT_SCHEDULE\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"SESSION_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"LMS\",\"sub\":[{\"name\":\"LEADS\",\"actions\":[\"VIEW\",\"CREATE\",\"DELETE\"]}]},{\"name\":\"CENTER\",\"sub\":[{\"name\":\"BOOKINGS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"COLLECTIONS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"ENROLLMENTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"RBC\",\"actions\":[\"VIEW\",\"CREATE\"]}]}]}",
@@ -55,12 +56,29 @@ module.exports = defineConfig({
         "userProfilePic": "null",
         "salesRole": "null",
         "_persist": "{\"version\":1,\"rehydrated\":true}"
-      }
+      },
+      pranav: {
+        "user": "\"SPRK24PRAC9\"",
+        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRQUkFDOSIsInVwdCI6MTcxMDMxNTIxODUwNiwiaWF0IjoxNzEwMzE3ODU5LCJleHAiOjE3MTA0MDQyNTl9.45Rca2WTyCMuJ9K0Ov1jaMPZCjW_gfz_lav_3yUaqwI\"",
+        "roles": "[\"ROLE_FACULTY\"]",
+        "userId": "\"SPRK24PRAC9\"",
+        "userDetails": "{\"emp_id\":\"SPRK24PRAC9\",\"name\":\"Pranav Jadhav\",\"email\":\"angela27116@gmail.com\",\"enabled\":true,\"authorities\":[\"ROLE_FACULTY\"],\"profile\":false,\"entitlements\":[{\"name\":\"ACADEMICS\",\"sub\":[{\"name\":\"DASHBOARD\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]}]}]}",
+        "entitlements": "[{\"name\":\"ACADEMICS\",\"sub\":[{\"name\":\"DASHBOARD\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]}]}]",
+        "tabName": "[\"ACADEMICS\",\"DASHBOARD\",\"MY_BATCHES\",\"MY_REQUEST\"]",
+        "selectedIds": "null",
+        "studentData": "null",
+        "receiptObj": "null",
+        "userProfilePic": "null",
+        "salesRole": "null",
+        "_persist": "{\"version\":1,\"rehydrated\":true}"
+    }
     },
     token: {
       kavita:
         "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzEwMTM3NzYyLCJleHAiOjE3MTAyMjQxNjJ9.CR8hrXtZtRpEVgIIpXToRq-dbnAafjl_bkvvOKR_1Vs",
-    },
+      pranav:
+        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRQUkFDOSIsInVwdCI6MTcxMDMxNTIxODUwNiwiaWF0IjoxNzEwMzE2MTMyLCJleHAiOjE3MTA0MDI1MzJ9.-7lEkFttg1jtrsWNa_2tO4jOe6NAr5VIHz9ZkzcVquE",
+      },
     portal_url: "https://rfc2rnvg-3000.inc1.devtunnels.ms",
   },
 

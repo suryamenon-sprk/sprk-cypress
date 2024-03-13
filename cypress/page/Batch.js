@@ -49,7 +49,7 @@ export class BatchBtn {
   }
 
   okbtn() {
-    return cy.get(".swal-button.swal-button--confirm");
+    return cy.get(".swal-button");
   }
   backBth() {
     return cy.get("#back-btn-createBatch").click();
@@ -281,26 +281,42 @@ export class BatchBtn {
     return cy.contains('button', 'Apply')
 
   }
-  addStudentInStudentScheduleBtn(){
-    
-    let i = 1;
-let checkboxClicked = false;
+  addStudentInStudentScheduleBtn() {
+    let checked = false;
 
-do {
-  cy.get(`[row-index="${i}"]`).find('[col-id="course_name"]').invoke('text').then((text) => {
-    if (text.includes('MySQL')) {
-      cy.get(`[row-index="${i}"]`).find('[col-id="checkboxColumn"]').click();
-      checkboxClicked = true; // Set checkboxClicked to true
-      console.log(checkboxClicked)
+    for (let i = 1; i <= 20; i++) {
+        cy.get(`[row-index="${i}"]`)
+            .find('[col-id="course_name"]')
+            .invoke('text')
+            .then((text) => {
+                if (text.includes('MySQL')) {
+                    cy.get(`[row-index="${i}"]`)
+                        .find('[col-id="checkboxColumn"]')
+                        .click();
+                    checked = true;
+                }
+            });
+
+      if (checked) {
+            break;
+      }
     }
-  });
-  i++;
-} while (!checkboxClicked);
-
-
-     return cy.contains('button','Add Student')
+    
+    return cy.contains('button', 'Add Student');
   }
 
+  cancenAddStudentUsingCrossIcon(){
+    return cy.get('[data-testid="CloseIcon"]')
+
+  }
+
+  selectBatchToAddStudent(){
+    return cy.get('input[name="batchSelection"]')
+  }
+
+  addAvailableBtn(){
+    return cy.contains('button','Add Available')
+  }
 
 
 
