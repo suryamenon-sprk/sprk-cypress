@@ -1,7 +1,7 @@
 [{
     "preview":true,
     "days_of_week": [
-            "THURSDAY","FRIDAY"
+            "THU","FRI"
     ],
     "description":"edit_days"
 

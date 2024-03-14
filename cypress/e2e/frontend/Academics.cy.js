@@ -140,7 +140,7 @@ it('Cancel Batch Flow',()=>{
 
   
 
-  it("Batch Actions Flow",()=>{
+  it("Edit Batch Flow",()=>{
 
     academicsBtn.getMyBatches().click()    
     batchBtn.selectOngoingBatches().click()
@@ -295,7 +295,6 @@ it('Hold Batch Flow',()=>{
 
   })
 
-   */
 
 
 
@@ -311,7 +310,7 @@ it('Hold Batch Flow',()=>{
     batchBtn.okbtn().click()
   
   })
-
+   */
 
 
 

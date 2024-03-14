@@ -4,6 +4,7 @@ import {
   skipMSTunnelWarning,
 } from "../../support/portal";
 import { BatchBtn } from "../../page/Batch";
+import { basename } from "path";
 
 
 const base_url = getPortalUrl() + "/Batch_Scheduling";
@@ -271,18 +272,54 @@ it('Student Schedule Tab- Add Student Flow',()=>{
 
 
 
-/*
+
 
 it('Session Request Tab- all filters, search and pagination',()=>{
   batchBtn.getSessionRequestTab().click()
-  batchBtn.facultyScheduleTabSearch("Hello")
-  batchBtn.applyDateFilterInFacultyScheduleTab("2024-01-01","2024-03-08").click()
+  batchBtn.facultyScheduleTabSearch("pending")
+  batchBtn.applyDateFilterInFacultyScheduleTab("2024-01-01","2024-04-08").click()
   batchBtn.goToPageNumber("7").click()
   batchBtn.selectPageSize("100").click()
   batchBtn.applyStatusFilter(["Pending","Approved","Select All"]).click()
+  batchBtn.clickApproveSessionBtn().click()
+  cy.wait(5000);
+
+  
+  payload_register.forEach((test_case)=>{
+
+
+    if(test_case.days_of_week)
+      batchBtn.selectWeekDays(test_case.days_of_week)
+    if(test_case.start_time)
+      batchBtn.filingStartTime(test_case.start_time)
+    if(test_case.end_time)
+      batchBtn.filingEndtime(test_case.end_time);
+    if(test_case.preview)
+       batchBtn.previewBtn();
+    batchBtn.rescheduleBtn().click()
+    if(test_case.new_date)
+      batchBtn.typeRescheduleDate()
+    if(test_case.new_start_time)
+      batchBtn.typeRescheduleStartTime(test_case.new_start_time)
+    if(test_case.new_end_time)
+      batchBtn.typeRescheduleEndTime(test_case.new_end_time)
+    batchBtn.saveRescheduleChangesBtn().click()
+    //batchBtn.cancelRescheduleChangesBtn().click()
+
+
+  })
+
+  batchBtn.submitBtn();
+  batchBtn.addSessionNoBtn().click()
+  batchBtn.okbtn().click()
+
+
+
 
 })
-*/
+
+
+
 
 
 

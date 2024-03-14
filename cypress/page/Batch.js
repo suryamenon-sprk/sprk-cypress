@@ -26,7 +26,7 @@ export class BatchBtn {
 
   selectWeekDays(weekdays) {
     return weekdays.forEach((day) => {
-      cy.get(`.button-${day}`).click();
+      cy.contains('button',`${day}`).click();
     });
   }
 
@@ -326,7 +326,15 @@ export class BatchBtn {
     return cy.get('.MuiCollapse-wrapperInner > .MuiList-root > :nth-child(4) > .MuiButtonBase-root')
   }
 
-
+  clickApproveSessionBtn(){
+    return cy.contains('button','Approve').eq(0)
+  }
+  addSessionYesBtn(){
+    return cy.contains('button',"YES")
+  }
+  addSessionNoBtn(){
+    return cy.contains('button',"NO")
+  }
 
 
 
