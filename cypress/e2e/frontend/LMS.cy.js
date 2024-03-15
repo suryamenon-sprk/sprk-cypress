@@ -151,9 +151,8 @@ describe(
 
 
 
-              
-            // Type into the "College Name" input field
-            // Typing into the "College Name" input field
+
+      
       cy.get('input[name="college_name"]').clear().type('Vishwaniketan college');
 
       // Selecting an option from the "Qualification" dropdown

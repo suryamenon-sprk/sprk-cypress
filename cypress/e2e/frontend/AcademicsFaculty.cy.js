@@ -39,7 +39,6 @@ before(() => {
 
 
 describe('Academics',()=>{
-/*
 
 
     it("Dashboard",()=>{
@@ -310,7 +309,7 @@ it('Hold Batch Flow',()=>{
     batchBtn.okbtn().click()
   
   })
-   */
+   
 
 
 

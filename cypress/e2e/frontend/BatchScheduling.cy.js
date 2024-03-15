@@ -33,7 +33,7 @@ before(() => {
 
 describe("Batch_Scheduling", () => {
 
-  /*
+  
   it("Create New BAtch", () => {
     payload.forEach((test_case) => {
       batchBtn.createBthBtn().click();
@@ -263,7 +263,7 @@ it('Student Schedule Tab- Add Student Flow',()=>{
 
 })
 
-*/
+
 
 
 
