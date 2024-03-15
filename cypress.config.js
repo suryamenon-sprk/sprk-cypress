@@ -1,7 +1,6 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-
   reporter: `cypress-mochawesome-reporter`, //for html reports
 
   env: {
@@ -18,7 +17,7 @@ module.exports = defineConfig({
     auth: {
       kavita: {
         "user": "\"kavita@sprktechnologies.in\"",
-        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA5MTkyMDM3LCJleHAiOjE3MDkyNzg0Mzd9.L7WmMm1YsLWV80CR_0dEPZX5GggHYOkGiZTOq6mVXlc\"",
+        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzEwMzk1MDYyLCJleHAiOjE3MTA0ODE0NjJ9.SDP6HMRKFxTt5JUS7WZD6xrstPPoqEoF06rVWH38a4E\"",
         "roles": "[\"ROLE_ADMIN\"]",
         "userId": "\"SPRK23KAV0C\"",
         "userDetails": "{\"emp_id\":\"SPRK23KAV0C\",\"name\":\"Kavita Pankaj Pawar\",\"email\":\"kavita@sprktechnologies.in\",\"enabled\":true,\"authorities\":[\"ROLE_ADMIN\"],\"profile\":false,\"entitlements\":[{\"name\":\"EMS\",\"sub\":[{\"name\":\"REQUESTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"LEAVE_REQUESTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"FACULTY_EXAM\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"EMPLOYEES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"ACTIVITIES\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"ACADEMICS\",\"sub\":[{\"name\":\"MY_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"DASHBOARD\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"BATCH_SCHEDULING\",\"sub\":[{\"name\":\"FACULTY_SCHEDULE\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"STUDENT_SCHEDULE\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"SESSION_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"LMS\",\"sub\":[{\"name\":\"LEADS\",\"actions\":[\"VIEW\",\"CREATE\",\"DELETE\"]}]},{\"name\":\"CENTER\",\"sub\":[{\"name\":\"BOOKINGS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"COLLECTIONS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"ENROLLMENTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"RBC\",\"actions\":[\"VIEW\",\"CREATE\"]}]}]}",
@@ -30,30 +29,47 @@ module.exports = defineConfig({
         "userProfilePic": "null",
         "salesRole": "null",
         "_persist": "{\"version\":1,\"rehydrated\":true}"
-      }
+      },
+      pranav: {
+        "user": "\"SPRK24PRAC9\"",
+        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRQUkFDOSIsInVwdCI6MTcxMDMxNTIxODUwNiwiaWF0IjoxNzEwMzE3ODU5LCJleHAiOjE3MTA0MDQyNTl9.45Rca2WTyCMuJ9K0Ov1jaMPZCjW_gfz_lav_3yUaqwI\"",
+        "roles": "[\"ROLE_FACULTY\"]",
+        "userId": "\"SPRK24PRAC9\"",
+        "userDetails": "{\"emp_id\":\"SPRK24PRAC9\",\"name\":\"Pranav Jadhav\",\"email\":\"angela27116@gmail.com\",\"enabled\":true,\"authorities\":[\"ROLE_FACULTY\"],\"profile\":false,\"entitlements\":[{\"name\":\"ACADEMICS\",\"sub\":[{\"name\":\"DASHBOARD\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]}]}]}",
+        "entitlements": "[{\"name\":\"ACADEMICS\",\"sub\":[{\"name\":\"DASHBOARD\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]}]}]",
+        "tabName": "[\"ACADEMICS\",\"DASHBOARD\",\"MY_BATCHES\",\"MY_REQUEST\"]",
+        "selectedIds": "null",
+        "studentData": "null",
+        "receiptObj": "null",
+        "userProfilePic": "null",
+        "salesRole": "null",
+        "_persist": "{\"version\":1,\"rehydrated\":true}"
+    }
     },
     token: {
-      kavita: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzA4OTMwMDgwLCJleHAiOjE3MDkwMTY0ODB9.GwOcKC6COrZqdM6Crab_WV00CI7_t8R7NKPRCbG2nzA"
-    },
+      kavita:
+        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzEwMTM3NzYyLCJleHAiOjE3MTAyMjQxNjJ9.CR8hrXtZtRpEVgIIpXToRq-dbnAafjl_bkvvOKR_1Vs",
+      pranav:
+        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRQUkFDOSIsInVwdCI6MTcxMDMxNTIxODUwNiwiaWF0IjoxNzEwMzE2MTMyLCJleHAiOjE3MTA0MDI1MzJ9.-7lEkFttg1jtrsWNa_2tO4jOe6NAr5VIHz9ZkzcVquE",
+      },
     portal_url: "https://rfc2rnvg-3000.inc1.devtunnels.ms",
   },
 
-  
   e2e: {
     projectId: "yi8d6y",
     setupNodeEvents(on, config) {
       // implement node event listeners here
-      screenshotOnRunFailure=true;
+      screenshotOnRunFailure = true;
       require(`cypress-mochawesome-reporter/plugin`)(on); //for html reports
     },
-    "reporter": "cypress-mochawesome-reporter",
-    "reporterOptions": {
-    "reportDir": "cypress/reports/mochawesome",
-    "overwrite": true,
-    "html": true,
-    "json": false,
-    "timestamp":"mmddyyyy_HHMMss"
-  }
+    reporter: "cypress-mochawesome-reporter",
+    reporterOptions: {
+      reportDir: "cypress/reports/mochawesome",
+      overwrite: true,
+      html: true,
+      json: false,
+      timestamp: "mmddyyyy_HHMMss",
+    },
   },
 });
 

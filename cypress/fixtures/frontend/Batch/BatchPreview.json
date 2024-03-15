@@ -1,0 +1,59 @@
+[{
+    "course":"Adva",
+    "days_of_week": [
+            "THURSDAY",
+        "FRIDAY","MONDAY","TUESDAY"
+    ],
+    "date": "2024-03-03",
+    "start_time": "07:00",
+    "end_time": "09:00",
+    "new_start_time":"13:00",
+    "new_end_time":"15:00"
+},
+{
+    "course":"C++ Programming",
+    "days_of_week": [
+        "THURSDAY",
+    "FRIDAY","MONDAY","TUESDAY"
+    ],
+    "date": "2024-01-07",
+    "start_time": "12:00",
+    "end_time": "14:00",
+    "new_start_time":"13:00",
+    "new_end_time":"15:00"
+},{
+    "course":"C Programming",
+    "days_of_week": [
+        "THURSDAY",
+    "FRIDAY","MONDAY","TUESDAY"
+    ],
+    "date": "2024-01-18",
+    "start_time": "12:00",
+    "end_time": "14:00",
+    "new_start_time":"13:00",
+    "new_end_time":"15:00"
+},{
+    "course":"Python",
+    "days_of_week": [
+            "THURSDAY",
+        "FRIDAY"
+    ],
+    "date": "2024-02-06",
+    "start_time": "08:00",
+    "end_time": "10:00",
+    "new_start_time":"13:00",
+    "new_end_time":"15:00"
+},{
+    "course":"PPT",
+    "days_of_week": [
+            "MONDAY",
+        "TUEADAY"
+    ],
+    "date": "2024-02-06",
+    "start_time": "12:00",
+    "end_time": "14:00",
+    "new_start_time":"13:00",
+    "new_end_time":"15:00"
+}
+
+]

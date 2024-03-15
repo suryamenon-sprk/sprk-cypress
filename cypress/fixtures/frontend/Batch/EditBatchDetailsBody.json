@@ -1,0 +1,22 @@
+[{
+    "preview":true,
+    "days_of_week": [
+            "THU","FRI"
+    ],
+    "description":"edit_days"
+
+},
+{
+
+    "start_time": "13:00",
+    "end_time": "14:00",
+    "description":"edit_time"
+},
+{
+
+    "new_start_time": "14:00",
+    "new_end_time": "16:00",
+    "description":"edit start_time"
+}
+
+]
