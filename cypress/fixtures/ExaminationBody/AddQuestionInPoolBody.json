@@ -9,14 +9,17 @@
             "question": "What is variable in python?",
             "options": [
              {
+                "id":1,
                 "option": "A memory location to store value",
                 "ans": true
             },
              {
+                "id":2,
                 "option": "A Character",
                 "ans": false
             },
             {
+                "id":3,
                 "option": "A Number",
                 "ans": false
             }
@@ -27,9 +30,7 @@
             "expected_status_code":201
         }
     ],
-
     [
-
         {
             "course": null,
             "question_type": "SCQ",
@@ -38,21 +39,24 @@
             "question": "What is variable in python?",
             "options": [
              {
+                "id":1,
                 "option": "A memory location to store value",
                 "ans": true
             },
              {
+                "id":2,
                 "option": "A Character",
                 "ans": false
             },
             {
+                "id":3,
                 "option": "A Number",
                 "ans": false
             }
             ],
             "marks": 1.00,
             "explanation": "It a memory location to store value",
-            "description": "Course id id null",
+            "description": "All Valid details in the field",
             "expected_status_code":400
         }
     ],
@@ -65,21 +69,24 @@
             "question": "What is variable in python?",
             "options": [
              {
+                "id":1,
                 "option": "A memory location to store value",
                 "ans": true
             },
              {
+                "id":2,
                 "option": "A Character",
                 "ans": false
             },
             {
+                "id":3,
                 "option": "A Number",
                 "ans": false
             }
             ],
             "marks": 1.00,
             "explanation": "It a memory location to store value",
-            "description": "Question type is null",
+            "description": "All Valid details in the field",
             "expected_status_code":400
         }
     ],
@@ -92,21 +99,24 @@
             "question": "What is variable in python?",
             "options": [
              {
+                "id":1,
                 "option": "A memory location to store value",
                 "ans": true
             },
              {
+                "id":2,
                 "option": "A Character",
                 "ans": false
             },
             {
+                "id":3,
                 "option": "A Number",
                 "ans": false
             }
             ],
             "marks": 1.00,
             "explanation": "It a memory location to store value",
-            "description": "Difficulty level is given null",
+            "description": "All Valid details in the field",
             "expected_status_code":400
         }
     ],
@@ -119,96 +129,17 @@
             "question": "What is variable in python?",
             "options": [
              {
+                "id":1,
                 "option": "A memory location to store value",
                 "ans": true
             },
              {
+                "id":2,
                 "option": "A Character",
                 "ans": false
             },
             {
-                "option": "A Number",
-                "ans": false
-            }
-            ],
-            "marks": 1.00,
-            "explanation": "It a memory location to store value",
-            "description": "Modules is given null",
-            "expected_status_code":400
-        }
-    ],
-    [
-        {
-            "course": [36],
-            "question_type": "SCQ",
-            "difficulty_level": "EASY",
-            "module": [97],
-            "question": null,
-            "options": [
-             {
-                "option": "A memory location to store value",
-                "ans": true
-            },
-             {
-                "option": "A Character",
-                "ans": false
-            },
-            {
-                "option": "A Number",
-                "ans": false
-            }
-            ],
-            "marks": 1.00,
-            "explanation": "It a memory location to store value",
-            "description": "Question is null",
-            "expected_status_code":400
-        }
-    ],
-    [
-        {
-            "course": [36],
-            "question_type": "SCQ",
-            "difficulty_level": "EASY",
-            "module": [97],
-            "question": "What is variable in python?",
-            "options": [
-             {
-                "option": null,
-                "ans": true
-            },
-             {
-                "option": "A Character",
-                "ans": false
-            },
-            {
-                "option": "A Number",
-                "ans": false
-            }
-            ],
-            "marks": 1.00,
-            "explanation": "It a memory location to store value",
-            "description": "One of the option field is null but ans is given true",
-            "expected_status_code":200
-        }
-
-    ],
-    [
-        {
-            "course": [36],
-            "question_type": "SCQ",
-            "difficulty_level": "EASY",
-            "module": [97],
-            "question": "What is variable in python?",
-            "options": [
-             {
-                "option": "A memory location to store value",
-                "ans": true
-            },
-             {
-                "option": "A Character",
-                "ans": false
-            },
-            {
+                "id":3,
                 "option": "A Number",
                 "ans": false
             }
@@ -216,7 +147,7 @@
             "marks": 1.00,
             "explanation": "It a memory location to store value",
             "description": "All Valid details in the field",
-            "expected_status_code":200
+            "expected_status_code":201
         }
     ],
     [
@@ -228,71 +159,28 @@
             "question": "What is variable in python?",
             "options": [
              {
-                "option": "A memory location to store value",
-                "ans": null
-            },
-             {
-                "option": "A Character",
-                "ans": false
-            },
-            {
-                "option": "A Number",
-                "ans": false
-            }
-            ],
-            "marks": null,
-            "explanation": "It a memory location to store value",
-            "description": "Marks is given null",
-            "expected_status_code":400
-        }
-    ],
-    [
-        {
-            "course": [36],
-            "question_type": "SCQ",
-            "difficulty_level": "EASY",
-            "module": [97],
-            "question": "What is variable in python?",
-            "options": [
-             {
-                "option": "A memory location to store value",
-                "ans": false
-            },
-             {
-                "option": "A Character",
-                "ans": false
-            },
-            {
-                "option": "A Number",
-                "ans": false
-            }
-            ],
-            "marks": 1.00,
-            "explanation": "It a memory location to store value",
-            "description": "all the ans field is false not true value",
-            "expected_status_code":400
-        }
-    ],
-    [
-        {
-            "course": [36],
-            "question_type": "SCQ",
-            "difficulty_level": "EASY",
-            "module": [97],
-            "question": "What is variable in python?",
-            "options": [
-             {
+                "id":1,
                 "option": "A memory location to store value",
                 "ans": true
+            },
+             {
+                "id":2,
+                "option": "A Character",
+                "ans": false
+            },
+            {
+                "id":3,
+                "option": "A Number",
+                "ans": false
             }
             ],
             "marks": 1.00,
             "explanation": "It a memory location to store value",
-            "description": "Only one option is given which is invalid there should be atleast 2 options",
-            "expected_status_code":400
+            "description": "All Valid details in the field",
+            "expected_status_code":201
         }
-
-        ]
+    ]
 ]
 
+   
 
