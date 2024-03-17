@@ -37,7 +37,7 @@ before(()=>{
 
 
 describe('EMS',()=>{
-/*
+
     //Employee Request flow
     it('Add - Employee', () => {
         emsbtn.createEmpBtn().click()
@@ -311,7 +311,7 @@ describe('EMS',()=>{
         emsbtn.searchEmpActivity("Kav")
 
     })
-   */
+   
     it("Employee Leave Request",()=>{
         emsbtn.getEmpLeaveRequestTab().click()
         emsbtn.getPendingLeaveRequest()

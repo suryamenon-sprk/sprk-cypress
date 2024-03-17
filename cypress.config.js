@@ -45,13 +45,33 @@ module.exports = defineConfig({
         "userProfilePic": "null",
         "salesRole": "null",
         "_persist": "{\"version\":1,\"rehydrated\":true}"
+    },
+    umesh:
+      {
+        "user": "\"SPRK24SHI35\"",
+        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRTSEkzNSIsInVwdCI6MTcxMDQ4MjA3NTMzNywiaWF0IjoxNzEwNDgzMTI2LCJleHAiOjE3MTA1Njk1MjZ9.mr1zXqQ6LZKDJ_BuwKg_xe3GlIc_xXic2iDdhpSyxzg\"",
+        "roles": "[\"ROLE_SALES\"]",
+        "userId": "\"SPRK24SHI35\"",
+        "userDetails": "{\"emp_id\":\"SPRK24SHI35\",\"name\":\"shivraj Yalave\",\"email\":\"shivyelave@gmail.com\",\"enabled\":true,\"authorities\":[\"ROLE_SALES\"],\"profile\":false,\"entitlements\":[{\"name\":\"LMS\",\"sub\":[{\"name\":\"LEADS\",\"actions\":[\"DELETE\",\"CREATE\",\"VIEW\"]}]},{\"name\":\"CENTER\",\"sub\":[{\"name\":\"BOOKINGS\",\"actions\":[\"CREATE\",\"VIEW\"]},{\"name\":\"RBC\",\"actions\":[\"CREATE\",\"VIEW\"]},{\"name\":\"ENROLLMENTS\",\"actions\":[\"CREATE\",\"VIEW\"]},{\"name\":\"COLLECTIONS\",\"actions\":[\"CREATE\",\"VIEW\"]}]}]}",
+        "entitlements": "[{\"name\":\"LMS\",\"sub\":[{\"name\":\"LEADS\",\"actions\":[\"DELETE\",\"CREATE\",\"VIEW\"]}]},{\"name\":\"CENTER\",\"sub\":[{\"name\":\"BOOKINGS\",\"actions\":[\"CREATE\",\"VIEW\"]},{\"name\":\"RBC\",\"actions\":[\"CREATE\",\"VIEW\"]},{\"name\":\"ENROLLMENTS\",\"actions\":[\"CREATE\",\"VIEW\"]},{\"name\":\"COLLECTIONS\",\"actions\":[\"CREATE\",\"VIEW\"]}]}]",
+        "tabName": "[\"LMS\",\"LEADS\",\"CENTER\",\"BOOKINGS\",\"RBC\",\"ENROLLMENTS\",\"COLLECTIONS\"]",
+        "selectedIds": "null",
+        "studentData": "null",
+        "receiptObj": "null",
+        "userProfilePic": "null",
+        "salesRole": "[{\"user_id\":1,\"name\":\"Kavita Pankaj Pawar\"},{\"user_id\":2,\"name\":\"Krutika Rushi Rushi\"},{\"user_id\":4,\"name\":\"Disha shah\"},{\"user_id\":5,\"name\":\"Surya Menon\"},{\"user_id\":6,\"name\":\"ketan kadam\"},{\"user_id\":16,\"name\":\"shivraj Yalave\"},{\"user_id\":9,\"name\":\"rakesh XYZ lolam\"},{\"user_id\":8,\"name\":\"rahul bhosale\"},{\"user_id\":12,\"name\":\"Rajesh ashok kadam\"},{\"user_id\":15,\"name\":\"Umesh Yelave\"}]",
+        "_persist": "{\"version\":1,\"rehydrated\":true}"
     }
+    
     },
     token: {
       kavita:
         "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzEwMTM3NzYyLCJleHAiOjE3MTAyMjQxNjJ9.CR8hrXtZtRpEVgIIpXToRq-dbnAafjl_bkvvOKR_1Vs",
       pranav:
         "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRQUkFDOSIsInVwdCI6MTcxMDMxNTIxODUwNiwiaWF0IjoxNzEwMzE2MTMyLCJleHAiOjE3MTA0MDI1MzJ9.-7lEkFttg1jtrsWNa_2tO4jOe6NAr5VIHz9ZkzcVquE",
+      
+      umesh:
+        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRTSEkzNSIsInVwdCI6MTcxMDQ4MjA3NTMzNywiaWF0IjoxNzEwNDgzMTI2LCJleHAiOjE3MTA1Njk1MjZ9.mr1zXqQ6LZKDJ_BuwKg_xe3GlIc_xXic2iDdhpSyxzg",
       },
     portal_url: "https://rfc2rnvg-3000.inc1.devtunnels.ms",
   },
