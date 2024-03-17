@@ -34,12 +34,18 @@ describe('POST - Create Question Set', () => {
 
         payload_register.forEach((testCase) => {
 
+            const qsns = testCase.qsn && Array.isArray(testCase.qsn) ?
+               testCase.qsn.map(qsn =>({
+                id:qsn.id,
+                marks:qsn.marks
+               })) : [];
+
             let bodyPayload = {
                 title:testCase.title,
                 assessment:testCase.assessment,
                 percentage:testCase.percentage,
                 duration:testCase.duration,
-                qsn:testCase.qsn,
+                qsn:qsns,
                 id:testCase.id,
                 marks:testCase.marks
             }

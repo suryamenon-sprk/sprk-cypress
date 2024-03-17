@@ -56,7 +56,7 @@
             ],
             "marks": 1.00,
             "explanation": "It a memory location to store value",
-            "description": "All Valid details in the field",
+            "description": "Course field is null",
             "expected_status_code":400
         }
     ],
@@ -86,7 +86,7 @@
             ],
             "marks": 1.00,
             "explanation": "It a memory location to store value",
-            "description": "All Valid details in the field",
+            "description": "Question type is null",
             "expected_status_code":400
         }
     ],
@@ -116,7 +116,7 @@
             ],
             "marks": 1.00,
             "explanation": "It a memory location to store value",
-            "description": "All Valid details in the field",
+            "description": "Difficulty level is null",
             "expected_status_code":400
         }
     ],
@@ -146,8 +146,82 @@
             ],
             "marks": 1.00,
             "explanation": "It a memory location to store value",
-            "description": "All Valid details in the field",
+            "description": "Module field is null but it can be null so the expected staqtus will 201 created",
             "expected_status_code":201
+        }
+    ],
+    [
+        {
+            "course": [36],
+            "question_type": "SCQ",
+            "difficulty_level": "EASY",
+            "module": [97],
+            "question": null,
+            "options": [
+             {
+                "id":1,
+                "option": "A memory location to store value",
+                "ans": true
+            },
+             {
+                "id":2,
+                "option": "A Character",
+                "ans": false
+            },
+            {
+                "id":3,
+                "option": "A Number",
+                "ans": false
+            }
+            ],
+            "marks": 1.00,
+            "explanation": "It a memory location to store value",
+            "description": "Question field is null",
+            "expected_status_code":400
+        }
+    ],
+    [
+        {
+            "course": [36],
+            "question_type": "SCQ",
+            "difficulty_level": "EASY",
+            "module": [97],
+            "question": "What is variable in python?",
+            "options": null,
+            "marks": 1.00,
+            "explanation": "It a memory location to store value",
+            "description": "Options are null if question type is SCQ or MCQ should give an error of 400",
+            "expected_status_code":400
+        }
+    ],
+    [
+        {
+            "course": [36],
+            "question_type": "SCQ",
+            "difficulty_level": "EASY",
+            "module": [97],
+            "question": "What is variable in python?",
+            "options": [
+             {
+                "id":1,
+                "option": "A memory location to store value",
+                "ans": true
+            },
+             {
+                "id":2,
+                "option": "A Character",
+                "ans": false
+            },
+            {
+                "id":3,
+                "option": "A Number",
+                "ans": false
+            }
+            ],
+            "marks": null,
+            "explanation": "It a memory location to store value",
+            "description": "Marks is given null",
+            "expected_status_code":400
         }
     ],
     [
@@ -175,8 +249,34 @@
             }
             ],
             "marks": 1.00,
-            "explanation": "It a memory location to store value",
-            "description": "All Valid details in the field",
+            "explanation": null,
+            "description": "Explanation can be null so the expected status will be 201 created",
+            "expected_status_code":201
+        }
+    ],
+    [
+        {
+            "course": [36],
+            "question_type": "TRUE_FALSE",
+            "difficulty_level": "EASY",
+            "module": [97],
+            "question": "Python is case sensitive",
+            "options": [
+             {
+                "id":1,
+                "option": "True",
+                "ans": true
+            },
+             {
+                "id":2,
+                "option": "False",
+                "ans": false
+            }
+            
+            ],
+            "marks": 1.00,
+            "explanation": null,
+            "description": "Explanation can be null so the expected status will be 201 created",
             "expected_status_code":201
         }
     ]
