@@ -1,6 +1,6 @@
 [
     {
-        "id":"fac11b97-d939-49fc-8b9f-e3d235882606",
+        "id":"13af0fea-25b5-4795-8967-1527a01c01a5",
         "title":"Python set",
         "assessment":"INTERNAL_ASSESSMENT",
         "percentage":90.00,
@@ -31,7 +31,7 @@
          "expected_status_code":200
     },
     {
-        "id":"fac11b97-d939-49fc-8b9f-e3d235882606",
+        "id":"13af0fea-25b5-4795-8967-1527a01c01a5",
         "title":null,
         "assessment":"INTERNAL_ASSESSMENT",
         "percentage":90.00,
@@ -62,38 +62,7 @@
         "expected_status_code":400
     },
     {
-        "id":"fac11b97-d939-49fc-8b9f-e3d235882606",
-        "title":"Faculty Python set",
-        "assessment":null,
-        "percentage":90.00,
-        "duration":60,
-         "qsn":[
-            {
-                "id":"8c839c14-fab2-4058-a3ab-98be2a7c7646",
-                "marks":2.00
-            },
-            {
-                "id":"89a9e9bc-6e80-43d8-825d-5cbd79cf3424",
-                "marks":2.00
-            },
-            {
-                "id":"8c02360a-9d0c-4cfa-9c7a-fde77b019de2",
-                "marks":1.00
-            },
-            {
-                "id":"dfade63c-53ad-4b5b-9428-8563e500b2b7",
-                "marks":1.00
-            },
-            {
-                "id":"783f8e1d-5eea-4cdc-a07f-d7ab466b7bcc",
-                "marks":1.00
-            }
-        ],
-        "description": "assessment is null",
-        "expected_status_code":400
-    },
-    {
-        "id":"fac11b97-d939-49fc-8b9f-e3d235882606",
+        "id":"13af0fea-25b5-4795-8967-1527a01c01a5",
         "title":"Faculty Python set",
         "assessment":"INTERNAL_ASSESSMENT",
         "percentage":null,
@@ -124,7 +93,7 @@
         "expected_status_code":400
     },
     {
-        "id":"fac11b97-d939-49fc-8b9f-e3d235882606",
+        "id":"13af0fea-25b5-4795-8967-1527a01c01a5",
         "title":"Faculty Python set",
         "assessment":"INTERNAL_ASSESSMENT",
         "percentage":90.00,
@@ -154,14 +123,67 @@
         "description": "Duration is null",
         "expected_status_code":400
     },
-    {
-        "id":"fac11b97-d939-49fc-8b9f-e3d235882606",
-        "title":"Faculty Python set",
-        "assessment":"INTERNAL_ASSESSMENT",
-        "percentage":90.00,
-        "duration":60,
-         "qsn":null,
-        "description": "questions are null",
-        "expected_status_code":400
-    }
+  {
+            "id":"13af0fea-25b5-4795-8967-1527a01c01a5",
+            "title":"For student",
+            "assessment":"INTERNAL_ASSESSMENT",
+            "percentage":105.00,
+            "duration":60,
+             "qsn":[
+                {
+                    "id":"8c839c14-fab2-4058-a3ab-98be2a7c7646",
+                    "marks":2.00
+                },
+                {
+                    "id":"89a9e9bc-6e80-43d8-825d-5cbd79cf3424",
+                    "marks":2.00
+                },
+                {
+                    "id":"8c02360a-9d0c-4cfa-9c7a-fde77b019de2",
+                    "marks":1.00
+                },
+                {
+                    "id":"dfade63c-53ad-4b5b-9428-8563e500b2b7",
+                    "marks":1.00
+                },
+                {
+                    "id":"783f8e1d-5eea-4cdc-a07f-d7ab466b7bcc",
+                    "marks":1.00
+                }
+            ],
+            "description": "Percentage is more than 100%",
+            "expected_status_code":400
+        },
+        {
+            "id":"13af0fea-25b5-4795-8967-1527a01c01a5",
+            "title":"Python set",
+            "assessment":"INTERNAL_ASSESSMENT",
+            "percentage":90.00,
+            "duration":60,
+             "qsn":[
+                {
+                    "id":"8c839c14-fab2-4058-a3ab-98be2a7c7646",
+                    "marks":-2.00
+                },
+                {
+                    "id":"89a9e9bc-6e80-43d8-825d-5cbd79cf3424",
+                    "marks":2.00
+                },
+                {
+                    "id":"8c02360a-9d0c-4cfa-9c7a-fde77b019de2",
+                    "marks":1.00
+                },
+                {
+                    "id":"dfade63c-53ad-4b5b-9428-8563e500b2b7",
+                    "marks":1.00
+                },
+                {
+                    "id":"783f8e1d-5eea-4cdc-a07f-d7ab466b7bcc",
+                    "marks":1.00
+                }
+            ],
+            "description": "one of the question's mark is -2 negative value",
+            "expected_status_code":400
+        }
+    
 ]

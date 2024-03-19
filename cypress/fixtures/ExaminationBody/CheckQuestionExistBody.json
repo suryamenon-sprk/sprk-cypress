@@ -1,0 +1,169 @@
+[
+    {
+        "course": [
+            19
+        ],
+        "question_type": "SCQ",
+        "difficulty_level": "EASY",
+        "module": [
+            97
+        ],
+        "question": "Which component is used to compile, debug and execute the java programs?",
+        "options": [
+            {
+                "id":1,
+                "option": "A memory location to store value",
+                "ans": true
+            },
+            {
+                "id":2,
+                "option": "A Character",
+                "ans": false
+            },
+            {
+                "id":3,
+                "option": "A Number",
+                "ans": false
+            }
+        ],
+        "marks": 1.00,
+        "explanation": "It a memory location to store value",
+        "description": "All valid data but the question that already exist in the data",
+        "expected_status_code":200
+    },
+    {
+        "course": [
+            -1
+        ],
+        "question_type": "SCQ",
+        "difficulty_level": "EASY",
+        "module": [
+            97
+        ],
+        "question": "Which component is used to compile, debug and execute the java programs?",
+        "options": [
+            {
+                "id":1,
+                "option": "A memory location to store value",
+                "ans": true
+            },
+            {
+                "id":2,
+                "option": "A Character",
+                "ans": false
+            },
+            {
+                "id":3,
+                "option": "A Number",
+                "ans": false
+            }
+        ],
+        "marks": 1.00,
+        "explanation": "It a memory location to store value",
+        "description": "Invalid course id",
+        "expected_status_code":400
+    },
+    {
+        "course": [
+            19
+        ],
+        "question_type": "SCQ",
+        "difficulty_level": "EASY",
+        "module": [
+            -97
+        ],
+        "question": "Which component is used to compile, debug and execute the java programs?",
+        "options": [
+            {
+                "id":1,
+                "option": "A memory location to store value",
+                "ans": true
+            },
+            {
+                "id":2,
+                "option": "A Character",
+                "ans": false
+            },
+            {
+                "id":3,
+                "option": "A Number",
+                "ans": false
+            }
+        ],
+        "marks": 1.00,
+        "explanation": "It a memory location to store value",
+        "description": "Modules number is invalid",
+        "expected_status_code":400
+    },
+    {
+        "course": [
+            19
+        ],
+        "question_type": "SCQ",
+        "difficulty_level": "EASY",
+        "module": [
+            97
+        ],
+        "question": "Which component is used to compile, debug and execute the java programs?",
+        "options": [
+            {
+                "id":-1,
+                "option": "A memory location to store value",
+                "ans": true
+            },
+            {
+                "id":2,
+                "option": "A Character",
+                "ans": false
+            },
+            {
+                "id":3,
+                "option": "A Number",
+                "ans": false
+            }
+        ],
+        "marks": 1.00,
+        "explanation": "It a memory location to store value",
+        "description": "Id of the one of the option is having negative value",
+        "expected_status_code":200
+    },
+    {
+        "course": [36],
+        "question_type": "FILL_UPS",
+        "difficulty_level": "EASY",
+        "module": [97],
+        "question": "<<<<Python>>>> is case sensitive",
+        "marks": 1.00,
+        "options":[],
+        "sensitivity":true,
+        "explanation": "",
+        "description": "Fill in the blanks question",
+        "expected_status_code":200
+    },
+    {
+        "course": [36],
+        "question_type": "FILL_UPS",
+        "difficulty_level": "EASY",
+        "module": [97],
+        "question": "Python is case <<<<sensitive>>>>",
+        "marks": 1.00,
+        "options":[],
+        "sensitivity":true,
+        "explanation": "",
+        "description": "Fill in the blanks question",
+        "expected_status_code":200
+    },
+    {
+        "course": [36],
+        "question_type": "FILL_UPS",
+        "difficulty_level": "EASY",
+        "module": [97],
+        "question": "Python is case <<<<sensitive>>>>",
+        "marks": 1.00,
+        "options":[],
+        "sensitivity":false,
+        "explanation": "",
+        "description": "Fill in the blanks question",
+        "expected_status_code":200
+    }
+]
