@@ -279,6 +279,21 @@
             "description": "Explanation can be null so the expected status will be 201 created",
             "expected_status_code":201
         }
+    ],
+    [
+        {
+            "course": [36],
+            "question_type": "FILL_UPS",
+            "difficulty_level": "EASY",
+            "module": [97],
+            "question": "Python is case <<<<sensitive>>>>",
+            "marks": 1.00,
+            "options":[],
+            "sensitivity":true,
+            "explanation": "",
+            "description": "Fill in the blanks question",
+            "expected_status_code":201
+        }
     ]
 ]
 

@@ -47,7 +47,7 @@ describe('PATCH - Update Question Set', () => {
 
             // REQUEST
             cy.request({
-                method: HttpMethod.POST,
+                method: HttpMethod.PATCH,
                 url: API_URL,
                 failOnStatusCode: false,
                 body: bodyPayload,

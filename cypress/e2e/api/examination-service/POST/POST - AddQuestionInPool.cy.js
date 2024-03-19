@@ -90,6 +90,7 @@ describe('POST - Add Question In Pool', () => {
                     module: testCase.module,
                     question: testCase.question,
                     marks: testCase.marks,
+                    sensitivity: testCase.sensitivity,
                     explanation: testCase.explanation,
                     options: options,
                 };
