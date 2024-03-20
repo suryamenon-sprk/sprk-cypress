@@ -73,8 +73,8 @@ describe(
 
         cy.get('input[name="student_firstname"]').type("Rupesh"); // First Name
         cy.get('input[name="student_lastname"]').type("Mishra"); // Last Name
-        cy.get('input[name="primary_mobile"]').type("90888888999"); // Phone
-        cy.get('input[name="primary_email"]').type("example@gmail.com"); // Email
+        cy.get('input[name="primary_mobile"]').type("900008999"); // Phone
+        cy.get('input[name="primary_email"]').type("exa233@gmail.com"); // Email
         
         cy.get('.Lms_buttonBox__sLJ4u > .MuiButtonBase-root').click();
 

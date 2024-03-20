@@ -6,8 +6,8 @@ import { bypassLogin, getPortalUrl, skipMSTunnelWarning } from "../../support/po
 const base_url = getPortalUrl() + "/Lms"
 beforeEach(() => {
   bypassLogin(
-    Cypress.env("auth").umesh,
-    Cypress.env("token").umesh
+    Cypress.env("auth").shiv,
+    Cypress.env("token").shiv
   )
   skipMSTunnelWarning(base_url)
 });
@@ -110,9 +110,9 @@ describe('lms',()=>{
             }
         })
     })
-*/
 
-   it('Transfer Enquiry',()=>{
+
+   it('Transfer Enquiry from LMS update details',()=>{
     lmsBtn.getlmsTab().click()
     lmsBtn.searchFilter("opened")
     lmsBtn.dateFilter("2024-01-01","2024-04-04").click()
@@ -122,4 +122,80 @@ describe('lms',()=>{
     lmsBtn.clickUpdate().click()
     lmsBtn.swalBtn().click()
    })
+
+   it('Follow-up Enquiry  from LMS update details',()=>{
+    lmsBtn.getlmsTab().click()
+    lmsBtn.searchFilter("opened")
+    lmsBtn.dateFilter("2024-01-01","2024-04-04").click()
+    lmsBtn.selectStudentToTransfer().click()
+    lmsBtn.selectAction("FOLLOW UP").click()
+    lmsBtn.clickUpdate().click()
+    lmsBtn.followUpDate("2024-04-04")
+    lmsBtn.followUpTime("16:00")
+    lmsBtn.selectFollowUpType("TELEPHONIC").click()
+    lmsBtn.typeComment("XYZ")
+    lmsBtn.submitPaymentandCourse().click()
+    //lmsBtn.cancelBtn().click()
+   })
+
+
+   it('Discard Enquiry from LMS update details',()=>{
+    lmsBtn.getlmsTab().click()
+    lmsBtn.searchFilter("opened")
+    lmsBtn.dateFilter("2024-01-01","2024-04-04").click()
+    lmsBtn.selectStudentToTransfer().click()
+    lmsBtn.selectAction("DISCARD").click()
+    lmsBtn.typeDiscardReason("XYZ")
+    lmsBtn.clickUpdate().click()
+
+   })
+
+   it('Discard Enquiry',()=>{
+    lmsBtn.getlmsTab().click()
+    lmsBtn.searchFilter("opened")
+    lmsBtn.dateFilter("2024-01-01","2024-04-04").click()
+    lmsBtn.selectStudentRow().click()
+    lmsBtn.discardBtn().click()
+    lmsBtn.discardReasonForDirectDiscard("ABC")
+    lmsBtn.finalDiscardBtn().click()
+
+   })
+
+   it('Transfer Enquiry',()=>{
+    lmsBtn.getlmsTab().click()
+    lmsBtn.searchFilter("opened")
+    lmsBtn.dateFilter("2024-01-01","2024-04-04").click()
+    lmsBtn.selectStudentRow().click()
+    lmsBtn.transferBtn().click()
+    lmsBtn.selectWhomToTransferInLms("ketan kadam").click()
+    lmsBtn.finalTransferBtn().click()
+   })
+ 
+   it('Delete Enquiry',()=>{
+    lmsBtn.getlmsTab().click()
+    lmsBtn.searchFilter("opened")
+    lmsBtn.dateFilter("2024-01-01","2024-04-04").click()
+    lmsBtn.selectStudentRow().click()
+    lmsBtn.deleteBtn().click()
+    //lmsBtn.yesDeleteBtn().click()
+    lmsBtn.cancelDeleteBtn().click()
+   })
+ */
+   it('View follow up',()=>{
+    lmsBtn.selectFollowUpView().click()
+    lmsBtn.typeFollowFilterStartEndDate("2024-01-01","2024-04-04")
+    lmsBtn.clearBtn().click()
+    lmsBtn.closeFollowUpLeads().click()
+   })
+
+
+
+
+
+
+
+
+
+
+
 })

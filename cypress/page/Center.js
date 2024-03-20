@@ -1,7 +1,13 @@
 export class CenterBtns {
 
+    getEnrollmentTab(){
+        cy.get('.css-1m8u6xh-MuiListItem-root > .MuiButtonBase-root').click()
+        return cy.contains('[role="button"]', 'Enrollments')
+    }
     getStudent(){
-        return cy.get('#cell-student_name-8');
+        return cy.get('[col-id="student_name"]').eq(1); 
+
+      
     }
     getStudentByIdAndName(){
         cy.get('.ag-body-viewport').scrollTo('bottom');
@@ -14,6 +20,36 @@ export class CenterBtns {
         cy.get('#pageSizeSelect').click();
         return cy.get(`[data-value="${page_size}"]`);
     }
+    //Edit Timings
+
+    clickEdit(){
+        return cy.contains('p','Edit')
+    }
+    clickAddSlot(){
+        return cy.contains('button',' Add slot')
+    }
+    clickDays(days){
+        cy.get('[id="days-0"]').click()
+        days.forEach((day)=>{
+            cy.get(`li[data-value="${day}"]`).find('input[type="checkbox"]').click()
+        })
+        return cy.get('body').click()
+    }
+    typeStartEndTimeAndReasonInAddTimings(start_time,end_time,reason){
+        cy.get('input[name="start"]').type(start_time)
+        cy.get('input[name="end"]').type(end_time)
+        cy.get('input[name="reason"]').type(reason)
+    }
+    saveChangesBtn(){
+        return cy.contains('button','Save Changes')
+    }
+    cancelChangesBtn(){
+        return cy.contains('button','Cancel')
+    }
+
+
+
+    // add course
     CourseBtn(){
         return cy.get('.MuiTabs-flexContainer > :nth-child(2)');
     }
@@ -113,6 +149,68 @@ export class CenterBtns {
     swalBtn(){
         return cy.get('.swal-button');
     }
+
+
+    selectAnyCourseForFurtherPayment(){
+        return cy.get('[row-id="0"]').find('[col-id="booked_course"]')
+    }
+    clickActionsBtn(){
+        return cy.contains('button','Actions')
+    }
+    selectAddInstallmentAction(){
+        return cy.contains('li','Add Installments')
+    }
+    selectEditDueDateAction(){
+        return cy.contains('li','Edit Due Date')
+    }
+    editDateOfAnyPayment(date){
+        cy.get('[row-id="3"]').find('[col-id="action"] button').eq(2).click()
+       
+        cy.get('p.MuiTypography-body1').contains('Due Date:').next().find('input[type="date"]').clear().type(date)
+
+    }
+
+    typeDateInEditAllDueDate(date){
+        cy.get('p.MuiTypography-body1').contains('Due Date:').next().find('input[type="date"]').clear().type(date)
+
+    }
+    
+    selectEditAllDueDateAction(){
+        return cy.contains('li','Edit All Due Date')
+    }
+
+    updateBtn(){
+        return cy.contains('button','update')
+    }
+    cancelBtn(){
+        return cy.contains('button','cancel')
+
+    }
+
+    clickPayButton(){
+        cy.get('.ag-center-cols-container .ag-row').each(($row) => {
+            const isPayButtonEnabled = $row.find('[aria-label="pay"]').is(':enabled');
+            
+            if (isPayButtonEnabled) {
+                cy.wrap($row)
+                .find('[aria-label="pay"]')
+                .click();
+            }
+            });
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     //Print receipt flow buttons

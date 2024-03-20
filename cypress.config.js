@@ -17,7 +17,7 @@ module.exports = defineConfig({
     auth: {
       kavita: {
         "user": "\"kavita@sprktechnologies.in\"",
-        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzEwMzk1MDYyLCJleHAiOjE3MTA0ODE0NjJ9.SDP6HMRKFxTt5JUS7WZD6xrstPPoqEoF06rVWH38a4E\"",
+        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjNLQVYwQyIsInVwdCI6MTcwMDgwNTAzMzIwNCwiaWF0IjoxNzEwODQwODE5LCJleHAiOjE3MTA5MjcyMTl9.dhCtpUBK_Aryhv29X-ah7x2188QtbAi3NrHsO15mUGM\"",
         "roles": "[\"ROLE_ADMIN\"]",
         "userId": "\"SPRK23KAV0C\"",
         "userDetails": "{\"emp_id\":\"SPRK23KAV0C\",\"name\":\"Kavita Pankaj Pawar\",\"email\":\"kavita@sprktechnologies.in\",\"enabled\":true,\"authorities\":[\"ROLE_ADMIN\"],\"profile\":false,\"entitlements\":[{\"name\":\"EMS\",\"sub\":[{\"name\":\"REQUESTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"LEAVE_REQUESTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"FACULTY_EXAM\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"EMPLOYEES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"ACTIVITIES\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"ACADEMICS\",\"sub\":[{\"name\":\"MY_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"MY_BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"DASHBOARD\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"BATCH_SCHEDULING\",\"sub\":[{\"name\":\"FACULTY_SCHEDULE\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"STUDENT_SCHEDULE\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"BATCHES\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"SESSION_REQUEST\",\"actions\":[\"VIEW\",\"CREATE\"]}]},{\"name\":\"LMS\",\"sub\":[{\"name\":\"LEADS\",\"actions\":[\"VIEW\",\"CREATE\",\"DELETE\"]}]},{\"name\":\"CENTER\",\"sub\":[{\"name\":\"BOOKINGS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"COLLECTIONS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"ENROLLMENTS\",\"actions\":[\"VIEW\",\"CREATE\"]},{\"name\":\"RBC\",\"actions\":[\"VIEW\",\"CREATE\"]}]}]}",
@@ -45,10 +45,10 @@ module.exports = defineConfig({
         "salesRole": "null",
         "_persist": "{\"version\":1,\"rehydrated\":true}"
     },
-    umesh:
+    shiv:
       {
         "user": "\"SPRK24SHI35\"",
-        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRTSEkzNSIsInVwdCI6MTcxMDQ4MjA3NTMzNywiaWF0IjoxNzEwNDgzMTI2LCJleHAiOjE3MTA1Njk1MjZ9.mr1zXqQ6LZKDJ_BuwKg_xe3GlIc_xXic2iDdhpSyxzg\"",
+        "token": "\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRTSEkzNSIsInVwdCI6MTcxMDQ4MjA3NTMzNywiaWF0IjoxNzEwOTI2ODQ0LCJleHAiOjE3MTEwMTMyNDR9.9HbpfjLWlJTwT_SOLb3421cgkRtUotcUMScJRIAmzKI\"",
         "roles": "[\"ROLE_SALES\"]",
         "userId": "\"SPRK24SHI35\"",
         "userDetails": "{\"emp_id\":\"SPRK24SHI35\",\"name\":\"shivraj Yalave\",\"email\":\"shivyelave@gmail.com\",\"enabled\":true,\"authorities\":[\"ROLE_SALES\"],\"profile\":false,\"entitlements\":[{\"name\":\"LMS\",\"sub\":[{\"name\":\"LEADS\",\"actions\":[\"DELETE\",\"CREATE\",\"VIEW\"]}]},{\"name\":\"CENTER\",\"sub\":[{\"name\":\"BOOKINGS\",\"actions\":[\"CREATE\",\"VIEW\"]},{\"name\":\"RBC\",\"actions\":[\"CREATE\",\"VIEW\"]},{\"name\":\"ENROLLMENTS\",\"actions\":[\"CREATE\",\"VIEW\"]},{\"name\":\"COLLECTIONS\",\"actions\":[\"CREATE\",\"VIEW\"]}]}]}",
@@ -69,10 +69,10 @@ module.exports = defineConfig({
       pranav:
         "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRQUkFDOSIsInVwdCI6MTcxMDMxNTIxODUwNiwiaWF0IjoxNzEwMzE2MTMyLCJleHAiOjE3MTA0MDI1MzJ9.-7lEkFttg1jtrsWNa_2tO4jOe6NAr5VIHz9ZkzcVquE",
       
-      umesh:
-        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRTSEkzNSIsInVwdCI6MTcxMDQ4MjA3NTMzNywiaWF0IjoxNzEwNDgzMTI2LCJleHAiOjE3MTA1Njk1MjZ9.mr1zXqQ6LZKDJ_BuwKg_xe3GlIc_xXic2iDdhpSyxzg",
+      shiv:
+        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTUFJLMjRTSEkzNSIsInVwdCI6MTcxMDQ4MjA3NTMzNywiaWF0IjoxNzEwOTI2ODQ0LCJleHAiOjE3MTEwMTMyNDR9.9HbpfjLWlJTwT_SOLb3421cgkRtUotcUMScJRIAmzKI",
       },
-    portal_url: "https://rfc2rnvg-3000.inc1.devtunnels.ms",
+    portal_url: "https://4f0w8jbl-3000.inc1.devtunnels.ms",
   },
 
   e2e: {

@@ -246,7 +246,86 @@ export class Action {
 
 
 
+    followUpDate(date){
+        cy.get('input[type="date"]').eq(1).type(date)
+    }
+    followUpTime(time){
+        cy.get('input[type="time"]').eq(0).type(time)
+    }
 
+    selectFollowUpType(followup_type){
+        cy.contains('p', 'Type') 
+        .next() 
+        .find('#demo-simple-select') 
+        .click(); 
+        return cy.contains(followup_type)
+    }
+    typeComment(comment){
+        cy.get('textarea[name="comment"]').type(comment)
+
+    }
+    cancelBtn(){
+        return cy.contains('button', 'Cancel')
+    }
+
+    typeDiscardReason(discard_reason){
+        cy.get('input[name="discard_reason"]').type(discard_reason)
+    }
+
+    discardBtn(){
+        return cy.contains('button','Discard')
+    }
+    finalDiscardBtn(){
+        return  cy.contains('div.Lms_buttonBox__sLJ4u button', 'Discard')
+    }
+    transferBtn(){
+        return cy.contains('button','Transfer')
+    }
+    finalTransferBtn(){
+        return  cy.contains('div.Lms_buttonBox__sLJ4u button', 'Transfer')
+      
+    }
+    deleteBtn(){
+        return cy.contains('button','Delete')
+    }
+    finalDeleteBtn(){
+        return  cy.contains('div.Lms_buttonBox__sLJ4u button', 'Delete')
+    }
+    yesDeleteBtn(){
+        return cy.contains('button','Yes, Delete')
+    }
+    cancelDeleteBtn(){
+        return cy.contains('button','No, Cancel')
+    }
+
+
+    selectStudentRow(){
+        return cy.get('div[row-id="0"]').next().find('input[type="checkbox"]')
+    }
+    discardReasonForDirectDiscard(discard_reason){
+        return cy.get('input[type="text"]').eq(1).type(discard_reason)
+    }
+
+
+    selectWhomToTransferInLms(transfer_to){
+        cy.get('[role="combobox"]').eq(1) 
+        .click(); 
+        return cy.contains(transfer_to)
+    }
+
+    selectFollowUpView(){
+        return cy.get('.Lms_gridInBox__WEr13').eq(2)
+    }
+    typeFollowFilterStartEndDate(start_date,end_date){
+        cy.get('input[name="followStartDate"]').type(start_date)
+        cy.get('input[name="followEndDate"]').type(end_date)
+    }
+    clearBtn(){
+        return cy.contains('button','Clear')
+    }
+    closeFollowUpLeads(){
+        return cy.get('[data-testid="CloseIcon"]')
+    }
 
 }
 
