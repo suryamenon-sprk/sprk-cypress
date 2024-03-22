@@ -1,0 +1,47 @@
+[
+    {
+        "fill":true,
+        "course":["C Programming","C++ Programming"],
+        "question_type":"FILL",
+        "difficulty_level":"Easy",
+        "question":"Father of C Programming is <<<<Dennis Ritchie>>>>.",
+        "case_sensetive":false,
+        "explanation":"XYZ"
+    },
+    {
+        "fill":true,   
+        "course":["C Programming","C++ Programming"],
+        "question_type":"FILL",
+        "difficulty_level":"Hard",
+        "question":"Father of C++ Programming is <<<<Bjarne Stroustrup>>>>.",
+        "case_sensetive":true,
+        "explanation":"XYZ"
+    },
+    {
+        "scq":true,
+        "course":["C Programming","C++ Programming"],
+        "question_type":"SCQ",
+        "difficulty_level":"Easy",
+        "question":"Father of C++ Programming is .",
+        "option1":"Bjarne Stroustrup",
+        "option2":"Dennis Ritchie",
+        "option3":"Bjarne Willams",
+        "option4":"Dennis Bravo",
+        "explanation":"XYZ",
+        "answer":"0"
+    },
+    {
+        "mcq":true,
+        "course":["C Programming","C++ Programming"],
+        "question_type":"MCQ",
+        "difficulty_level":"Hard",
+        "question":"Father of Programming is .",
+        "option1":"Bjarne Stroustrup",
+        "option2":"Dennis Ritchie",
+        "option3":"Bjarne Willams",
+        "option4":"Dennis Bravo",
+        "explanation":"XYZ",
+        "answer":["1","2"]
+
+    }
+]

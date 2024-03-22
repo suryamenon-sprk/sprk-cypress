@@ -1,0 +1,73 @@
+[
+    {
+        "title":"Web Development Basics",
+        "courses":["HTML5","CSS3","Javascript","Bootstrap"],
+        "question_types":["FILL UPS","MCQ","SCQ"],
+        "difficulty_level":["EASY","MEDIUM","HARD"],
+        "assessment_type":"Final",
+        "passing_percent":"70",
+        "duration":"10",
+        "number_of_questions":"5",
+        "fill_marks":"2",
+        "scq_marks":"1",
+        "mcq_marks":"2"
+
+    },
+    {
+        "title":"Python 1",
+        "courses":["Python"],
+        "question_types":["FILL UPS","MCQ","SCQ"],
+        "difficulty_level":["EASY","MEDIUM","HARD"],
+        "assessment_type":"Internal Assessment",
+        "passing_percent":"70",
+        "duration":"20",
+        "number_of_questions":"20",
+        "fill_marks":"2",
+        "scq_marks":"1",
+        "mcq_marks":"2"
+
+    },
+    {
+        "title":"C and C++",
+        "courses":["C Programming","C++ Programming"],
+        "question_types":["FILL UPS","MCQ","SCQ"],
+        "difficulty_level":["EASY","MEDIUM","HARD"],
+        "assessment_type":"Final",
+        "passing_percent":"70",
+        "duration":"10",
+        "number_of_questions":"8",
+        "fill_marks":"2",
+        "scq_marks":"1",
+        "mcq_marks":"2"
+
+    },
+    {
+        "title":"C and C++ 2",
+        "courses":["C Programming","C++ Programming"],
+        "question_types":["FILL UPS","MCQ","SCQ"],
+        "difficulty_level":["EASY","MEDIUM","HARD"],
+        "assessment_type":"Final",
+        "passing_percent":"70",
+        "duration":"10",
+        "number_of_questions":"5",
+        "fill_marks":"2",
+        "scq_marks":"1",
+        "mcq_marks":"2"
+
+    },
+    {
+        "title":"My SQL 1",
+        "courses":["MySQL"],
+        "question_types":["FILL UPS","MCQ","SCQ"],
+        "difficulty_level":["EASY","MEDIUM","HARD"],
+        "assessment_type":"Internal Assessment",
+        "passing_percent":"60",
+        "duration":"10",
+        "number_of_questions":"7",
+        "fill_marks":"2",
+        "scq_marks":"1",
+        "mcq_marks":"2"
+
+    }
+
+]

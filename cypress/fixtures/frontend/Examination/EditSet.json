@@ -1,0 +1,23 @@
+[
+    {
+        "exam_type":"Internal Assessment",
+        "title":"C and C++",
+        "passing_percent":"70",
+        "number_of_questions":"1",
+        "duration":"10",
+        "fill_marks":"2",
+        "scq_marks":"1",
+        "mcq_marks":"2"
+
+    },
+    {
+        "exam_type":"Practice",
+        "assessment_type":"Skill Clearance",
+        "number_of_questions":"1",
+        "fill_marks":"2",
+        "scq_marks":"1",
+        "mcq_marks":"2"
+
+    }
+
+]

@@ -152,7 +152,7 @@ export class CenterBtns {
 
 
     selectAnyCourseForFurtherPayment(){
-        return cy.get('[row-id="0"]').find('[col-id="booked_course"]')
+        return cy.get('[row-id="3"]').find('[col-id="booked_course"]')
     }
     clickActionsBtn(){
         return cy.contains('button','Actions')
@@ -188,18 +188,28 @@ export class CenterBtns {
     }
 
     clickPayButton(){
-        cy.get('.ag-center-cols-container .ag-row').each(($row) => {
-            const isPayButtonEnabled = $row.find('[aria-label="pay"]').is(':enabled');
-            
-            if (isPayButtonEnabled) {
-                cy.wrap($row)
-                .find('[aria-label="pay"]')
-                .click();
-            }
-            });
+        cy.get('.ag-center-cols-container .ag-row')
+        .each(($row) => {
+        const isPayButtonEnabled = $row.find('[aria-label="pay"]').is(':enabled');
+        
+        if (isPayButtonEnabled) {
+            cy.wrap($row)
+            .find('[aria-label="pay"]')
+            .click();
+        }
+        });
 
     }
 
+    showPaymentInfo(){
+        return cy.get('.ag-cell-value button').eq(0)
+
+    }
+    printReceiptOfTotalCourse(){
+        return cy.get('.ag-cell-value button').eq(1)
+
+    }
+    
 
 
 
@@ -219,10 +229,10 @@ export class CenterBtns {
         return cy.get('.MuiTabs-flexContainer > :nth-child(3)');
     }
     printIcon(){
-        return cy.get('#cell-Action-76 > div > [aria-label="generatePrint"]')
+        return cy.get('.ag-cell-wrapper button').eq(0)
     }
     printHistoryIcon(){
-        return cy.get('#cell-Action-76 > div > [aria-label="historyprint"]')
+        return cy.get('.ag-cell-wrapper button').eq(1)
     }
     cancelPrintHistoryBtn(){
         return cy.get('.css-75hnft > .MuiBox-root > .MuiButtonBase-root');
@@ -294,6 +304,9 @@ export class CenterBtns {
     typeTextInBookingSearch(textToSearch){
         return cy.get('input[placeholder="Search ....."]').type(textToSearch);
     }
+    clickViewInBookingTab(){
+        return cy.get(".ag-cell-wrapper button").eq(1)
+    }
     cancelBookingBtn(){
         return cy.contains('Cancel Booking Confirmation').scrollIntoView()
 
@@ -339,6 +352,8 @@ export class CenterBtns {
         return cy.get('button[type="button"]').contains('Export to PDF');    
     }
 
+
+
     getStudentInCollectionTab(){
         return cy.get('div[row-id="5"] input[type="checkbox"]');
         
@@ -378,7 +393,7 @@ export class CenterBtns {
         return cy.get('input[placeholder="Search ....."]').type(textToSearch);
     }
     getStudentInRbcTab(){
-        return cy.get('[row-id="0"] input[type="checkbox"]')
+        return cy.get('[row-id="6"] input[type="checkbox"]')
     }
     initiateRbcBtn(){
         return cy.contains('Initiate Reverse Booking Confirmation').scrollIntoView()
@@ -427,7 +442,7 @@ export class CenterBtns {
 
     }
     submitRcbForm(){
-        return cy.get('button[type="submit"]')
+        return cy.contains('button','Submit')
     }
     getRbcHistoryTab(){
         return cy.contains('button','RBC HISTORY')
@@ -438,5 +453,12 @@ export class CenterBtns {
     creditPrintIcon(){
         cy.get('.ag-body-horizontal-scroll-viewport').scrollTo('right');
         return cy.get('button[aria-label="generatePrint"]').eq(0);
+    }
+
+    creditHistoryCredits(){
+        return cy.get(".ag-cell-wrapper button").eq(2)
+    }
+    creditHistoryCreditscancel(){
+        return cy.get('.StudentCreadit_style2__Yjb4z > .MuiBox-root > .MuiButtonBase-root')
     }
 }
