@@ -30,10 +30,6 @@ before(() => {
 describe('lms',()=>{
 
 
-/* 
-
-
-
     it("Create Enquiry- Admit flow",() => {
        
         payload.forEach((test_case)=>{
@@ -180,7 +176,7 @@ describe('lms',()=>{
     //lmsBtn.yesDeleteBtn().click()
     lmsBtn.cancelDeleteBtn().click()
    })
- */
+ 
    it('View follow up',()=>{
     lmsBtn.selectFollowUpView().click()
     lmsBtn.typeFollowFilterStartEndDate("2024-01-01","2024-04-04")

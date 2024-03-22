@@ -45,7 +45,6 @@ var examinationbtn = new ExaminationBtns ()
 
 
 describe('Examination',()=>{
-/*
 
 
     it('Examination Filters (Select And Deselect)', () => {
@@ -149,7 +148,7 @@ describe('Examination',()=>{
         examinationbtn.cancelBtn().click()
 
     })
-*/
+
 
 
     it('Edit Set Flow',()=>{
