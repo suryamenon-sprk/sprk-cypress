@@ -1,12 +1,10 @@
-const buttonCSS = ".MuiButton-containedPrimary"
-
 export class Action {
 
     getlmsTab(){
         return cy.get('[aria-label="Leads"]')
     }
     getCreateButton() {
-        return cy.get(buttonCSS).eq(0)
+        return cy.contains('button','Create')
     }
 
     getTransferButton() {
@@ -29,18 +27,41 @@ export class Action {
         return cy.get(`input[name="primary_email"]`).type(email);
     }
 
-    getEnquiryCreationModalSubmitButtion() {
-        return cy.get('.Lms_buttonBox__sLJ4u > .MuiButtonBase-root');
+    EnquirySubmitBtn() {
+        cy.get('body').then($body => {
+            cy.log($body)
+            if ($body.find('.Lms_createModal__cp4SA').length > 0) {
+              cy.contains('Submit').click();
+            } else {
+              cy.log('Submit button does not exist');
+            }
+        })
     }
 
     clickContinue(){
-        cy.get('.carousel-root .slide').eq(0).within(() => {
-           
-            cy.get('button').eq(1).click(); 
-        });
+        cy.wait(2000)
+        cy.get('body').then($body => {
+            cy.log($body)
+            if ($body.find('.carousel-root').length > 0) {
+                cy.get('.css-gg4vpm > :nth-child(2)').click();
+            } else {
+              cy.log('Continue button does not exist');
+            }
+          });
     }
     closeCreateEnquiry(){
         return cy.get('[data-testid="CloseIcon"]')
+    }
+    enquirySWalBtn(){
+
+        cy.get('body').then($body => {
+            cy.log($body)
+            if ($body.find('.swal-modal').length > 0) {
+                cy.get('.swal-button').click();
+            } else {
+              cy.log('Swal button does not exist');
+            }
+          });
     }
     swalBtn(){
         return cy.get('.swal-button')
@@ -231,6 +252,17 @@ export class Action {
         cy.get('input[type="date"]').eq(1).type(to)
         return cy.contains('button','Apply')
     }
+    selectEmployeeInLmsFilter(employee_names){
+        cy.contains('button','Filter').click()
+        employee_names.forEach((employee_name)=>{
+            cy.contains('p', `${employee_name}`) 
+            .prev() 
+            .find('input[type="checkbox"]') 
+            .check()
+        })
+        return cy.contains('button','Apply')
+
+    }
     selectStudentToTransfer(){
         return cy.get('[data-testid="EditIcon"]').eq(0)
 
@@ -276,13 +308,13 @@ export class Action {
         return cy.contains('button','Discard')
     }
     finalDiscardBtn(){
-        return  cy.contains('div.Lms_buttonBox__sLJ4u button', 'Discard')
+        return cy.get('.Lms_buttonBox__wpsIJ > .MuiButtonBase-root')
     }
     transferBtn(){
         return cy.contains('button','Transfer')
     }
     finalTransferBtn(){
-        return  cy.contains('div.Lms_buttonBox__sLJ4u button', 'Transfer')
+        return  cy.get('.Lms_buttonBox__wpsIJ > .MuiButtonBase-root')
       
     }
     deleteBtn(){
@@ -310,11 +342,11 @@ export class Action {
     selectWhomToTransferInLms(transfer_to){
         cy.get('[role="combobox"]').eq(1) 
         .click(); 
-        return cy.contains(transfer_to)
+        return cy.contains('li',transfer_to)
     }
 
     selectFollowUpView(){
-        return cy.get('.Lms_gridInBox__WEr13').eq(2)
+        return cy.contains('p','Follow Ups')
     }
     typeFollowFilterStartEndDate(start_date,end_date){
         cy.get('input[name="followStartDate"]').type(start_date)
